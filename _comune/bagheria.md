@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: comune
 title: You're up and running!
 ---
 
