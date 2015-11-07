@@ -49,6 +49,11 @@ url: http://aborruso.github.io
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: "/albo-pop"
 
+collections:
+  - comune:
+    output: true
+    permalink: /comune/:path/
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #
@@ -75,8 +80,3 @@ exclude:
     - LICENSE
     - README.md
     - CNAME
-
-collections:
-  - comune:
-    output: true
-    permalink: /comune/:path/
