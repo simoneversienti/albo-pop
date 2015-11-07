@@ -50,7 +50,7 @@ url: http://aborruso.github.io
 baseurl: "/albo-pop"
 
 collections:
-  - comune:
+    comune:
     output: true
     permalink: /comune/:path/
 
