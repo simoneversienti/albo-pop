@@ -18,7 +18,7 @@ Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it
 
 ## Una nota conclusiva
 
-In chiusura un aspetto molto piacevole di questa storia. Come scrivevo sopra tutto nasce da un messaggio in un gruppo facebook, ed in particolare con il responsabile ufficio stampa del comune di Bagheria: Marina Mancini. 
+In chiusura un aspetto molto piacevole di questa storia. Come scrivevo sopra, tutto nasce da un messaggio in un gruppo facebook, ed in particolare con il responsabile ufficio stampa del comune di Bagheria: Marina Mancini. 
 
 A cose fatte, qualche giorno fa, le ho mostrato il risultato. Ha apprezzato subito la cosa e l'ha girata a Patrizio Cinque, sindaco di Bagheria, con il risultato che Albo POP viene oggi lanciato ufficialmente dal primo, e ancora per poco unico, comune per cui è stato attivato. Qui il post di lancio http://....
 
