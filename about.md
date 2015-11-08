@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-**Albo POP** è per ora un piccolo e semplice esperimento, che ha come obiettivo quello di rendere "per tutti" gli Albi Pretori dei comuni.
+**Albo POP** è per ora un piccolo e semplice esperimento, che ha come obiettivo quello di rendere più "popolari" gli Albi Pretori dei comuni.
 
 Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it/)** probabilmente tutto questo non sarebbe nato (appena trovo il tempo, racconterò della sua genesi); per questo per me **Albo POP** è di **ODS**.
 
