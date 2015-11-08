@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: page
 title: Comuni con Albo POP
 permalink: /comune/
 ---
 
-{% for piece in site.comune %}
+{% for comune in site.comune %}
   <li>
 
-    <a href="{{ piece.url }}">{{ piece.title }}</a>
+    <a href="{{ comune.url }}">{{ comune.title }}</a>
   </li>
 {% endfor %}
