@@ -5,8 +5,5 @@ permalink: /comune/
 ---
 
 {% for comune in site.comune %}
-  <li>
-
-    <a href="{{ comune.url }}">{{ comune.title }}</a>
-  </li>
+  <li><a href="{{ site.baseurl }}{{ comune.url }}">{{ comune.title }}</a></li>
 {% endfor %}
