@@ -6,6 +6,7 @@ title: Bagheria
 La pagina dell'albo pretorio del **Comune di Bagheria** è questa: http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
+
 * su un account **Twitter** https://twitter.com/albobagheria;
 * su un canale **Telegram** https://telegram.me/albopretoriobagheria;
 * iscrivendosi a un **feed RSS** http://feeds.feedburner.com/BagheriaAlboPretorio
