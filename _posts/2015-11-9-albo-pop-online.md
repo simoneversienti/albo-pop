@@ -15,3 +15,13 @@ Così ho preso in mano gli attrezzi tecnologici che mi sembravano adeguati all'o
 Una volta realizzato per Bagheria, mi è sembrato un servizio di grande utilità e che fosse tutto sommato facilmente replicabile per altri comuni. E' per questo che da una semplice voglia di dare una mano ad una singola realtà, mi è venuto voglia di trasformarlo in un piccolo progetto che ho appunto chiamato "**Albo POP**".
 
 Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it/)** probabilmente tutto questo non sarebbe nato e per questo per me Albo POP è di ODS.
+
+## Una nota conclusiva
+
+In chiusura un aspetto molto piacevole di questa storia. Come scrivevo sopra tutto nasce da un messaggio in un gruppo facebook, ed in particolare con il responsabile ufficio stampa del comune di Bagheria: Marina Mancini. 
+
+A cose fatte, qualche giorno fa, le ho mostrato il risultato. Ha apprezzato subito la cosa e l'ha girata a Patrizio Cinque, sindaco di Bagheria, con il risultato che Albo POP viene subito lanciato ufficialmente dal primo, e ancora per poco unico, comune per cui è stato attivato.
+
+Non capita sovente di riuscire a dialogare in modo semplice e diretto con la Pubblica Amministrazione e questa chiusura del cerchio è una piacevole eccezione.
+
+Un mio personale ringranziamento a Marina.
