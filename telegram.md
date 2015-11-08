@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Telegram
+title: Albo POP su Telegram
 permalink: /telegram/
 ---
-
-# Albo POP su Telegram
 
 **[Telegram](https://telegram.org/)** è uno dei servizi di chat oggi più utilizzati. Avete presente WhatsApp? Ecco, è un programma della stessa categoria, che funziona meglio del suo fratello più famoso e che fa pure diverse cose in più.
 

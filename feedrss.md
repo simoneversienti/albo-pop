@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: Albo POP tramite feed RSS
 permalink: /feedrss/
 ---
-
-# Albo POP tramite feed RSS
 
 [**RSS**](https://it.wikipedia.org/wiki/RSS) (Really Simple Syndication) è uno dei formati più vecchi e allo stesso tempo moderni, per pubblicare contenuti sul web. Inoltre gli RSS ti consentono facilmente di fare cose: gli aggiornamenti su Twitter e Telegram di Albo POP sono pilotati da un feed RSS.
 

@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Twitter
+title: Albo POP su Twitter
 permalink: /twitter/
 ---
-
-# Albo POP su Twitter
 
 **[Twitter](https://twitter.com/)** è uno dei social network oggi più utilizzati, in cui ci si esprime con testi non più lunghi di 140 caratteri.
 
