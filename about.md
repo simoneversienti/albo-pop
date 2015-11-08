@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-**Albo POP** è un piccolo e semplice esperimento, che ha come obiettivo quello di rendere più "popolari" gli Albi Pretori dei comuni.
+Mi chiamo Andrea Borruso e ho un po' il pallino degi **Albi Pretori**.
+
+**Albo POP** è un piccolo e semplice esperimento, che ha come obiettivo quello di rendere più "popolari" gli albi dei comuni.
 
 Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it/)** probabilmente tutto questo non sarebbe nato (appena trovo il tempo, racconterò della sua genesi); per questo per me **Albo POP** è di **ODS**.
 
