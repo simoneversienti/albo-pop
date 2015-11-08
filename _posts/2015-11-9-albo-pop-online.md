@@ -24,4 +24,4 @@ A cose fatte, qualche giorno fa, le ho mostrato il risultato. Ha apprezzato subi
 
 Non capita sovente di riuscire a dialogare in modo semplice e diretto con la Pubblica Amministrazione e questa chiusura del cerchio è una piacevole eccezione.
 
-Un mio personale ringranziamento a Marina.
+Un mio personale ringranziamento a [Marina](https://twitter.com/marinamancin).
