@@ -3,7 +3,7 @@ layout: comune
 title: Bagheria
 ---
 
-La pagina dell'albo pretorio del **Comune di Bagheria** è questa: http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/
+La pagina dell'albo pretorio del **Comune di Bagheria** è questa: [http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/](http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 

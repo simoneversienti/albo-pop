@@ -3,7 +3,7 @@ layout: comune
 title: San Giuseppe Jato
 ---
 
-La pagina dell'albo pretorio del **Comune di San Giuseppe Jato** è questa: http://156.54.128.62/sgjato
+La pagina dell'albo pretorio del **Comune di San Giuseppe Jato** è questa: [http://156.54.128.62/sgjato](http://156.54.128.62/sgjato)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 
