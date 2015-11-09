@@ -5,5 +5,5 @@ permalink: /post/
 ---
 
 {% for posts in site.posts %}
-  <li><a href="{{ posts.baseurl }}{{ posts.url }}">{{ posts.title }}</a></li>
+  <li><a href="{{ posts.baseurl }}/albo-pop{{ posts.url }}">{{ posts.title }}</a></li>
 {% endfor %}
