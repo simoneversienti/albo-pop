@@ -12,7 +12,7 @@ Così ho preso in mano gli attrezzi tecnologici che mi sembravano adeguati all'o
 * su un canale **[Telegram](https://telegram.me/albopretoriobagheria)**  su cui verrà pubblicato un nuovo messaggio per ogni nuova pubblicazione in Albo;
 * iscrivendosi a un **[feed RSS](http://feeds.feedburner.com/BagheriaAlboPretorio)** su cui verrà pubblicato un nuovo elemento per ogni nuova pubblicazione in Albo.
 
-Una volta realizzato per Bagheria, mi è sembrato un servizio di grande utilità e che fosse tutto sommato facilmente replicabile per altri comuni. E' per questo che da una semplice voglia di dare una mano ad una singola realtà, mi è venuto voglia di trasformarlo in un piccolo progetto che ho appunto chiamato "**Albo POP**".
+Una volta realizzato per [Bagheria](/albo-pop/comune/bagheria), mi è sembrato un servizio di grande utilità e che fosse tutto sommato facilmente replicabile per altri comuni. E' per questo che da una semplice voglia di dare una mano ad una singola realtà, mi è venuto voglia di trasformarlo in un piccolo progetto che ho appunto chiamato "**Albo POP**".
 
 Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it/)** probabilmente tutto questo non sarebbe nato e per questo per me Albo POP è di ODS.
 
