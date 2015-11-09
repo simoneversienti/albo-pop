@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Bagheria
+title: Bagheria (Sicilia)
 ---
 
 La pagina dell'albo pretorio del **Comune di Bagheria** è questa: [http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/](http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/)
