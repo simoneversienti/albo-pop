@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Il secondo Albo POP è quello di cento
+title: Il secondo Albo POP è quello di Cento
 ---
 
 La cosa bella della rete sono gli effetti domino inaspettati.
