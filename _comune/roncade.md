@@ -3,7 +3,7 @@ layout: comune
 title: Roncade (Veneto)
 ---
 
-La pagina dell'albo pretorio del **Comune di San Giuseppe Jato** è questa: [http://sac3.halleysac.it/c026069/mc/mc_p_ricerca.php](http://sac3.halleysac.it/c026069/mc/mc_p_ricerca.php)
+La pagina dell'albo pretorio del **Roncade** è questa: [http://sac3.halleysac.it/c026069/mc/mc_p_ricerca.php](http://sac3.halleysac.it/c026069/mc/mc_p_ricerca.php)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 
