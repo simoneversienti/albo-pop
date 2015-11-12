@@ -12,7 +12,7 @@ Se non frequentassi il gruppo di **[Open Data Sicilia](http://opendatasicilia.it
 
 # Nota bene
 
-Le varie modalità di pubblicazione di Albo POP **non hanno alcun valore legale**, e fa fede sempre la fonte. Per questa ragione è stato sempre inserito nei vari messaggi il link alla fonte.
+Le varie modalità di pubblicazione di Albo POP **non hanno alcun valore legale**, e fa fede sempre la pagina ufficiale dei vari albi. Anche per questa ragione è stato sempre inserito nei vari messaggi il link alla fonte.
 
 C'è una **latenza** di circa **un'ora**, rispetto al tempo originale di pubblicazione, per la pubblicazione in Albo POP. Per fortuna è un tempo insignificante per un contesto di questo tipo.
 
