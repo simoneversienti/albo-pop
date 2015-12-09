@@ -11,4 +11,4 @@ Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 * su un account **Twitter** [https://twitter.com/alboroncade](https://twitter.com/alboroncade);
 * iscrivendoti a un **feed RSS** [http://feeds.feedburner.com/AlboPretorioComuneDiRoncade](http://feeds.feedburner.com/AlboPretorioComuneDiRoncade).
 
-**Autore**: [Carlo Felice Dalla Pasqua](https://twitter.com/carlofelice) per [Gigi Cogo](https://twitter.com/webeconoscenza) e [Roberto Scano](https://twitter.com/rscano).
+**Autore**: [Andrea Borruso](https://twitter.com/aborruso).
