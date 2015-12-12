@@ -3,7 +3,7 @@ layout: comune
 title: Pietraperzia (Sicilia)
 ---
 
-La pagina dell'albo pretorio del **Comune di Bagheria** è questa: [http://www.albipretori.it/Public/Pubblicazioni.aspx?Codice=66](http://www.albipretori.it/Public/Pubblicazioni.aspx?Codice=66)
+La pagina dell'albo pretorio del **Pietraperzia** è questa: [http://www.albipretori.it/Public/Pubblicazioni.aspx?Codice=66](http://www.albipretori.it/Public/Pubblicazioni.aspx?Codice=66)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
