@@ -12,4 +12,4 @@ Adesso puoi seguire le nuove pubblicazioni in albo in due modalità:
 
 **Nota bene**: nel canale, oltre ai dati dall'albo, anche le news comunali.
 
-**Autori**: [Francesco Paolicelli](https://twitter.com/piersoft).
+**Autore**: [Francesco Paolicelli](https://twitter.com/piersoft).
