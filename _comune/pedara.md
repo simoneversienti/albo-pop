@@ -11,4 +11,4 @@ Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 * su un canale **Telegram** [https://telegram.me/albopretoriopedara](https://telegram.me/albopretoriopedara);
 * iscrivendoti a un **feed RSS** [http://feeds.feedburner.com/AlboPretorioPedara](http://feeds.feedburner.com/AlboPretorioPedara).
 
-**Autore**: [Andrea Borruso](https://twitter.com/aborruso).
+**Autori**: [Andrea Borruso](https://twitter.com/aborruso) e [Cristiano Longo](https://www.facebook.com/EtnaRosso).
