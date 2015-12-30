@@ -1,6 +1,6 @@
 ---
 layout: post
-title: #Pedara2015, la presentazione dell'albo POP di Pedara
+title: Pedara2015, la presentazione dell'albo POP di Pedara
 ---
 
 *di [@aborruso](https://twitter.com/aborruso)*
