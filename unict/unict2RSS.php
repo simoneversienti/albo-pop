@@ -23,23 +23,7 @@ define('ALBO_UNICT_URL','http://ws1.unict.it/albo/');
 //define('ALBO_UNICT_URL','sample.html');
 define('DATE_FORMAT','d/m/Y');
 
-/**
- * An item of the "Albo"
- */
-class Item{
-	private $number;
-	private $unit;
-	private $text;
-	private $date;
-	private $link;
-
-	/*
-	 * Initialize the item by getting the data from a
-	* html table row
-	*
-	* @param $trElement DOM element representing the table row
-	*/
-}
+//PARSING FUNCTIONS
 
 /**
  * Get the element corresponding to the table in the Albo Unict document.
@@ -177,8 +161,69 @@ function rowBasicHandler($numero,
 	echo "$numero \t $link \n";
 }
 
+/**
+ * To generate an RSS feed.
+ * 
+ * @author Cristiano Longo
+ *
+ */
+class RSSFeedGenerator{
+
+	private $doc;
+	private $channelEl;
+	
+	/**
+	 * @param string $title the feed title
+	 * @param string $description optional, a feed description
+	 * @param string $homepage optional, an home page describing the feed
+	 * @param string $url the url where the feed is published
+	 * @return number
+	 */
+	public function __construct($title, $description, $homepage, $url) {		
+		$this->doc=new DOMDocument('1.0', 'UTF-8');
+		$this->doc->formatOutput = true;
+		
+		$rssEl=$this->doc->createElement('rss');
+		$rssEl->setAttribute('version', '2.0');
+		$rssEl->setAttributeNS('http://www.w3.org/2000/xmlns/','xmlns:atom','http://www.w3.org/2005/Atom');
+		
+		$this->doc->appendChild($rssEl);
+		
+		$this->channelEl=$this->doc->createElement('channel');
+		$rssEl->appendChild($this->channelEl);
+		
+		$this->channelEl->appendChild($this->doc->createElement('title', $title));
+		
+		if (isset($description))
+			$this->channelEl->appendChild(
+					$this->doc->createElement('description', $description));
+		
+		if (isset($homepage))
+			$this->channelEl->appendChild(
+					$this->doc->createElement('link', $homepage));
+		
+		if (isset($url)){
+			$urlEl=$this->doc->createElementNS('http://www.w3.org/2005/Atom','atom:link');
+			$urlEl->setAttribute('href', $url);
+			$urlEl->setAttribute('rel','self');
+			$urlEl->setAttribute('type','application/rss+xml');
+			$this->channelEl->appendChild($urlEl);
+		}
+	}
+	
+	/**
+	 * Get the feed as string
+	 */
+	public function getFeed(){
+		return $this->doc->saveXML();
+	}
+}
 $src = new DOMDocument();
 $src->loadHTMLfile(ALBO_UNICT_URL);
 $table=retrieveTable($src);
-visitTable($table, 'rowBasicHandler');
+
+
+//visitTable($table, 'rowBasicHandler');
+$feed=new RSSFeedGenerator("titolo", "descrizione", "Home", "url");
+echo $feed->getFeed();
 ?>
