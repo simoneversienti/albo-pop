@@ -83,7 +83,10 @@ class AlboUnictEntry{
 	 * @param DOMElement $td
 	 */
 	function getElementDateContent($td){
-		return DateTime::createFromFormat(DATE_FORMAT, $this->getElementPlainContent($td));
+		$d=DateTime::createFromFormat(DATE_FORMAT, 
+				$this->getElementPlainContent($td));
+		$d->setTime(0,0);
+		return $d;
 	}
 	
 	/**
