@@ -25,7 +25,7 @@ require("RSSFeedGenerator.php");
 //parsing
 $parser = new AlboUnictParser();
 $feed=new RSSFeedGenerator("Albo dell'Università di Catania", "Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania", 
-		"http://ws1.unict.it/albo/","http://www.dmi.unict.it/~longo/albo-pop/unict/feed.rss");
+		"http://ws1.unict.it/albo/","http://blog.spaziogis.it/static/ods/data/albopop/unict/unict2RSS.php");
 foreach($parser as $r){
 	$feed->addItem("Avviso ".$r->numero, $r->description, $r->inizio_pubblicazione, $r->link, 'http://ws1.unict.it/albo/'.$r->numero);
 }
