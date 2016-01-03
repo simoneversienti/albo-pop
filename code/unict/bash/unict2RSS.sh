@@ -84,11 +84,4 @@ echo $intestazioneRSS >> $output/feed.xml
 cat $output/out.xml >> $output/feed.xml
 echo $chiusuraRSS >> $output/feed.xml
 
-# rimuovo dal tag link estratto dall'albo di Pedara la parte di URL legata alla sessione, in quanto inutile
-sed -i -e "s/;jsessionid=\([0-9]\|[a-zA-Z]\)\{10,1000\}//g" $output/feed.xml
-
-# sostituisco i caratteri "&" e "=" presenti nel tag link, che danno problemi di encoding su Telegram e creo il feed che fa da trigger a Telegram
-sed -e "s/&org=pedara/%26org%3Dpedara/g" $output/feed.xml > $output/feed_telegram.xml
-
-# sostituisco il carattere "&" che non è compliant XML e creo il feed che fa da trigger a Telegram
-sed -e "s/&org=pedara/\&amp;org=pedara/g" $output/feed.xml > $output/feed_rss.xml
+cat $output/feed.xml > $output/feed_rss.xml
