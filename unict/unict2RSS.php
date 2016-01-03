@@ -25,13 +25,13 @@ require("RSSFeedGenerator.php");
 //parsing
 $parser = new AlboUnictParser();
 $feed=new RSSFeedGenerator("Albo dell'Università di Catania", "Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania", 
-		"http://ws1.unict.it/albo/","http://www.dmi.unict.it/~longo/albo-pop/unict/unict2RSS.php");
+		"http://ws1.unict.it/albo/","http://www.dmi.unict.it/~longo/albo-pop/unict/feed.rss");
 foreach($parser as $r){
 	$feed->addItem("Avviso ".$r->numero, $r->description, $r->inizio_pubblicazione, $r->link, 'http://ws1.unict.it/albo/'.$r->numero);
 }
 
 //output
-header('Content-type: application/atom+xml; charset=UTF-8');
+header('Content-type: application/rss+xml; charset=UTF-8');
 /*
  * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
 * (il server deve avere il locale italiano installato

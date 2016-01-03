@@ -90,7 +90,7 @@ class RSSFeedGenerator{
 			$itemEl->appendChild($this->doc->createElement('link', $link));
 		if (isset($pubDate))
 			$itemEl->appendChild($this->doc->createElement('pubDate', 
-					$pubDate->format(DateTime::ATOM)));
+					$pubDate->format(DateTime::RFC822)));
 				
 		
 		$guidEl=$this->doc->createElement('guid', $guid);
