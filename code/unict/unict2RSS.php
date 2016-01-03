@@ -31,20 +31,11 @@ foreach($parser as $r){
 }
 
 //output
-<<<<<<< HEAD:unict/unict2RSS.php
 header('Content-type: application/rss+xml; charset=UTF-8');
 /*
  * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
 * (il server deve avere il locale italiano installato
 		*/
 setlocale(LC_TIME, 'it_IT');
-=======
-header('Content-type: application/atom+xml; charset=UTF-8');
-/*
- * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
-* (il server deve avere il locale italiano installato
-		*/
-setlocale(LC_TIME, 'it_IT');
->>>>>>> 7730b5572bb053101b0918185dc760aa5f9b33d3:code/unict/unict2RSS.php
 echo $feed->getFeed();
 ?>

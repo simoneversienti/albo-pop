@@ -90,13 +90,7 @@ class RSSFeedGenerator{
 			$itemEl->appendChild($this->doc->createElement('link', $link));
 		if (isset($pubDate))
 			$itemEl->appendChild($this->doc->createElement('pubDate', 
-<<<<<<< HEAD:unict/RSSFeedGenerator.php
-					$pubDate->format(DateTime::RFC822)));
-=======
-					$pubDate->format(DateTime::ATOM)));
->>>>>>> 7730b5572bb053101b0918185dc760aa5f9b33d3:code/unict/RSSFeedGenerator.php
-				
-		
+					$pubDate->format(DateTime::ATOM)));				
 		$guidEl=$this->doc->createElement('guid', $guid);
 		$guidEl->setAttribute('isPermaLink', 'true');
 		$itemEl->appendChild($guidEl);
