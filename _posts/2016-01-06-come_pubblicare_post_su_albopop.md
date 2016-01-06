@@ -26,5 +26,6 @@ Il **nome del file** deve essere sempre nella forma `AAAA-MM-GG-titolo_breve.md`
 
 Per **pubblicarlo** sulla cartella del repository si possono percorrere diverse strade. Nel video di sotto mostro quella che userò per questo post.
 
+[![](http://i.imgur.com/4xeYmHT.png)](https://www.youtube.com/watch?v=VQI_0yEry8g&feature=youtu.be&hd=1)
 
 Buona pubblicazione :)
