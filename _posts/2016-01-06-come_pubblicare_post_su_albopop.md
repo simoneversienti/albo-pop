@@ -15,7 +15,7 @@ L'immagine di sotto è il codice Markdown con cui è scritto ad esempio questo p
 
 ![](http://i.imgur.com/7ugxLBm.png)
 
-Nella **prima parte** del file va sempre indicato il *layout* (che sarà sempre di tipo "post") e il *title*, ovvero il titolo della pagina. Il tutto circondato da tre trattini centrali ("-"). In questo post ad esempio nelle prime righe abbiamo:
+Nella **prima parte** del file va sempre indicato il *layout* (che sarà sempre di tipo "post") e il *title*, ovvero il titolo della pagina. Il tutto circondato da tre trattini centrali (`-`). In questo post ad esempio nelle prime righe abbiamo:
 
     ---
     layout: post
