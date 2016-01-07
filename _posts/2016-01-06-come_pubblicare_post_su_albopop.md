@@ -22,7 +22,7 @@ Nella **prima parte** del file va sempre indicato il *layout* (che sarà sempre 
     title: Un post per spiegare come si pubblica sul blog di Albo POP
     ---
 
-Il **nome del file** deve essere sempre nella forma `AAAA-MM-GG-titolo_breve.md`, dove "AAAA-MM-GG" sta per Anno-Mese-Giorno e `.md` è l'estensione. Il nome di questo post è ad esempio `2016-01-06-come_pubblicare_post_su_albopop.md`.
+Il **nome del file** deve essere sempre nella forma `AAAA-MM-GG-titolo_breve.md`, dove "AAAA-MM-GG" sta per Anno-Mese-Giorno e `.md` è l'estensione. Il nome di questo post è ad esempio `2016-01-06-come_pubblicare_post_su_albopop.md` e il testo in formato Markdown è [questo](https://raw.githubusercontent.com/aborruso/albo-pop/gh-pages/_posts/2016-01-06-come_pubblicare_post_su_albopop.md).
 
 Per **pubblicarlo** sulla cartella del repository - e quindi sul blog - si possono percorrere diverse strade. Nel video di sotto mostro quella che userò per questo post.
 
