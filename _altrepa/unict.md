@@ -5,7 +5,7 @@ title: Università di Catania (Sicilia)
 
 La pagina dell'albo pretorio dell'**Università di Catania** è questa: [http://ws1.unict.it/albo/](http://ws1.unict.it/albo/)
 
-Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
+Adesso puoi seguire le nuove pubblicazioni in albo in quattro modi dedicati:
 
 * su una pagina **facebook** [https://www.facebook.com/albopopunict](https://www.facebook.com/albopopunict);
 * su un canale **Telegram** [https://telegram.me/albounict;](https://telegram.me/albounict;);
