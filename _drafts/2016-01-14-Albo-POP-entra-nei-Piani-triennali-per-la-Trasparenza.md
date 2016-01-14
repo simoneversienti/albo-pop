@@ -13,6 +13,6 @@ La notizia è che a pag. 17 del documento si legge come l'Amministrazione si imp
 
 Non possiamo che trovare un gran piacere nel verificare come una Pubblica Amministrazione abbia apprezzato l'idea di Albo POP e l'abbia inserita nel proprio Piano Triennale per la Trasparenza.
 
-Due mesi fa, all'atto del lancio di Albo POP, l'iniziativa era stata informalmente apprezzata dalla PA locale. Immaginiamo quindi e siamo  fiduciosi che il Comune di San Giuseppe Jato possa considerare l'obiettivo previsto come già raggiunto semplicemente promuovendo e condividendo formalmente i canali di notifica già esistenti.  
+Due mesi fa, all'atto del lancio di Albo POP, l'iniziativa era stata informalmente apprezzata dalla PA locale. Immaginiamo quindi e siamo  fiduciosi che il Comune di San Giuseppe Jato possa considerare l'obiettivo previsto come già raggiunto semplicemente promuovendo e condividendo formalmente i [canali di notifica già esistenti](http://aborruso.github.io/albo-pop/comune/sangiuseppejato.html).  
 
 **Viva l'Albo POP**! 
