@@ -9,7 +9,7 @@ In data 11/01/2016 è stato pubblicato sull'Albo Pretorio di San Giuseppe Jato l
 Direte...e quindi..la notizia qual'è?
 La notizia è che a pag. 17 del documento si legge come l'Amministrazione si impegni  entro **Aprile 2016** ad implementare un sistema di **notifiche immediate** degli atti pubblicati in Albo Pretorio on line.
 
-![http://i.imgur.com/o13Cem3.png]
+![](http://i.imgur.com/o13Cem3.png)
 
 Non possiamo che trovare un gran piacere nel verificare come una Pubblica Amministrazione abbia apprezzato l'idea di Albo POP e l'abbia inserita nel proprio Piano Triennale per la Trasparenza.
 
