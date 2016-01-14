@@ -3,7 +3,7 @@
  title: Comune di Leonforte (Sicilia)
  ---
 
- La pagina dell'albo pretorio del **Comune di Leonforte ** è questa: [http://www.comuneleonforte.it/index.php?option=com_chronoconnectivity2&Itemid=62]
+ La pagina dell'albo pretorio del **Comune di Leonforte ** è questa: http://www.comuneleonforte.it/index.php?option=com_chronoconnectivity2&Itemid=62
 
  Adesso puoi seguire le nuove pubblicazioni in albo in N modi dedicati:
 
