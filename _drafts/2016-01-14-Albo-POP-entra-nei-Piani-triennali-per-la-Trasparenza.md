@@ -2,12 +2,7 @@
 published: false
 ---
 
----
-layout: post
-title: Albo POP entra nei Piani triennali per la Trasparenza
----
-
-*di [@giuragu](https://twitter.com/giuragu) e [aborruso](https://twitter.com/aborruso)
+di [@giuragu](https://twitter.com/giuragu) e [aborruso](https://twitter.com/aborruso)
 
 In data 11/01/2016 è stato pubblicato sull'Albo Pretorio di San Giuseppe Jato l'avviso che invita alla presentazione di proposte ed osservazioni sulla bozza di Piano triennale per la trasparenza e l'integrità 2016/2018 del Comune di San Giuseppe Jato, nonchè del Piano di Prevenzione dalla Corruzione e del Codice di Comportamento [Avviso Pubblico](http://156.54.128.62/sgjato/mc/mc_p_dettaglio.php?id_pubbl=1344).
 
