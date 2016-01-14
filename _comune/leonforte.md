@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Bondeno (Emilia-Romagna)
+title: Leonforte (Sicilia)
 ---
 
 La pagina dell'albo pretorio del **Comune di Leonforte** è questa: http://www.comuneleonforte.it/index.php?option=com_chronoconnectivity2&Itemid=62
