@@ -11,6 +11,6 @@ Adesso puoi seguire le nuove pubblicazioni in albo in quattro modi dedicati:
 * su un account **Twitter** [https://twitter.com/AlboPOPBondeno](https://twitter.com/AlboPOPBondeno);
 * su un canale **Telegram** [https://telegram.me/albopretorioBondenoFe](https://telegram.me/albopretorioBondenoFe);
 * su una **pagina Facebook** [https://www.facebook.com/Albo-Pretorio-POP-Bondeno-FE-1535959506725000/a?fref=ts](https://www.facebook.com/Albo-Pretorio-POP-Bondeno-FE-1535959506725000/a?fref=ts);
-* iscrivendoti a un **feed RSS**: [http://feeds.feedburner.com/AlbopopbondenoFE](http://feeds.feedburner.com/AlbopopbondenoFE).
+* iscrivendoti a un **feed RSS**: [http://feeds.feedburner.com/AlboPretorioComuneDiBondeno](http://feeds.feedburner.com/AlboPretorioComuneDiBondeno).
 
 **Autore**: [Enrico Bergamini](https://twitter.com/BergaminiEnrico)
