@@ -29,6 +29,7 @@
 
 
 alboURL='http://servizi.comune.cento.fe.it/web/trasparenza/albo-pretorio';
+alboCSV='http://servizi.comune.cento.fe.it/web/trasparenza/albo-pretorio?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=exportList&p_p_cacheability=cacheLevelPage&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_format=csv';
 RSSFeedURL=alboURL;
 RSSFeedTitle='AlboPOP';
 
@@ -124,8 +125,8 @@ var RSSCreator = function(){
 
 
 function doGet() { 
-        var alboCSV=alboURL+'?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=exportList&p_p_cacheability=cacheLevelPage&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_format=csv';
-        var feed =  UrlFetchApp.fetch(alboCSV).getContentText();
+        
+        var feed = UrlFetchApp.fetch(alboCSV).getContentText();
 
         // Eliminazione di tutti gli a-capo all'interno di una riga per non ingannare parseCsv
         var re=/^((?:(?:"(?:[^"]|"")*?")?,)*"(?:[^"]*?))[\n\r]((?:[^"]|"")*?)"/gm;
