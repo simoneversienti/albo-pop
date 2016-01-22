@@ -9,6 +9,6 @@ La pagina dell'albo pretorio del **Comune di Potenza** è questa: [http://www.al
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
 * su un account **Twitter** [https://twitter.com/albopoppotenza](https://twitter.com/albopoppotenza);
-* su un canale **Telegram** [https://telegram.me/ComunePZ](https://telegram.me/ComunePZ.
+* su un canale **Telegram** [https://telegram.me/ComunePZ](https://telegram.me/ComunePZ).
 
 **Autore**: [Francesco Paolicelli](https://twitter.com/piersoft)
