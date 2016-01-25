@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Agira (Enna)
+title: Agira (Sicilia)
 ---
 
 La pagina dell'albo pretorio del **Comune di Agira** è questa: [http://www.comuneagira.gov.it/albo-pretorio.html](http://www.comuneagira.gov.it/albo-pretorio.html)
