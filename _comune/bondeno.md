@@ -3,7 +3,6 @@ layout: comune
 title: Bondeno (Emilia-Romagna)
 ---
 
-Bondeno (Emilia-Romagna)
 La pagina dell'albo pretorio del **Comune di Bondeno** è questa: [http://sac2.halleysac.it/c038003/mc/mc_p_ricerca.php?](http://sac2.halleysac.it/c038003/mc/mc_p_ricerca.php?)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in quattro modi dedicati:
