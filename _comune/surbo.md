@@ -3,7 +3,7 @@
  title: Surbo (LE) (Puglia)
  ---
  
- La pagina dell'albo pretorio del **Comune di Surbo** è questa: (http://albo.parsec326.it/AlboPretorio/Default.aspx?cod=l011)
+ La pagina dell'albo pretorio del **Comune di Surbo** è questa: http://albo.parsec326.it/AlboPretorio/Default.aspx?cod=l011
 
  Adesso puoi seguire le nuove pubblicazioni in albo in N modi dedicati:
 
