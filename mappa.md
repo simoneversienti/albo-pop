@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: mappa
 title: mappa
 permalink: /mappa/
 ---
