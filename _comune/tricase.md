@@ -10,6 +10,6 @@
  * su un account **Twitter** https://twitter.com/comtricasenews; (a cura Federico Cortese)
  * su un canale **Telegram** https://telegram.me/comunetricase;
  
- * iscrivendoti a un **feed RSS**: https://www.kimonolabs.com/api/rss/cnmshgg6?apikey=EcELyNfS6DRZHFvOVmQ6Uems266NeXdB.
+ * iscrivendoti a un **feed RSS**: http://feeds.feedburner.com/Alpopoptricase.
 
  **Autore**: [Francesco Piero Paolicelli alias Piersoft](https://twitter.com/Piersoft)
