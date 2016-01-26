@@ -10,4 +10,4 @@
  * su un canale **Telegram** https://telegram.me/albopopbrindisi;
 
 
- **Autore**: https://twitter.com/Piersoft
+ **Autore**: [Francesco Piero Paolicelli alias Piersoft]https://twitter.com/Piersoft
