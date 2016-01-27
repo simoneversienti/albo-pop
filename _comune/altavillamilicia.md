@@ -5,7 +5,7 @@ title: Altavilla Milicia (Sicilia)
 
 La pagina dell'albo pretorio del **Comune di Altavilla Milicia** è questa: [http://goo.gl/rtSbiw](http://goo.gl/rtSbiw)
 
-Adesso puoi seguire le nuove pubblicazioni in albo in quattro modi dedicati:
+Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 
 * su un canale **Telegram** [https://telegram.me/AlboPretorioAltavillaMilicia](https://telegram.me/AlboPretorioAltavillaMilicia);
 * su una **pagina Facebook** [https://www.facebook.com/AlboPop-Altavilla-Milicia-1745995415638005](https://www.facebook.com/AlboPop-Altavilla-Milicia-1745995415638005);
