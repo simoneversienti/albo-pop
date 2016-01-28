@@ -8,6 +8,7 @@ La pagina ufficiale dell'albo pretorio del **Comune di Pisa** è questa: [http:/
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
 * su un account **Twitter** [https://twitter.com/alboPOPPisa](https://twitter.com/alboPOPPisa);
+* su un canale **Telegram** [https://telegram.me/alboPOPPisa](https://telegram.me/alboPOPPisa);
 * iscrivendoti a un **feed RSS**: [https://goo.gl/ma8OsS](https://goo.gl/ma8OsS).
 
 
