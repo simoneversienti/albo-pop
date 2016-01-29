@@ -7,6 +7,8 @@ La pagina dell'albo pretorio del **Comune di Campobello di Licata** è questa: [
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 
+su una pagina **Facebook** [https://www.facebook.com/AlboPopCampobelloDiLicata/?fref=ts] (https://www.facebook.com/AlboPopCampobelloDiLicata/?fref=ts)
+
 su un account **Twitter** [https://twitter.com/AlboPopCampLi] (https://twitter.com/AlboPopCampLi);
 
 su un canale **Telegram** [https://telegram.me/albopopcampobellodilicata](https://telegram.me/albopopcampobellodilicata);
