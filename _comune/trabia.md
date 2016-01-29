@@ -7,4 +7,4 @@ La pagina dell'albo pretorio del **Comune di Trabia** è questa: [http://www.com
 
 Adesso puoi seguire le nuove pubblicazioni in albo sul canale **Telegram** [https://telegram.me/Albopoptrabia](https://telegram.me/Albopoptrabia);
 
-**Autori**: [Andrea Borruso e Matteo Scirè]
+**Autori**: [Andrea Borruso] (https://twitter.com/aborruso) e [Matteo Scirè] (https://twitter.com/matteoscire)
