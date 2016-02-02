@@ -7,8 +7,8 @@ La pagina ufficiale dell'albo pretorio del **Comune di Oria** è questa: [http:/
 
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
-* su un account **Twitter** [https://twitter.com/albopoplizzane1](https://twitter.com/albopoporia);
-* su un canale **Telegram** [https://telegram.me/albopoplizzanello](https://telegram.me/albopoporia);
+* su un account **Twitter** [https://twitter.com/albopoporia](https://twitter.com/albopoporia);
+* su un canale **Telegram** [https://telegram.me/albopoporia](https://telegram.me/albopoporia);
 * su un feed **FeedBurner** [http://feeds.feedburner.com/Albopoplizzanello](http://feeds.feedburner.com/Albooria)
 
 **Autore**: [Francesco Piero Paolicelli alias Piersoft](https://twitter.com/piersoft)
