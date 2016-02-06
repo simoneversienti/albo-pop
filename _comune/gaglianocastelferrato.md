@@ -3,7 +3,7 @@ layout: comune
 title: Gagliano Castelferrato (Sicilia)
 ---
 
-La pagina ufficiale dell'albo pretorio del **Comune di Alghero** è questa: [http://www.comunegaglianocastelferrato.gov.it/albo-pretorio](http://www.comunegaglianocastelferrato.gov.it/albo-pretorio)
+La pagina ufficiale dell'albo pretorio del **Comune di Gagliano Castelferrato** è questa: [http://www.comunegaglianocastelferrato.gov.it/albo-pretorio](http://www.comunegaglianocastelferrato.gov.it/albo-pretorio)
 
 Adesso puoi seguire le nuove pubblicazioni in albo in tre modi dedicati:
 
