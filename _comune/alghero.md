@@ -9,7 +9,7 @@ Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
 * su un account **Twitter** [https://twitter.com/alboPOPAlghero](https://twitter.com/alboPOPAlghero);
 * su un canale **Telegram** [https://telegram.me/alboPOPAlghero](https://telegram.me/alboPOPAlghero);
-* iscrivendoti a un **feed RSS**: [https://goo.gl/dDn3Xf](https://goo.gl/dDn3Xf).
+* iscrivendoti a un **feed RSS**: [http://opendata.matteofortini.it/rssAlboPOP/alboPOPAlghero.xml](http://opendata.matteofortini.it/rssAlboPOP/alboPOPAlghero.xml).
 
 
 **Autore**: [Matteo Fortini](https://twitter.com/matt_fortini)

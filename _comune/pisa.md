@@ -9,7 +9,7 @@ Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
 * su un account **Twitter** [https://twitter.com/alboPOPPisa](https://twitter.com/alboPOPPisa);
 * su un canale **Telegram** [https://telegram.me/alboPOPPisa](https://telegram.me/alboPOPPisa);
-* iscrivendoti a un **feed RSS**: [https://goo.gl/ma8OsS](https://goo.gl/ma8OsS).
+* iscrivendoti a un **feed RSS**: [http://opendata.matteofortini.it/rssAlboPOP/alboPOPPisa.xml](http://opendata.matteofortini.it/rssAlboPOP/alboPOPPisa.xml).
 
 
 **Autore**: [Matteo Fortini](https://twitter.com/matt_fortini)
