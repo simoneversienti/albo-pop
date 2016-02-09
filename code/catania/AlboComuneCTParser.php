@@ -25,27 +25,52 @@
 define('ALBO_CT_URL','http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/Web%20Ricerca?OpenForm&AutoFramed');
 
 /**
+ * Convenience class to represent single entry of the municipality of Catania Albo.
+ *
+ * @author Cristiano Longo
+ *
+ */
+class AlboComuneCTEntry{
+	public $repertorio;
+	public $link;
+	public $tipo;
+	public $mittente_descrizione;
+
+	/**
+	 * Create an entry by parsing a table row.
+	 */
+	public function __construct($row) {
+		$cells=$row->getElementsByTagName("td");
+		$repertorioAnchorNodes=$cells->item(1)->getElementsByTagName("a");
+		if ($repertorioAnchorNodes->length==0)
+			throw new Exception("No anchor found in repertorio");
+		if ($repertorioAnchorNodes->length>1)
+			throw new Exception("Multiple anchor nodes found in repertorio");
+		$repertorioAnchorNode=$repertorioAnchorNodes->item(0);
+		$this->repertorio=$repertorioAnchorNode->textContent;
+		$this->link=" http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
+		$this->tipo=html_entity_decode($cells->item(3)->textContent);
+		$this->mittente_descrizione=html_entity_decode($cells->item(4)->textContent);
+	}
+}
+/**
  * Get and parse the entries of a single year of the Albo Pretorio of the municipality
  * of Catania.
  *
  * @author Cristiano Longo
  *
  */
-class AlboComuneCTParser{
+class AlboComuneCTParser implements Iterator{
 
 	private $rows;
-
+	private $i=1;
+	
 	/**
 	 *  Retrieve the entries relatives to a year.
 	 */
 	public function __construct($year) {
 		$page=$this->getPage($year);
 		$this->rows=$this->getRows($page);
-		echo $this->rows->length;
-// 		$src = new DOMDocument();
-// 		$src->loadHTMLfile(ALBO_UNICT_URL);
-// 		$table=$this->retrieveTable($src);
-// 		$this->rows=$table->getElementsByTagName("tr");
 	}
 	
 	/**
@@ -84,7 +109,31 @@ class AlboComuneCTParser{
 		return $rows; 			
 	}
 	
+	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
+	
+	public function current(){
+		if ($this->rows->length<2)
+			return null;
+		return new AlboComuneCTEntry($this->rows->item($this->i));
+	}
+	
+	
+	public function key (){
+		return $this->i;
+	}
+	
+	public function next(){
+		if ($this->i<$this->rows->length)
+			++$this->i;
+	}
+	
+	public function rewind(){
+		if ($this->rows->length>1)
+			$this->i=1;
+	}
+	
+	public function valid(){
+		return $this->rows->length>1 && $this->i<$this->rows->length;
+	}
 }
-
-new AlboComuneCTParser("2015");
- ?>
+?>
