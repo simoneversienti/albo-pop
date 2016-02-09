@@ -7,7 +7,6 @@ La pagina ufficiale dell'albo pretorio del **Comune di Cento** è questa: [http:
 
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
-* su un account **Twitter** [https://twitter.com/AlboPret100FE](https://twitter.com/AlboPret100FE);
 * su un canale **Telegram** [https://telegram.me/AlboPret100FE](https://telegram.me/AlboPret100FE).
 * iscrivendoti a un **feed RSS**: [http://opendata.matteofortini.it/rssAlboPOP/alboPOPCento.xml](http://opendata.matteofortini.it/rssAlboPOP/alboPOPCento.xml).
 

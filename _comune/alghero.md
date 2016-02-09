@@ -7,7 +7,6 @@ La pagina ufficiale dell'albo pretorio del **Comune di Alghero** è questa: [htt
 
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
-* su un account **Twitter** [https://twitter.com/alboPOPAlghero](https://twitter.com/alboPOPAlghero);
 * su un canale **Telegram** [https://telegram.me/alboPOPAlghero](https://telegram.me/alboPOPAlghero);
 * iscrivendoti a un **feed RSS**: [http://opendata.matteofortini.it/rssAlboPOP/alboPOPAlghero.xml](http://opendata.matteofortini.it/rssAlboPOP/alboPOPAlghero.xml).
 
