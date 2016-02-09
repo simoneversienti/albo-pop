@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Prato (Toscana)
+title: Latina (Lazio)
 ---
 
 La pagina ufficiale dell'albo pretorio del **Comune di Latina** è questa: [http://trasparenza.comune.latina.it/web/trasparenza/albo-pretorio](http://trasparenza.comune.latina.it/web/trasparenza/albo-pretorio)
