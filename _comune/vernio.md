@@ -10,4 +10,6 @@ Adesso puoi seguire le nuove pubblicazioni in albo:
 * su un canale **Telegram** [https://telegram.me/alboPOPValdiBisenzio](https://telegram.me/alboPOPValdiBisenzio);
 * iscrivendoti a un **feed RSS**: [https://teo-soft.com/AlboPOP/vernioAlboPOP.xml](https://teo-soft.com/AlboPOP/vernioAlboPOP.xml).
 
+Codice rilasciato in formato opensource in **questo repository** [https://github.com/iltempe/AlboPOP](https://github.com/iltempe/AlboPOP).
+
 **Autore**: [Matteo Tempestini](hhttps://twitter.com/il_tempe)
