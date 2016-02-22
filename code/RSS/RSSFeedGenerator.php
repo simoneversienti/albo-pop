@@ -45,15 +45,16 @@ class RSSFeedGenerator{
 		$this->channelEl=$this->doc->createElement('channel');
 		$rssEl->appendChild($this->channelEl);
 
-		$this->channelEl->appendChild($this->doc->createElement('title', $title));
+		$this->channelEl->appendChild($this->createEscapedElement('title', $title));
 
 		if (isset($description))
 			$this->channelEl->appendChild(
-					$this->doc->createElement('description', $description));
+					$this->createEscapedElement('description', $description));
 
-		if (isset($homepage))
+		if (isset($homepage)){
 			$this->channelEl->appendChild(
-					$this->doc->createElement('link', $homepage));
+					$this->createEscapedElement('link', $homepage));
+		}
 
 		if (isset($url)){
 			$urlEl=$this->doc->createElementNS('http://www.w3.org/2005/Atom','atom:link');
@@ -83,17 +84,28 @@ class RSSFeedGenerator{
 	public function addItem($title, $description, $pubDate, $link, $guid){
 		$itemEl=$this->doc->createElement("item");
 		$this->channelEl->appendChild($itemEl);
-		$itemEl->appendChild($this->doc->createElement('title', $title));
+		$itemEl->appendChild($this->createEscapedElement('title', $title));
 		if (isset($description))
-			$itemEl->appendChild($this->doc->createElement('description', $description));
+			$itemEl->appendChild($this->createEscapedElement('description', $description));
 		if (isset($link))
-			$itemEl->appendChild($this->doc->createElement('link', $link));
+			$itemEl->appendChild($this->createEscapedElement('link', $link));
 		if (isset($pubDate))
-			$itemEl->appendChild($this->doc->createElement('pubDate', 
+			$itemEl->appendChild($this->createEscapedElement('pubDate', 
 					$pubDate->format(DateTime::RFC822)));				
 		$guidEl=$this->doc->createElement('guid', $guid);
 		$guidEl->setAttribute('isPermaLink', 'true');
 		$itemEl->appendChild($guidEl);
+	}
+	
+	
+	/**
+	 * Create a DOM element with the specified tag name and a text child with the specified content.
+	 * The text child is xml-escaped.
+	 */
+	private function createEscapedElement($elementName, $textContent){
+		$el=$this->doc->createElement($elementName);
+		$el->appendChild($this->doc->createTextNode($textContent));
+		return $el;
 	}
 }
 ?>
