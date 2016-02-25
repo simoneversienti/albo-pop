@@ -159,11 +159,7 @@ function doGet() {
     //var pDateFix=pDate.replace(pattern,'$2/$1/$3')
     var pDateFix=pDate;
     
-    if (pDateFix.length > 0) {
-      var pubDateDate = new Date(pDateFix);
-    } else {
-      var pubDateDate = new Date();
-    }
+    var pubDateDate = new Date(pDateFix);
     
     rss.addItem({title: titolo,
                  guid:myguid,
