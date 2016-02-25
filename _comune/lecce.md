@@ -8,7 +8,7 @@ La pagina dell'albo pretorio del **Comune di Lecce** è questa: [https://www.com
 Adesso puoi seguire le nuove pubblicazioni in albo in due modalità:
 
 * su un canale **Telegram** [https://telegram.me/comuneleccenews](https://telegram.me/comuneleccenews);
-* tramite un **feed RSS** [http://feeds.feedburner.com/albopretoriocomunelecce](http://feeds.feedburner.com/albopretoriocomunelecce).
+* tramite un **feed RSS** [http://feeds.feedburner.com/Albopoplecce](http://feeds.feedburner.com/Albopoplecce).
 
 **Nota bene**: nel canale, oltre ai dati dall'albo, anche le news comunali.
 
