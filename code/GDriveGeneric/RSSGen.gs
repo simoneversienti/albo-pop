@@ -94,6 +94,12 @@ var makeRss = function(){
                         ch.addContent(createElement('language', language));
 
 
+                        ch.addContent(XmlService.createElement("xhtmlmeta")
+                                        .setAttribute('xmlnsxhtml','http://www.w3.org/1999/xhtml')
+                                        .setAttribute('name','robots')
+                                        .setAttribute('content','noindex')
+                                        );
+
                         for (var i in items) {
                                 ch.addContent(
                                                 XmlService
@@ -109,7 +115,9 @@ var makeRss = function(){
                         var document = XmlService.createDocument(root);
                         var xml = XmlService.getPrettyFormat().format(document)
                                 var result = xml.replace('xmlnsatom', 'xmlns:atom')
-                                .replace('<atomlink href=','<atom:link href=');
+                                .replace('<atomlink href=','<atom:link href=')
+                                .replace('xhtmlmeta','xhtml:meta')
+                                .replace('xmlnsxhtml','xmlns:xhtml');
 
                         return result;
                 }
