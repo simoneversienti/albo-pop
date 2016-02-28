@@ -161,158 +161,20 @@ Una volta avuto il google sheet pulito e funzionante, consiglio di fare File -->
 Ora serve creare lo script per generare l'RSS automatico. Per fare questo bisogna :
 
 1) creare lo script
-2) perconalizzarlo inserendo la KEY del foglio di calcolo sui cui deve lavorare
-3) Pubblicarlo come Applicazione Web permettendo a "chiunque" di poterlo eseguire
+2) personalizzarlo inserendo la KEY del foglio di calcolo sui cui deve lavorare
+3) Pubblicarlo come Applicazione Web permettendo a "chiunque" di poterlo eseguire e settare il Trigger
 4) Controllare se lo script funziona e il Feed RSS viene generato correttamente
 5) Inserire il feed su servizi come www.feedburner.com e cosi normalizzare tutti i campi. 
 6) Generare l'automa con IFTTT o Zapier per inviare gli items nuovi sul Canale Telegram o Twitter ect
 
 Vediamo come procedere:
-1) Strumenti --> Editor Script. Incollare questo testo:
+1) Strumenti --> Editor Script. Incollare [questo testo](https://docs.google.com/document/d/1MlF9mG6bB9Kam6p3m9MxJCS8fIayBAH6CNSRs8cySvk/edit?usp=sharing)
 
-ID_SPREADSHEET="XXXXXXXXXXXXXX"; // ### inserire qui la key del proprio Google Sheet
-
-I_TITLE=0;
-I_PUBDATE=1;
-I_HREF=2;
-
-var makeRss = function(){
-        var ch = XmlService.createElement('channel');
-        var root = XmlService.createElement('rss')
-                .setAttribute('version', '2.0')
-                .setAttribute('xmlnsatom', "http://www.w3.org/2005/Atom")
-                .addContent(ch);
-
-        var title = '';
-        var link = '';
-        var description = '';
-        var language = '';
-        var atomlink = '';
-        var items = {};
-
-        var createElement = function(element, text){
-                return XmlService.createElement(element).setText(text);
-        };
-
-
-        return {
-                setTitle: function(value){ title = value; },
-                setLink: function(value){ link = value; },
-                setDescription: function(value){ description = value; },
-                setLanguage: function(value){ language = value; },
-                setAtomlink: function(value){ atomlink = value; },
-
-                addItem: function(args){
-                        args.timezone = "GMT"; 
-
-                        var item = {
-                                title: args.title,
-                                link: args.link,
-                                description: args.description,
-                                pubDate: Utilities.formatDate(args.pubDate, args.timezone, "EEE, dd MMM yyyy HH:mm:ss Z"),
-                                guid: args.guid
-                        }
-
-                        items[item.guid] = item;
-                },
-
-                toString: function(){
-                        ch.addContent(XmlService.createElement("atomlink")
-                                        .setAttribute('href', atomlink)
-                                        .setAttribute('rel', 'self')
-                                        .setAttribute('type', 'application/rss+xml')
-                                        );
-
-                        ch.addContent(createElement('title', title));
-                        ch.addContent(createElement('link', link));
-                        ch.addContent(createElement('description', description));
-                        ch.addContent(createElement('language', language));
-                  
-                        ch.addContent(XmlService.createElement("xhtmlmeta")
-                                        .setAttribute('xmlnsxhtml','http://www.w3.org/1999/xhtml')
-                                        .setAttribute('name','robots')
-                                        .setAttribute('content','noindex')
-                                        );
-
-                        for (var i in items) {
-                                ch.addContent(
-                                                XmlService
-                                                .createElement('item')
-                                                .addContent(createElement('title', items[i].title))
-                                                .addContent(createElement('link', items[i].link))
-                                                .addContent(createElement('description', items[i].description))
-                                                .addContent(createElement('pubDate', items[i].pubDate))
-                                                .addContent(createElement('guid', items[i].guid))
-                                                );
-                        }
-
-                        var document = XmlService.createDocument(root);
-                        var xml = XmlService.getPrettyFormat().format(document)
-                                var result = xml.replace('xmlnsatom', 'xmlns:atom')
-                                .replace('<atomlink href=','<atom:link href=')
-                                .replace('xhtmlmeta','xhtml:meta')
-                                .replace('xmlnsxhtml','xmlns:xhtml');
-
-                        return result;
-                }
-        };
-};
-
-
-function doGet() { 
-  var ss = SpreadsheetApp.openById(ID_SPREADSHEET);
-  
-  var metaSheet = ss.getSheetByName('meta');
-  
-  var RSSFeedTitle = metaSheet.getRange('G1').getValue();
-  var RSSFeedURL = decodeURIComponent(metaSheet.getRange('G2').getValue().trim());
-  var RSSFeedDesc = metaSheet.getRange('G3').getValue();
-
-  var dataSheet = ss.getSheetByName('clean');
-  
-  var rss=makeRss();
- 
-  rss.setTitle(RSSFeedTitle);
-  rss.setLink(RSSFeedURL);
-  rss.setDescription(RSSFeedDesc);
-  rss.setLanguage('it');
-  rss.setAtomlink(RSSFeedURL);
-
-  for (var i=2; i < 1000; i++) {
-    var riga=dataSheet.getRange(i,1,1,3).getValues();
-    var myguid=riga[0][I_HREF];
-    var titolo=riga[0][I_TITLE];
-    var pDate=riga[0][I_PUBDATE]; 
-    
-    //Logger.log('Riga ' + i + ' myguid ' + myguid);
-    if (myguid.length == 0) {
-      break;
-    }
-    
-    //var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
-    //var pDateFix=pDate.replace(pattern,'$2/$1/$3')
-    var pDateFix=pDate;
-    
-    if (pDateFix.length > 0) {
-      var pubDateDate = new Date(pDateFix);
-    } else {
-      var pubDateDate = new Date();
-    }
-    
-    rss.addItem({title: titolo,
-                 guid:myguid,
-                 link: myguid,
-                 description: titolo,
-                 pubDate: pubDateDate
-                             });
-        }
-  
-  var rssStr=rss.toString();
-  
-  Logger.log(rssStr) // ### commentare questo comando, dopo aver appurato che eseguendo lo script, in Visualizza --> Log sia tutto ok
-  
-  return ContentService.createTextOutput(rssStr).setMimeType(ContentService.MimeType.RSS);
-}
+2) inserire la KEY nella riga commentata. Cliccare sull'icona del salvataggio e cliccare l'icona del Play oppure cliccare Esegui. Verrà chiesta l'autenticazione . Accettarla
+3) Cliccare Risorse --> Trigger del progetto corrente --> aggiungere nuovo trigger con cadenza oraria. (è quello di default). Cliccare Pubblica --> distribuisci come applicazione web.Attenzione!! cliccare nel menu a tendina impostando "Chiunque, inclusi utenti anonimi".
+4) Copiare il link creato da Google e incollarlo in una nuova finestra. E' tutto ok? E' un Feed RSS strutturato, con Title, Link e PubDate corretto? Complimenti! avete creato l'alboPop per il vostro Comune.
+5) Andare su www.feedburner.com autenticandosi con il proprio account Google. Incollare il link dello script per punto 4) e creare il feed ridotto che sarà del tipo http://feeds.feedburner.com/AlboXXXX
+6) sapete come fare :)
 
 
 
