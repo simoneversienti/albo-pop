@@ -29,4 +29,4 @@ I **feed RSS** sono una delle modalità più classiche di pubblicazione sul web.
 L'indirizzo del feed RSS è [http://feeds.feedburner.com/SanGiuseppeJatoAlboPretorio](http://feeds.feedburner.com/SanGiuseppeJatoAlboPretorio)
 
 ## Crediti
-Il progetto Albo POP per l'albo pretorio del comune di San Giuseppe Jato è stato creato e gestito da Giuseppe Ragusa e Andrea Borruso della comunità **[OpenDataSicilia](http://opendatasicilia.it/)**, che lo hanno donato a questa pubblica amministrazione.
+Il progetto Albo POP per l'albo pretorio del comune di San Giuseppe Jato è stato creato e gestito da Giuseppe Ragusa e Andrea Borruso della comunità **[OpenDataSicilia](http://opendatasicilia.it/)**, che lo hanno donato alla comunità jatina.
