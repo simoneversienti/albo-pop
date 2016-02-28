@@ -161,19 +161,29 @@ Una volta avuto il google sheet pulito e funzionante, consiglio di fare File -->
 Ora serve creare lo script per generare l'RSS automatico. Per fare questo bisogna :
 
 1) creare lo script
+
 2) personalizzarlo inserendo la KEY del foglio di calcolo sui cui deve lavorare
+
 3) Pubblicarlo come Applicazione Web permettendo a "chiunque" di poterlo eseguire e settare il Trigger
+
 4) Controllare se lo script funziona e il Feed RSS viene generato correttamente
+
 5) Inserire il feed su servizi come www.feedburner.com e cosi normalizzare tutti i campi. 
+
 6) Generare l'automa con IFTTT o Zapier per inviare gli items nuovi sul Canale Telegram o Twitter ect
+
 
 Vediamo come procedere:
 1) Strumenti --> Editor Script. Incollare [questo testo](https://docs.google.com/document/d/1MlF9mG6bB9Kam6p3m9MxJCS8fIayBAH6CNSRs8cySvk/edit?usp=sharing)
 
 2) inserire la KEY nella riga commentata. Cliccare sull'icona del salvataggio e cliccare l'icona del Play oppure cliccare Esegui. Verrà chiesta l'autenticazione . Accettarla
+
 3) Cliccare Risorse --> Trigger del progetto corrente --> aggiungere nuovo trigger con cadenza oraria. (è quello di default). Cliccare Pubblica --> distribuisci come applicazione web.Attenzione!! cliccare nel menu a tendina impostando "Chiunque, inclusi utenti anonimi".
+
 4) Copiare il link creato da Google e incollarlo in una nuova finestra. E' tutto ok? E' un Feed RSS strutturato, con Title, Link e PubDate corretto? Complimenti! avete creato l'alboPop per il vostro Comune.
+
 5) Andare su www.feedburner.com autenticandosi con il proprio account Google. Incollare il link dello script per punto 4) e creare il feed ridotto che sarà del tipo http://feeds.feedburner.com/AlboXXXX
+
 6) sapete come fare :)
 
 
