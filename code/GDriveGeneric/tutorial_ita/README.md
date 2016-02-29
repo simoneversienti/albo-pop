@@ -175,7 +175,7 @@ Ora serve creare lo script per generare l'RSS automatico. Per fare questo bisogn
 
 Vediamo come procedere:
 
-1) Strumenti --> Editor Script. Incollare [questo testo](https://docs.google.com/document/d/1MlF9mG6bB9Kam6p3m9MxJCS8fIayBAH6CNSRs8cySvk/edit?usp=sharing)
+1) Strumenti --> Editor Script. Incollare [questo testo](https://raw.githubusercontent.com/aborruso/albo-pop/master/code/GDriveGeneric/RSSGen.gs)
 
 2) inserire la KEY nella riga commentata. Cliccare sull'icona del salvataggio e cliccare l'icona del Play oppure cliccare Esegui. Verrà chiesta l'autenticazione . Accettarla
 
