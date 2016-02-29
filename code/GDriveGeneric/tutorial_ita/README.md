@@ -26,7 +26,7 @@
 
 ### L'individuazione degli ingredienti
 
-Si inizia dallo scegliere una pagina da trasformare in un feed RSS. Per questa ricetta, a solo scopo di esempio, utilizzeremo l'**albo Pretorio** del comun dei **Bagheria**:
+Si inizia dallo scegliere una pagina da trasformare in un feed RSS. Per questa ricetta, a solo scopo di esempio, utilizzeremo l'**albo Pretorio** del comune di **Bagheria**:
 
 http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/
 
@@ -85,7 +85,7 @@ Per la creazione di un feed RSS gli elementi minimi da creare, e quindi estrarre
 - `<link>`, ovvero l'URL dell'elemento.
 
 Per `<title>` e `<pubDate>`, per la tabella del nostro esempio, basterà estrarre rispettivamente il contenuto delle colonne "Oggetto" e "Inizio", ovvero la IV e la V. Per il link, bisognerà "guardare dentro" il codice HTML.
-In corrispondenza dell'oggetto degli atti sembra esserci l'URL relativo, quindi bisognerà fare click con il desto del mouse sull'oggetto e poi fare click su ispeziona:
+In corrispondenza dell'oggetto degli atti sembra esserci l'URL relativo, quindi bisognerà fare click con il tasto destro del mouse sull'oggetto e poi fare click su ispeziona:
 
 ![](./2016-02-28_13h13_32.png)
 
