@@ -13,8 +13,8 @@ L'avviso alla cittadinanza che si trova allegato alla Delibera di Giunta present
 
 Di seguito si riportano i canali di notifica Albo POP San Giuseppe Jato:
 
-- **Canale Telegram**: https://telegram.me/albopretoriosangiuseppejato
-- **Feed RSS**: http://feeds.feedburner.com/SanGiuseppeJatoAlboPretorio
+- **Canale Telegram**: [https://telegram.me/albopretoriosangiuseppejato](https://telegram.me/albopretoriosangiuseppejato)
+- **Feed RSS**: [http://feeds.feedburner.com/SanGiuseppeJatoAlboPretorio](http://feeds.feedburner.com/SanGiuseppeJatoAlboPretorio)
 
 ![2016-02-24_18h36_08](https://cloud.githubusercontent.com/assets/30607/13294701/84ebc1b8-db25-11e5-856d-8bc196458437.png)
 
