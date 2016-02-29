@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+title: Albo POP condiviso e promosso dal Comune di San Giuseppe Jato
 ---
 
 di [@giuragu](https://twitter.com/giuragu) e [@aborruso](https://twitter.com/aborruso)
