@@ -1,6 +1,9 @@
 ---
+layout: post
 published: false
 ---
+
+di [@giuragu](https://twitter.com/giuragu) e [@aborruso](https://twitter.com/aborruso)
 
 Dal 24/02/2016 Albo POP viene apprezzato, condiviso e promosso ufficialmente dal **Comune di San Giuseppe Jato**. 
 
