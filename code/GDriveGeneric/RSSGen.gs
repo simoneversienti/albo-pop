@@ -159,7 +159,7 @@ function doGet() {
     //var pDateFix=pDate.replace(pattern,'$2/$1/$3')
     var pDateFix=pDate;
     
-    var pubDateDate = new Date(pDateFix);
+    var pubDateDate = new Date(pDateFix + " 12:00");
     
     rss.addItem({title: titolo,
                  guid:myguid,
