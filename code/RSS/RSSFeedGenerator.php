@@ -46,7 +46,7 @@ class RSSFeedGenerator{
 		$this->channelEl=$this->doc->createElement('channel');
 		$rssEl->appendChild($this->channelEl);
 
-		$licenseEl=$this->doc->createElementNS('http://backend.userland.com/creativeCommonsRssModule','creativeCommons:license','http://creativecommons.org/licenses/by/3.0/');
+		$licenseEl=$this->doc->createElementNS('http://backend.userland.com/creativeCommonsRssModule','creativeCommons:license','http://creativecommons.org/licenses/by/4.0/');
 		$this->channelEl->appendChild($licenseEl);
 				
 		$this->channelEl->appendChild($this->createEscapedElement('title', $title));

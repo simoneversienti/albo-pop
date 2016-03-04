@@ -20,7 +20,7 @@
  */
 
 require("AlboUnictParser.php");
-require("RSSFeedGenerator.php");
+require("../RSS/RSSFeedGenerator.php");
 
 //parsing
 $parser = new AlboUnictParser();
