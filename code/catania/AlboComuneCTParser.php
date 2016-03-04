@@ -49,8 +49,8 @@ class AlboComuneCTEntry{
 		$repertorioAnchorNode=$repertorioAnchorNodes->item(0);
 		$this->repertorio=$repertorioAnchorNode->textContent;
 		$this->link=" http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
-		$this->tipo=html_entity_decode($cells->item(3)->textContent);
-		$this->mittente_descrizione=html_entity_decode($cells->item(4)->textContent);
+		$this->tipo=html_entity_decode(utf8_decode($cells->item(3)->textContent));
+		$this->mittente_descrizione=html_entity_decode(utf8_decode($cells->item(4)->textContent));
 	}
 }
 /**
@@ -85,6 +85,7 @@ class AlboComuneCTParser implements Iterator{
 		curl_setopt($h, CURLOPT_POST, TRUE);
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year));
+		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
 		if( $page==FALSE)
 			throw new Exception("Unable to execute POST request: "+curl_error());
