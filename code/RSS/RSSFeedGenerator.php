@@ -39,12 +39,16 @@ class RSSFeedGenerator{
 		$rssEl=$this->doc->createElement('rss');
 		$rssEl->setAttribute('version', '2.0');
 		$rssEl->setAttributeNS('http://www.w3.org/2000/xmlns/','xmlns:atom','http://www.w3.org/2005/Atom');
-
+		$rssEl->setAttributeNS('http://www.w3.org/2000/xmlns/','xmlns:creativeCommons','http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html');
+		
 		$this->doc->appendChild($rssEl);
 
 		$this->channelEl=$this->doc->createElement('channel');
 		$rssEl->appendChild($this->channelEl);
 
+		$licenseEl=$this->doc->createElementNS('http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html','creativeCommons:license','http://creativecommons.org/licenses/by/3.0/');
+		$this->channelEl->appendChild($licenseEl);
+				
 		$this->channelEl->appendChild($this->createEscapedElement('title', $title));
 
 		if (isset($description))
