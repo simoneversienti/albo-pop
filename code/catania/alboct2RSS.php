@@ -29,7 +29,10 @@ $feed=new RSSFeedGenerator("Albo del Comune di Catania", "Versione POP dell'Albo
 foreach($parser as $r){
 	//remove the sender if it is internal to the municipality of Catania
 	$title=preg_replace('%^.*- COMUNE DI CATANIA *%', '',$r->mittente_descrizione,1);
-	$feed->addItem($title, $r->repertorio." - ".$r->tipo.": ".$r->mittente_descrizione, null, $r->link, $r->link);
+	if (empty($title))
+		$feed->addItem('ERROR', null, null, $r->link, $r->link);
+	else
+		$feed->addItem($title, $r->repertorio." - ".$r->tipo.": ".$r->mittente_descrizione, null, $r->link, $r->link);
 }
 
 //output

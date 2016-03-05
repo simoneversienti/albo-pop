@@ -48,7 +48,7 @@ class AlboComuneCTEntry{
 			throw new Exception("Multiple anchor nodes found in repertorio");
 		$repertorioAnchorNode=$repertorioAnchorNodes->item(0);
 		$this->repertorio=$repertorioAnchorNode->textContent;
-		$this->link=" http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
+		$this->link="http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
 		$this->tipo=html_entity_decode(utf8_decode($cells->item(3)->textContent));
 		$this->mittente_descrizione=html_entity_decode(utf8_decode($cells->item(4)->textContent));
 	}
