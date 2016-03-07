@@ -66,7 +66,7 @@ class AlboComuneCTParser implements Iterator{
 	private $i=1;
 	
 	/**
-	 *  Retrieve the entries relatives to a year.
+	 *  Retrieve the entries relatives from $months months ago to now.
 	 */
 	public function __construct($year) {
 		$page=$this->getPage($year);
