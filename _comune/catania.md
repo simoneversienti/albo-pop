@@ -8,6 +8,6 @@ La pagina dell'albo pretorio del **Comune di Catania** è questa:
 
 Adesso puoi seguire le nuove pubblicazioni in albo
 
-* iscrivendoti a un **feed RSS** [http://dev.opendatasicilia.it/albopopct/alboct2RSS.php](http://dev.opendatasicilia.it/albopopct/alboct2RSS.php).
+* iscrivendoti a un **feed RSS** [http://dev.opendatasicilia.it/albopop/catania/alboct2RSS.php](http://dev.opendatasicilia.it/albopop/catania/alboct2RSS.php).
 
 **Autore**: [Cristiano Longo (opendatahacklab)](http://opendatahacklab.org)
