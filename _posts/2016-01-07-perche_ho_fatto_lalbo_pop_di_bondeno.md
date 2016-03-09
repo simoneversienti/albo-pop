@@ -17,6 +17,6 @@ Mi piace l’idea che il mio vicino di casa possa leggere i dettagli sul nuovo p
 
 E quindi viva l’Albo POP e GRAZIE Andy.
 
-L'albo POP di **Bondeno** è [qui](http://aborruso.github.io/albo-pop/comune/bondeno.html).
+L'albo POP di **Bondeno** è [qui](http://albopop.it/comune/bondeno.html).
 
 <p><a href="https://en.wikipedia.org/wiki/File:Bwall-allsmallpeople.jpg#/media/File:Bwall-allsmallpeople.jpg"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Bwall-allsmallpeople.jpg/1200px-Bwall-allsmallpeople.jpg" alt="Bwall-allsmallpeople.jpg"></a><br>"<a href="https://en.wikipedia.org/wiki/File:Bwall-allsmallpeople.jpg#/media/File:Bwall-allsmallpeople.jpg">Bwall-allsmallpeople</a>" by <a href="//en.wikipedia.org/w/index.php?title=User:Clouha&amp;action=edit&amp;redlink=1" class="new" title="User:Clouha (page does not exist)">Clouha</a> (<a href="//en.wikipedia.org/wiki/User_talk:Clouha" title="User talk:Clouha">talk</a>) (<a href="//en.wikipedia.org/wiki/Special:ListFiles/Clouha" title="Special:ListFiles/Clouha">Uploads</a>) - Own work. Licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons Attribution 3.0">CC BY 3.0</a> via <a href="//en.wikipedia.org/wiki/">Wikipedia</a>.</p>

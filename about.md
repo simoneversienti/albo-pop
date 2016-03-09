@@ -16,4 +16,4 @@ Le varie modalità di pubblicazione di Albo POP **non hanno alcun valore legale*
 
 C'è una **latenza** di circa **un'ora**, rispetto al tempo originale di pubblicazione, per la pubblicazione in Albo POP. Per fortuna è un tempo insignificante per un contesto di questo tipo.
 
-Tanti [**comuni**](http://aborruso.github.io/albo-pop/comune/) e [**altre PA**](http://aborruso.github.io/albo-pop/altrepa/) hanno attivato un **AlboPOP**. 
+Tanti [**comuni**](http://albopop.it/comune/) e [**altre PA**](http://albopop.it/altrepa/) hanno attivato un **AlboPOP**. 

@@ -7,7 +7,7 @@ title: Un post per spiegare come si pubblica sul blog di Albo POP
 
 Il sito web di Albo POP è basato su **[Jekyll](http://jekyllrb.com/)** (un generatore di siti web statici) e l'hosting è fatto direttamente su [questo](https://github.com/aborruso/albo-pop) repository **GitHub**.
 
-Per scrivere un nuovo post sul [**blog**](http://aborruso.github.io/albo-pop/post/), basta scriverne il testo in **Markdown**, inserire nelle prime righe delle informazioni secondo una determinata struttura, e pubblicare il file nella cartella ` _posts ` presente nel repository.
+Per scrivere un nuovo post sul [**blog**](http://albopop.it/post/), basta scriverne il testo in **Markdown**, inserire nelle prime righe delle informazioni secondo una determinata struttura, e pubblicare il file nella cartella ` _posts ` presente nel repository.
 
 Il [Markdown](https://daringfireball.net/projects/markdown/) è un modo per scrivere testi in un formato facile da leggere, che può essere convertito direttamente in formato HTML. Diciamo che è un modo per tutti per scrivere testo ricco, con [collegamenti ipertestuali](https://daringfireball.net/projects/markdown/syntax#link), **grassetti**, *corsivi*, tabelle, immagini, elenchi, ecc..  
 
