@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Napoli
+title: Napoli (Campania)
 ---
 
 La pagina dell'albo pretorio del **Comune di Napoli** è questa: [http://www.comune.napoli.it/flex/FixedPages/IT/PubblicazioneAtti.php/L/IT/](http://www.comune.napoli.it/flex/FixedPages/IT/PubblicazioneAtti.php/L/IT/)
