@@ -118,16 +118,24 @@ Query|Descrizione|Elemento estratto
 `//tbody/tr/td[5]`|Per la tabella presente, per tutte le righe, soltanto il contenuto delle celle della V colonna|`<pubDate>`
 `//tbody/tr/td[4]/a/@href`|Per la tabella presente, per tutte le righe, soltanto per la IV colonna, la proprietà `href` di tutti i tag `<a>` contenuti|`<link>`
 
-Non resta che aprire un foglio elettronico di Google Drive. Per facilitare l'apprendimento di questa ricetta, ne abbiamo già "cucinato" uno, raggiungibile [qui](https://docs.google.com/spreadsheets/d/1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao/edit?usp=sharing).
+#### Il preparato
 
-![](./2016-02-28_15h43_23.png)
+Anche per questa ricetta c'è un "preparato" per prendere confidenza e fare in modo che sia "buona la prima".
+Per facilitare l'apprendimento abbiamo infatti già "cucinato" uno foglio Gdrive, raggiungibile [**qui**](https://docs.google.com/spreadsheets/d/1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao/edit?usp=sharing).
+
+Il consiglio è quello di **farne una copia** andando sul menu **File** --> **Crea una copia**: usatela come base per le vostre **ricette future** e anche per **completare questa**.  
+Poi, sempre nel menu **File**, selezionare **Imposta Foglio di lavoro** e in "Ricalcolo" nel menù a tendina scegliere "Ad ogni modifica e ad ogni ora".
+
+![](./2016-03-11_12h17_33.png)
 
 E' suddiviso in tre fogli: 
 - "**raccolta**", in cui vengono inseriti ed eventualmente "mondati" i dati estratti dalla pagina web sorgente;
 - "**clean**", in cui sono presenti i soli necessari per la generazione del feed RSS; 
 - "**meta**", un foglio in cui inserire alcuni metadati e istruzioni utili alla riuscita della ricetta.
 
-Iniziamo proprio da "**meta**", in cui dovrà essere inserito l'URL della pagina sorgente e le 3 query XPath di sopra.
+![](./2016-02-28_15h43_23.png)
+
+Iniziamo proprio da "**meta**", in cui dovrà essere inserito l'URL della pagina sorgente e le 3 query XPath di sopra. Per questo esempio la sorgente è l'albo del Comune di Bagheria.
 
 ![](./2016-02-28_16h04_28.png)
 
@@ -143,7 +151,7 @@ Queste funzioni produrranno in automatico l'importazione per l'appunto di oggett
 
 ![](./2016-02-28_16h07_10.png)
 
-Alle volte è necessario fare un po' di pulizia, e un foglio elettronico si presta bene per la "mondatura" di testi. Nella colonna "title", la IV, è stata inserita ad esempio una funziona che copia il titolo grezzo della fonte, e rimuove eventuali "andate a capo" presenti nel testo originario. La funzione usata è:
+Alle volte è necessario fare un po' di "pulizia", e un foglio elettronico si presta bene per la "mondatura" di testi. Nella colonna "title", la IV, è stata inserita ad esempio una funziona che copia il titolo grezzo della fonte, e rimuove eventuali "andate a capo" presenti nel testo originario. La funzione usata è:
 
     =REGEXREPLACE(A2,"\n"," ")
 
@@ -154,53 +162,49 @@ Ad esempio, in questo caso, nella cella `A1` del foglio la formula:
 
     =QUERY(raccolta!A:D,"select D,B,C where C contains 'http'")
 
-Ovvero a partire da tutto il range dei dati compreso tra le colonne "A" e "D" del foglio "raccolta", selezionare tutte le righe le colonne "D","B" e "C" laddove la colonna "C" contiene la stringa 'http'.
+Ovvero a partire da tutto il range dei dati compreso tra le colonne "A" e "D" del foglio "raccolta" (`raccolta!A:D`), selezionare tutte le righe le colonne "D","B" e "C" (`select D,B,C`) laddove la colonna "C" contiene la stringa 'http' (`where C contains 'http'`).
 
-Una volta avuto il google sheet pulito e funzionante, consiglio di fare File --> Imposta Foglio di lavoro --> Ricalcolo e nel menù a tendina mettere "Ad ogni modifica e ad ogni ora".
+### Costruiamo il nostro piatto
 
-Ora serve creare lo script per generare l'RSS automatico. Per fare questo bisogna :
+Non resta che usare gli ingredienti estratti - titolo, data di pubblicazione e link - e creare il feed RSS.
 
-1) creare lo script
+La creazione del feed avverrà tramite uno script **[Google App Script](https://developers.google.com/apps-script)** creato da [Matteo Fortini](https://twitter.com/matt_fortini), che trovate già dentro il foglio elettronico.
 
-2) personalizzarlo inserendo la KEY del foglio di calcolo sui cui deve lavorare
+La cosa più comoda è partire 
 
-3) Pubblicarlo come Applicazione Web permettendo a "chiunque" di poterlo eseguire e settare il Trigger
+Questi i passi da seguire:
 
-4) Controllare se lo script funziona e il Feed RSS viene generato correttamente
+- copiare l'ID del foglio creato in copia. Si legge nell'URL e in questo esempio è "1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao"
+- 
+![](./2016-03-11_15h09_49.png)
 
-5) Inserire il feed su servizi come www.feedburner.com e cosi normalizzare tutti i campi. 
+- fare click nel menu **Strumenti** --> **Editor Script**. Si aprirà lo script creato da Matteo;
+- poco dopo una tretina di righe c'è la variabile `ID_SPREADSHEET`. Cancellate l'ID esistente e incollate l'ID copiato prima; 
+- fare click sul menu **File** --> **Save**;
+- fare click sul menu **Pubblica** --> **Distribuisci come applicazione web**;
+- selezionare 1) il vostro indirizzo di posta elettronica in "Esegui 'applicazione come" e 2 "Chiunque, inclusi utenti anonimi" in "Chi accedee all'applicazione";
 
-6) Generare l'automa con IFTTT o Zapier per inviare gli items nuovi sul Canale Telegram o Twitter ect
+![](./2016-03-11_15h28_56.png)
 
+- fare click sul menu **Risorse** --> **Trigger del progetto corrente** e aggiungere nuovo trigger con cadenza oraria (è quello di default)
+- fare click su **Implementa**;
+- autorizzare l'applicazione;
+- copiare l'URL della finestra che appare;
 
-Vediamo come procedere:
+![](./2016-03-11_15h34_46.png)
 
-1) Strumenti --> Editor Script. Incollare [questo testo](https://raw.githubusercontent.com/aborruso/albo-pop/master/code/GDriveGeneric/RSSGen.gs)
+- incollarlo nel foglio "meta" in corrispondenza di RSS link. **Questo è l'URL del feed RSS**; 
 
-2) inserire la KEY nella riga commentata. Cliccare sull'icona del salvataggio e cliccare l'icona del Play oppure cliccare Esegui. Verrà chiesta l'autenticazione . Accettarla
+![](./2016-03-11_15h36_49.png)
 
-3) Cliccare Risorse --> Trigger del progetto corrente --> aggiungere nuovo trigger con cadenza oraria. (è quello di default). Cliccare Pubblica --> distribuisci come applicazione web.Attenzione!! cliccare nel menu a tendina impostando "Chiunque, inclusi utenti anonimi".
-
-4) Copiare il link creato da Google e incollarlo in una nuova finestra. E' tutto ok? E' un Feed RSS strutturato, con Title, Link e PubDate corretto? Complimenti! avete creato l'alboPop per il vostro Comune.
-
-5) Andare su www.feedburner.com autenticandosi con il proprio account Google. Incollare il link dello script per punto 4) e creare il feed ridotto che sarà del tipo http://feeds.feedburner.com/AlboXXXX
-
-6) sapete come fare :)
-
-
-
-
- **... to be continued ...**
-
+- tornare nello script e fare di nuovo click sul menu **Pubblica** --> **Distribuisci come applicazione web** e poi fare click su **Aggiorna**;
 
 
+## In conclusione
 
+Avete creato un **feed RSS** a partire da una pagina web su cui avete applicato delle **query XPath**. L'RSS è generato grazie un **Google App Script**.
 
+E' una procedura applicabile a numerossisme pagine web e non solo agli albi pretori. Quello che varierà più frequentemente è la sintassi delle interrogazioni XPath.
 
-
-
-
-
-
-
+Buon divertimento
 
