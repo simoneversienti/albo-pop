@@ -175,7 +175,7 @@ La cosa più comoda è partire
 Questi i passi da seguire:
 
 - copiare l'ID del foglio creato in copia. Si legge nell'URL e in questo esempio è "1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao"
-- 
+
 ![](./2016-03-11_15h09_49.png)
 
 - fare click nel menu **Strumenti** --> **Editor Script**. Si aprirà lo script creato da Matteo;
