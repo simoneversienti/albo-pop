@@ -197,7 +197,7 @@ Questi i passi da seguire:
 
 ![](./2016-03-11_15h36_49.png)
 
-- tornare nello script e fare di nuovo click sul menu **Pubblica** --> **Distribuisci come applicazione web** e poi fare click su **Aggiorna**;
+- tornare nello script e fare di nuovo click sul menu **Pubblica** --> **Distribuisci come applicazione web** e poi fare click su **Aggiorna**.
 
 
 ## In conclusione
