@@ -21,11 +21,11 @@ footer-links:
   email: aborruso@gmail.com
   facebook:
   flickr:
-  github:
+  github: https://github.com/aborruso/albo-pop
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: http://albopop.it/feed.xml # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: albopop
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
