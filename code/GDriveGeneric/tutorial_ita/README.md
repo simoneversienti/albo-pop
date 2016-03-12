@@ -121,7 +121,7 @@ Query|Descrizione|Elemento estratto
 #### Il preparato
 
 Anche per questa ricetta c'è un "preparato" per prendere confidenza e fare in modo che sia "buona la prima".
-Per facilitare l'apprendimento abbiamo infatti già "cucinato" uno foglio Gdrive, raggiungibile [**qui**](https://docs.google.com/spreadsheets/d/1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao/edit?usp=sharing).
+Per facilitare l'apprendimento abbiamo infatti già "cucinato" uno foglio Gdrive di cui fare una **copia** e raggiungibile [**qui**](https://docs.google.com/spreadsheets/d/1NdMuPWWXriStFn4P45ScYWkopIxTP2IrpIIOYX6Eeao/copy).
 
 Il consiglio è quello di **farne una copia** andando sul menu **File** --> **Crea una copia**: usatela come base per le vostre **ricette future** e anche per **completare questa**.  
 Poi, sempre nel menu **File**, selezionare **Imposta Foglio di lavoro** e in "Ricalcolo" nel menù a tendina scegliere "Ad ogni modifica e ad ogni ora".
