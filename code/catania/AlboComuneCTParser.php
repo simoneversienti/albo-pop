@@ -63,6 +63,7 @@ class AlboComuneCTEntry{
 class AlboComuneCTParser implements Iterator{
 
 	private $rows;
+	private $items;
 	private $i=1;
 	
 	/**
@@ -108,6 +109,22 @@ class AlboComuneCTParser implements Iterator{
  			throw new Exception("Multiple table elements found");
 		$rows=$tables->item(0)->getElementsByTagName("tr");
 		return $rows; 			
+	}
+	
+	//helper function
+	/**
+	 * Get the (first) item with the specified value in the repertorio property.
+	 * Return null if no such entry exists.
+	 */
+	public function getByRepertorio($repertorio){
+		if ($this->rows->length<2) 
+			return null;
+		for($j=1; $j<$this->rows->length; $j++){
+			$entry=new AlboComuneCTEntry($this->rows->item($j));
+			if (!strcmp($repertorio, $entry->repertorio))
+				return $entry;
+		}
+		return null;
 	}
 	
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
