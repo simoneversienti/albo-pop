@@ -125,7 +125,7 @@ var makeRss = function(){
 };
 
 
-function doGet() { 
+function doGet(e) {
   var ss = SpreadsheetApp.openById(ID_SPREADSHEET);
   
   var metaSheet = ss.getSheetByName('meta');
@@ -153,6 +153,12 @@ function doGet() {
     //Logger.log('Riga ' + i + ' myguid ' + myguid);
     if (myguid.length == 0) {
       break;
+    }
+
+    if (e && e.parameter['ricerca']) {
+      if (titolo.toString().toLowerCase().indexOf(e.parameter['ricerca'].toLowerCase()) < 0) {
+        continue;
+      }
     }
     
     //var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
