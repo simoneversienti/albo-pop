@@ -155,12 +155,35 @@ function doGet(e) {
       break;
     }
 
-    if (e && e.parameter['ricerca']) {
-      if (titolo.toString().toLowerCase().indexOf(e.parameter['ricerca'].toLowerCase()) < 0) {
-        continue;
+    var skip = false;
+    if (e) {
+      if (e.parameter['ricerca']) {
+        var strRicerca = e.parameter['ricerca'];
+        if (titolo.toString().toLowerCase().indexOf(strRicerca.toLowerCase()) < 0) {
+          skip = true;
+        }
+      }
+
+      if (e.parameter['regexp']) {
+        var reInput = e.parameter['regexp'];
+
+        var reParts = reInput.match(/^\/(.*?)\/([gim]*)$/);
+        if (reParts) {
+          var re = new RegExp(reParts[1], reParts[2]);
+        } else {
+          var re = new RegExp(reInput);
+        }
+        if (!titolo.toString().match(re)) {
+          skip = true;
+        }
       }
     }
     
+
+    if (skip) {
+      continue;
+    }
+
     //var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
     //var pDateFix=pDate.replace(pattern,'$2/$1/$3')
     var pDateFix=pDate;
