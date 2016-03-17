@@ -66,6 +66,9 @@ function sharefb(){
 	}, function(response){});
 }
 		</script>
+		<meta property="og:title" content="Albo POP - Comune di Catania - Avviso <?php echo $entry->repertorio ?>" />
+		<meta property="og:description" content="<?php echo $entry->mittente_descrizione;?>" />
+		<meta property="og:image" content="http://dev.opendatasicilia.it/albopop/catania/ct-logo-pop.jpg" />
 	</head>
 	<body>
 	<header class="main-header" id="top">
@@ -88,8 +91,8 @@ function sharefb(){
 		</p>
 		
 		<p>		
-		L'albo pop del comune di Catania è stato realizzato da <a href="http://hackspace.it">Hackspace Catania</a>
-		nell'ambito del progetto <code>opendatahacklab</code>.</p>
+		L'albo pop del comune di Catania è stato realizzato da <a href="http://hackspacecatania.it">Hackspace Catania</a>
+		nell'ambito del progetto <a href="http://opendatahacklab.org"><code>opendatahacklab</code></a>.</p>
 	</body>	
 </html>
 
