@@ -31,6 +31,8 @@ define('ALBO_CT_URL','http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.ns
  *
  */
 class AlboComuneCTEntry{
+	public $anno;
+	public $numero;
 	public $repertorio;
 	public $link;
 	public $tipo;
@@ -48,6 +50,7 @@ class AlboComuneCTEntry{
 			throw new Exception("Multiple anchor nodes found in repertorio");
 		$repertorioAnchorNode=$repertorioAnchorNodes->item(0);
 		$this->repertorio=$repertorioAnchorNode->textContent;
+		
 		$this->link="http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
 		$this->tipo=html_entity_decode(utf8_decode($cells->item(3)->textContent));
 		$this->mittente_descrizione=html_entity_decode(utf8_decode($cells->item(4)->textContent));
@@ -67,10 +70,10 @@ class AlboComuneCTParser implements Iterator{
 	private $i=1;
 	
 	/**
-	 *  Retrieve the entries relatives from $months months ago to now.
+	 *  Retrieve the entries relatives to the specified year.
 	 */
 	public function __construct($year) {
-		$page=$this->getPage($year);
+		$page=$this->getPage(null, $year);
 		$this->rows=$this->getRows($page);
 	}
 	
@@ -80,12 +83,16 @@ class AlboComuneCTParser implements Iterator{
 	 * @param int $year
 	 * @return string the retrieved web page
 	 */
-	private function getPage($year){
+	private function getPage($number, $year){
 		$h=curl_init(ALBO_CT_URL);
 		if (!$h) throw new Exception("Unable to initialize cURL session");
 		curl_setopt($h, CURLOPT_POST, TRUE);
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year));
+		if ($number==null)
+			curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year));
+		else
+			curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year, "Numero"=>$number));
+				
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
 		if( $page==FALSE)

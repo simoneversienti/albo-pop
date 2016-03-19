@@ -18,28 +18,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require("AlboComuneCTParser.php");
-$repertorio=$_GET['repertorio'];
-if (!isset($repertorio))
-	die("E' necessario specificare un numero di repertorio.");
+require("AlboUnictParser.php");
+$number=$_GET['number'];
+if (!isset($number))
+	die("E' necessario specificare un numero di avviso.");
 
-$entry = (new AlboComuneCTParser(2016))->getByRepertorio($repertorio);
+$entry = (new AlboUnictParser())->getByNumber($number);
 if ($entry==null)
-  die("Nessun elemento col numero di repertorio $repertorio");
+  die("Nessun elemento con numero $number");
 
-$title="Albo POP Comune di Catania - Avviso $repertorio";
-$logo="ct-logo-pop.jpg";
-$description=$entry->repertorio." - ".$entry->tipo.": ".$entry->mittente_descrizione;
+$title="Albo Universit&agrave; di Catania - Avviso $number";
+$logo="logo.png";
+$description=$entry->richiedente.": ".$entry->description;
 $link=$entry->link;
 $credits="		
 <img class=\"logo\" src=\"http://opendatahacklab.github.io/imgs/logo_cog4_ter.png\" alt=\"the opendatahacklab logo\" />
-		<p>Il logo di questo albo pop &egrave; stato ottenuto dalla 
-			pagina di Wikipedia che riporta lo <a href=\"https://it.wikipedia.org/wiki/File:Catania-Stemma.png\">stemma del comune di Catania</a>,
-			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.
-		</p>
-		
 		<p>		
-		L'albo pop del comune di Catania &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace Catania</a>
+		Questo albo pop &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace Catania</a>
 		nell'ambito del progetto <a href=\"http://opendatahacklab.org\"><code>opendatahacklab</code></a>.
 </p>";
 require("../RSS/sharer-template.php");

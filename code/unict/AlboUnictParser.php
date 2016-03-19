@@ -148,6 +148,20 @@ class AlboUnictParser implements Iterator{
 	}
 
 	/**
+	 * Get the item with the specified number, if any. Null otherwise.
+	 */
+	public function getByNumber($number){
+		if ($this->rows->length<2)
+			return null;
+		for($j=1; $j<$this->rows->length; $j++){
+			$entry=new AlboUnictEntry($this->rows->item($j));
+			if (!strcmp($number, $entry->numero))
+				return $entry;
+		}
+		return null;
+	}
+	
+	/**
 	 * Get the element corresponding to the table in the Albo Unict document.
 	 * It is the solely child of the div with id='boge'
 	 *
