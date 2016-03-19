@@ -157,7 +157,7 @@ class AlboUnictParser implements Iterator{
 	 * @exception if the document structure is not as expected
 	 */
 	private function retrieveTable($doc){
-		$div = $doc->getElementById("boge");
+		$div = $this->getElementById($doc->documentElement, "boge");
 		if ($div==null)
 			throw new Exception("No such element with id boge");
 		$children = $div->getElementsByTagName("table");
@@ -168,6 +168,26 @@ class AlboUnictParser implements Iterator{
 		return $children->item(0);
 	}
 
+	/**
+	 * Just a workaround, see https://github.com/aborruso/albo-pop/issues/102
+	 * Get an element with the specified value for the id attribute in the subtree 
+	 * rooted at the specified element
+	 * 
+	 */
+	private function getElementById($root,$id){
+		$idValue=$root->getAttribute("id");
+		if (isset($idValue) && !strcmp($id, $idValue))
+			return $root;
+		for($i=0; $i<$root->childNodes->length; $i++){
+			$child=$root->childNodes->item($i);
+			if ($child->nodeType==XML_ELEMENT_NODE)
+			$r=$this->getElementById($child, $id);
+			if (isset($r))
+				return $r;
+		}
+		return null;
+	}
+	
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
 	
 	public function current(){
