@@ -27,15 +27,10 @@ $entry = (new AlboUnictParser())->getByNumber($number);
 if ($entry==null)
   die("Nessun elemento con numero $number");
 
-$title="Albo Universit&agrave; di Catania - Avviso $number";
+$css="../RSS/sharer.css";
+$title="Albo POP Universit&agrave; di Catania - Avviso $number";
 $logo="logo.png";
 $description=$entry->richiedente.": ".$entry->description;
 $link=$entry->link;
-$credits="		
-<img class=\"logo\" src=\"http://opendatahacklab.github.io/imgs/logo_cog4_ter.png\" alt=\"the opendatahacklab logo\" />
-		<p>		
-		Questo albo pop &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace Catania</a>
-		nell'ambito del progetto <a href=\"http://opendatahacklab.org\"><code>opendatahacklab</code></a>.
-</p>";
 require("../RSS/sharer-template.php");
 ?>

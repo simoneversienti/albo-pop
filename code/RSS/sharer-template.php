@@ -2,13 +2,13 @@
 /**
  * A template for generated pages to share feed items on facebook.
  * Just set the following variables and import this file in your own sharer.php page:
- * 
- * - title 
+ *
+ * - title
  * - logo an url of the page logo
  * - description
  * - link the link of the reported test
  * - credits html code to be put in the Credits section
- * 
+ *
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,12 +27,12 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title><?php echo $title;?></title>
-		<link rel="stylesheet" type="text/css" href="http://opendatahacklab.github.io/odhl.css" />
-		
-		<script>
+<head>
+<meta charset="UTF-8">
+<title><?php echo $title;?></title>
+<link rel="stylesheet" type="text/css" href="<?php echo $css;?>" />
+
+<script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1196238777060410',
@@ -64,26 +64,69 @@ function sharefb(){
 	}, function(response){});
 }
 		</script>
-		<meta property="og:title" content="<?php echo $title; ?>" />
-		<meta property="og:description" content="<?php echo $description; ?>" />
-		<meta property="og:image" content="<?php echo $logo; ?>" />
-	</head>
-	<body>
+<meta property="og:title" content="<?php echo $title; ?>" />
+<meta property="og:description" content="<?php echo $description; ?>" />
+<meta property="og:image" content="<?php echo $logo; ?>" />
+</head>
+<body>
 	<header class="main-header" id="top">
 		<img class="logo" src="<?php echo $logo; ?>" alt="logo" />
-		<h1><?php echo $title;?></h1>
-		<p class="subtitle">Questo  &egrave; un <a href="http://albopop.it">Albo POP</a>!</p>
+		<h1>
+			<?php echo $title;?>
+		</h1>
 	</header>
-	<section>
-		<p><?php echo $description; ?></p>
-		<p><a href="<?php echo $link?>" >Vedi l'avviso originale</a></p>		
-		<p><a href="#" onclick="sharefb()">Condividi su Facebook</a>
+	<section id="avviso">
+		<blockquote cite="<?php echo $link?>">
+			<p>
+				<?php echo $description; ?>
+			</p>
+		</blockquote>
+		<p>
+			Vedi l'<a href="<?php echo $link?>" target="_blank">avviso originale</a> - Condividi
+			su <a href="#" onclick="sharefb()">Facebook</a>
+		</p>
 	</section>
-	<section>
+	<section id="links">
+		<h2>Per saperne di pi&ugrave</h2>
+		<p>
+			Visita il sito del progetto <a href="http://albopop">Albo POP</a> o
+			vieni al prossimo <a
+				href="https://www.facebook.com/events/1133850986634756/">Aperitivo
+				POP</a> che si terr&agrave; Marted&igrave; 5 Aprile 2016 alle 19:00
+			presso l'associazione Chilometro Zero in via Grotte Bianche 56,
+			Catania.
+		</p>
+
+		<p class="links">
+			<a href="http://albopop.it"> <img alt="logo albo pop"
+				src="http://albopop.it/images/logo.png" />
+			</a> <a href="https://www.facebook.com/events/1133850986634756/"> <img
+				alt="Aperitivo POP" src="../RSS/aperitivo-pop.png" />
+			</a>
+		</p>
+	</section>
+
+	<section id="credits">
 		<h2>Crediti</h2>
-		<?php echo $credits;?>		
+		<p>
+			Questo albo pop &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace
+				Catania</a> nell'ambito del progetto <a href=\"http://opendatahacklab.org\"><code>opendatahacklab</code>
+			</a>.
+		</p>
+		<p class="links">
+			<a href="http://hackspacecatania.it/"> <img
+				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
+				alt="LEARN MAKE HACK SHARE. Hackspace Catania" />
+			</a> <a href="http://opendatahacklab.org"> <img
+				src="http://opendatahacklab.github.io/imgs/logo_cog4_ter.png"
+				alt="logo opendatahacklab" />
+			</a>
+		</p>
+<?php 
+	if (isset($credits)) echo $credits;
+?>
 	</section>
-		
-	</body>	
+
+</body>
 </html>
 

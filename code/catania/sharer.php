@@ -31,16 +31,10 @@ $title="Albo POP Comune di Catania - Avviso $repertorio";
 $logo="ct-logo-pop.jpg";
 $description=$entry->repertorio." - ".$entry->tipo.": ".$entry->mittente_descrizione;
 $link=$entry->link;
-$credits="		
-<img class=\"logo\" src=\"http://opendatahacklab.github.io/imgs/logo_cog4_ter.png\" alt=\"the opendatahacklab logo\" />
-		<p>Il logo di questo albo pop &egrave; stato ottenuto dalla 
+$css="../RSS/sharer.css";
+$credits="<p>Il logo di questo albo pop &egrave; stato ottenuto dalla 
 			pagina di Wikipedia che riporta lo <a href=\"https://it.wikipedia.org/wiki/File:Catania-Stemma.png\">stemma del comune di Catania</a>,
 			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.
-		</p>
-		
-		<p>		
-		L'albo pop del comune di Catania &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace Catania</a>
-		nell'ambito del progetto <a href=\"http://opendatahacklab.org\"><code>opendatahacklab</code></a>.
-</p>";
+		</p>";
 require("../RSS/sharer-template.php");
 ?>

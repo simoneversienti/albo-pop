@@ -1,0 +1,94 @@
+body {
+	margin: 0 0 0 0;
+	padding: 1em 0 1em 0;
+	background: #fff;
+	font: Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+header {
+	margin: 0;
+	padding: 0;
+}
+
+img.logo {
+	float: left;
+	text-align: middle;
+	width: 5em;
+	margin: 0 1em 1em 1em;
+	border-radius: 0.5em;
+}
+
+h1 {
+	font-size: 3em;
+	margin: 0 0 0 0;
+	padding: 0.2em 0.2em 0.2em 0.2em;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 2em;
+	margin: 0 0 0 0;
+	padding: 0.2em 0.2em 0.2em 0.2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+a:link,a:visited,a:active,a:hover {
+	color: #1e5a62;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+section {
+	clear: both;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+p {
+	margin: 0 0 0 0;
+	padding: 1em 2em 1em 2em;
+}
+
+blockquote {
+	font-family: "Lucida Console", Courier, monospace;
+	margin: 2em 0 1em 0;
+	padding: 1em 4em 1em 4em;
+	text-indent: 0;
+	text-align: justify;
+	background-color: #d8f0f3;
+}
+
+p.links {
+	margin: 1em auto 1em 20%;
+	padding: 0;
+}
+
+p.links img {
+	float: left;
+	margin: 0 2em 2em 2em;
+	padding : 0 0 0 0;
+	max-height: 6em;
+	max-width : 15em;
+	border-radius: 0.5em;
+}
+
+blockquote p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+nav {
+	background-color: rgb(99, 197, 207);
+	margin: 0 0 0 7em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+nav a {
+	text-decoration: none;
+}
