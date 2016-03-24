@@ -1,6 +1,6 @@
 ---
 layout: post
-title: L'albo POP di Barletta: "Apri e Condividi le tue conoscenze"
+title: L'albo POP di Barletta: apri e Condividi le tue conoscenze
 ---
 
 _di **[Rinex83](https://github.com/Rinux83)**_
