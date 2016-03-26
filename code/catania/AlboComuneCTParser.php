@@ -70,28 +70,38 @@ class AlboComuneCTParser implements Iterator{
 	private $i=1;
 	
 	/**
-	 *  Retrieve the entries relatives to the specified year.
+	 *  Retrieve the entries relatives to the specified period.
+	 *  @param $from_date a DateTime object
+	 *  @param $to_date a DataTime object
 	 */
-	public function __construct($year) {
-		$page=$this->getPage(null, $year);
+	public function __construct($from_date) {		
+		$page=$this->getPage($from_date);
 		$this->rows=$this->getRows($page);
 	}
-	
+
 	/**
-	 * Retrieve the page by performing a post request.
+	 * Retrieve the notices whose validity period falls entirely in 
+	 * the specified one.
 	 * 
-	 * @param int $year
-	 * @return string the retrieved web page
+	 * @param $from_date a DateTime object
+	 * @param $to_date a DataTime object
 	 */
-	private function getPage($number, $year){
+	private function getPage($from_date){
 		$h=curl_init(ALBO_CT_URL);
 		if (!$h) throw new Exception("Unable to initialize cURL session");
+		
+		$start_year=$from_date->format('Y');
+		$start_month=$from_date->format('m');
+		$start_day=$from_date->format('d');
+		
 		curl_setopt($h, CURLOPT_POST, TRUE);
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		if ($number==null)
-			curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year));
-		else
-			curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year, "Numero"=>$number));
+		curl_setopt($h, CURLOPT_POSTFIELDS, 
+				array("__Click" => 0, 
+						"%%Surrogate_gg1"=>1, "gg1"=>$from_date->format('d'),
+						"%%Surrogate_mm1"=>1, "mm1"=>$from_date->format('m'),
+						"%%Surrogate_aa1"=>1, "aa1"=>$from_date->format('Y')
+				));
 				
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
@@ -100,7 +110,7 @@ class AlboComuneCTParser implements Iterator{
 		curl_close($h);
 		return $page;
 	}
-	
+
 	/**
 	 * Extract the rows of the table containing the Albo Entries from a result page.
 	 *
