@@ -49,11 +49,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-  FB.ui({
-	  method: 'share',
-	  href: 'https://developers.facebook.com/docs/',
-	}, function(response){});
-
  /**
   * Share the current page on facebook.
   */
@@ -89,18 +84,18 @@ function sharefb(){
 	<section id="links">
 		<h2>Per saperne di pi&ugrave</h2>
 		<p>
-			Visita il sito del progetto <a href="http://albopop">Albo POP</a> o
+			Visita il sito del progetto <a href="http://albopop.it" target="_blank">Albo POP</a> o
 			vieni al prossimo <a
-				href="https://www.facebook.com/events/1133850986634756/">Aperitivo
+				href="https://www.facebook.com/events/1133850986634756/" target="_blank">Aperitivo
 				POP</a> che si terr&agrave; Marted&igrave; 5 Aprile 2016 alle 19:00
 			presso l'associazione Chilometro Zero in via Grotte Bianche 56,
 			Catania.
 		</p>
 
 		<p class="links">
-			<a href="http://albopop.it"> <img alt="logo albo pop"
+			<a href="http://albopop.it" target="_blank"> <img alt="logo albo pop"
 				src="http://albopop.it/images/logo.png" />
-			</a> <a href="https://www.facebook.com/events/1133850986634756/"> <img
+			</a> <a href="https://www.facebook.com/events/1133850986634756/" target="_blank"> <img
 				alt="Aperitivo POP" src="../RSS/aperitivo-pop.png" />
 			</a>
 		</p>
@@ -109,15 +104,15 @@ function sharefb(){
 	<section id="credits">
 		<h2>Crediti</h2>
 		<p>
-			Questo albo pop &egrave; stato realizzato da <a href=\"http://hackspacecatania.it\">Hackspace
-				Catania</a> nell'ambito del progetto <a href=\"http://opendatahacklab.org\"><code>opendatahacklab</code>
+			Questo albo pop &egrave; stato realizzato da <a href="http://hackspacecatania.it" target="_blank">Hackspace
+				Catania</a> nell'ambito del progetto <a href="http://opendatahacklab.org" target="_blank"><code>opendatahacklab</code>
 			</a>.
 		</p>
 		<p class="links">
-			<a href="http://hackspacecatania.it/"> <img
+			<a href="http://hackspacecatania.it/" target="_blank"> <img
 				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
 				alt="LEARN MAKE HACK SHARE. Hackspace Catania" />
-			</a> <a href="http://opendatahacklab.org"> <img
+			</a> <a href="http://opendatahacklab.org" target="_blank"> <img
 				src="http://opendatahacklab.github.io/imgs/logo_cog4_ter.png"
 				alt="logo opendatahacklab" />
 			</a>
