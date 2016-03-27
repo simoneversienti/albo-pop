@@ -24,6 +24,9 @@
 //the following url is url-encoded
 define('ALBO_CT_URL','http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/Web%20Ricerca?OpenForm&AutoFramed');
 
+//number of months before today from which retrieve the notices
+define("NMONTHS","3");
+
 /**
  * Convenience class to represent single entry of the municipality of Catania Albo.
  *
@@ -80,6 +83,16 @@ class AlboComuneCTParser implements Iterator{
 	}
 
 	/**
+	 * Factory method to construct an instance which retrieves entries from
+	 * a default period of time ago.
+	 */
+	public static function create(){
+		$date=new DateTimeImmutable();
+		$pd=$date->sub(new DateInterval('P'.NMONTHS.'M'));
+		$parser = new AlboComuneCTParser($pd);
+		return $parser;
+	}
+	/**
 	 * Retrieve the notices whose validity period falls entirely in 
 	 * the specified one.
 	 * 
@@ -106,7 +119,7 @@ class AlboComuneCTParser implements Iterator{
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
 		if( $page==FALSE)
-			throw new Exception("Unable to execute POST request: "+curl_error());
+			throw new Exception("Unable to execute POST request: ".curl_error($h));
 		curl_close($h);
 		return $page;
 	}

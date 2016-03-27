@@ -23,7 +23,7 @@ $repertorio=$_GET['repertorio'];
 if (!isset($repertorio))
 	die("E' necessario specificare un numero di repertorio.");
 
-$entry = (new AlboComuneCTParser(2016))->getByRepertorio($repertorio);
+$entry = AlboComuneCTParser::create()->getByRepertorio($repertorio);
 if ($entry==null)
   die("Nessun elemento col numero di repertorio $repertorio");
 
