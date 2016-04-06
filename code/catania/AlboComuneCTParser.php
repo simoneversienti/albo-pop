@@ -25,7 +25,7 @@
 define('ALBO_CT_URL','http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/Web%20Ricerca?OpenForm&AutoFramed');
 
 //number of months before today from which retrieve the notices
-define("NMONTHS","3");
+define("NMONTHS","4");
 
 /**
  * Convenience class to represent single entry of the municipality of Catania Albo.
@@ -103,10 +103,6 @@ class AlboComuneCTParser implements Iterator{
 		$h=curl_init(ALBO_CT_URL);
 		if (!$h) throw new Exception("Unable to initialize cURL session");
 		
-		$start_year=$from_date->format('Y');
-		$start_month=$from_date->format('m');
-		$start_day=$from_date->format('d');
-		
 		curl_setopt($h, CURLOPT_POST, TRUE);
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($h, CURLOPT_POSTFIELDS, 
@@ -115,7 +111,6 @@ class AlboComuneCTParser implements Iterator{
 						"%%Surrogate_mm1"=>1, "mm1"=>$from_date->format('m'),
 						"%%Surrogate_aa1"=>1, "aa1"=>$from_date->format('Y')
 				));
-				
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
 		if( $page==FALSE)
