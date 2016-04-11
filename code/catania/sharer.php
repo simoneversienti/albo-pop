@@ -19,13 +19,23 @@
  */
 
 require("AlboComuneCTParser.php");
-$repertorio=$_GET['repertorio'];
-if (!isset($repertorio))
-	die("E' necessario specificare un numero di repertorio.");
 
-$entry = AlboComuneCTParser::create()->getByRepertorio($repertorio);
+//backward compatibility
+if (isset($_GET['repertorio'])){
+	$repertorioPieces=explode('/',$_GET['repertorio']);
+	$anno=trim($repertorioPieces[0]);
+	$numero=trim($repertorioPieces[1]);		
+} else {
+	$anno=$_GET['anno'];
+	$numero=$_GET['numero'];
+}
+
+if (!isset($anno) || !isset($numero))
+	die("E' necessario specificare anno e numero di repertorio.");
+
+$entry = AlboComuneCTParser::createByRepertorio($anno, $numero)->current();
 if ($entry==null)
-  die("Nessun elemento col numero di repertorio $repertorio");
+  die("Nessun elemento col numero di repertorio $anno \ $numero");
 
 $title="Albo POP Comune di Catania - Avviso $repertorio";
 $logo="ct-logo-pop.jpg";

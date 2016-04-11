@@ -33,7 +33,7 @@ foreach($parser as $r){
 		$feed->addItem('ERROR', null, null, $r->link, $r->link);
 	else{
 		$description=$r->repertorio." - ".$r->tipo.": ".$r->mittente_descrizione;
-		$newpagelink=RSSPATH.'sharer.php?repertorio='.urlencode($r->repertorio);
+		$newpagelink=RSSPATH.'sharer.php?anno='.urlencode($r->anno)."&numero=".urlencode($r->numero);
 		$feed->addItem($title, $description, null, $newpagelink, $newpagelink);
 	}
 }

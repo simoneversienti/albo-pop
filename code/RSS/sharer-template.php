@@ -77,36 +77,27 @@ function sharefb(){
 			</p>
 		</blockquote>
 		<p>
-			Vedi l'<a href="<?php echo $link?>" target="_blank">avviso originale</a> - Condividi
-			su <a href="#" onclick="sharefb()">Facebook</a>
+			Vedi l'<a href="<?php echo $link?>" target="_blank">avviso originale</a>
+			- Condividi su <a href="#" onclick="sharefb()">Facebook</a>
 		</p>
 	</section>
 	<section id="links">
-		<h2>Per saperne di pi&ugrave</h2>
+		<a href="http://albopop.it" target="_blank"> <img class="logo" alt="logo albo pop"
+			src="http://albopop.it/images/logo.png" />
+		</a>
 		<p>
-			Visita il sito del progetto <a href="http://albopop.it" target="_blank">Albo POP</a> o
-			vieni al prossimo <a
-				href="https://www.facebook.com/events/1133850986634756/" target="_blank">Aperitivo
-				POP</a> che si terr&agrave; Marted&igrave; 5 Aprile 2016 alle 19:00
-			presso l'associazione Chilometro Zero in via Grotte Bianche 56,
-			Catania.
-		</p>
-
-		<p class="links">
-			<a href="http://albopop.it" target="_blank"> <img alt="logo albo pop"
-				src="http://albopop.it/images/logo.png" />
-			</a> <a href="https://www.facebook.com/events/1133850986634756/" target="_blank"> <img
-				alt="Aperitivo POP" src="../RSS/aperitivo-pop.png" />
-			</a>
+			Per saperne di pi&ugrave visita il sito del progetto <a
+				href="http://albopop.it" target="_blank">Albo POP</a>.
 		</p>
 	</section>
 
 	<section id="credits">
 		<h2>Crediti</h2>
 		<p>
-			Questo albo pop &egrave; stato realizzato da <a href="http://hackspacecatania.it" target="_blank">Hackspace
-				Catania</a> nell'ambito del progetto <a href="http://opendatahacklab.org" target="_blank"><code>opendatahacklab</code>
-			</a>.
+			Questo albo pop &egrave; stato realizzato da <a
+				href="http://hackspacecatania.it" target="_blank">Hackspace Catania</a>
+			nell'ambito del progetto <a href="http://opendatahacklab.org"
+				target="_blank"><code>opendatahacklab</code> </a>.
 		</p>
 		<p class="links">
 			<a href="http://hackspacecatania.it/" target="_blank"> <img
@@ -117,9 +108,9 @@ function sharefb(){
 				alt="logo opendatahacklab" />
 			</a>
 		</p>
-<?php 
-	if (isset($credits)) echo $credits;
-?>
+		<?php 
+		if (isset($credits)) echo $credits;
+		?>
 	</section>
 
 </body>

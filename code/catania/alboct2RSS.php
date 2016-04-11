@@ -38,8 +38,8 @@ foreach($parser as $r){
 header('Content-type: application/rss+xml; charset=UTF-8');
 /*
  * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
-* (il server deve avere il locale italiano installato
-		*/
+ * (il server deve avere il locale italiano installato
+ */
 setlocale(LC_TIME, 'it_IT');
 echo $feed->getFeed();
 ?>

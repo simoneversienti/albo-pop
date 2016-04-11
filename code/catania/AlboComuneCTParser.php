@@ -53,6 +53,9 @@ class AlboComuneCTEntry{
 			throw new Exception("Multiple anchor nodes found in repertorio");
 		$repertorioAnchorNode=$repertorioAnchorNodes->item(0);
 		$this->repertorio=$repertorioAnchorNode->textContent;
+		$repertorioPieces=explode('/',$this->repertorio);
+		$this->anno=trim($repertorioPieces[0]);
+		$this->numero=trim($repertorioPieces[1]);		
 		
 		$this->link="http://www.comune.catania.gov.it".$repertorioAnchorNode->getAttribute("href");
 		$this->tipo=html_entity_decode(utf8_decode($cells->item(3)->textContent));
@@ -149,12 +152,12 @@ class AlboComuneCTParser implements Iterator{
 	
 	//helper function
 	/**
-	 * Get the (first) item with the specified value in the repertorio property.
-	 * Return null if no such entry exists.
+	 * Get the (first) item if any, null otherwise.
 	 */
-	public function getByRepertorio($repertorio){
+	public function getFirst($repertorio){
 		if ($this->rows->length<2) 
 			return null;
+		return new AlboComuneCTEntry($this->rows->item(0));
 		for($j=1; $j<$this->rows->length; $j++){
 			$entry=new AlboComuneCTEntry($this->rows->item($j));
 			if (!strcmp($repertorio, $entry->repertorio))
