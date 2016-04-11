@@ -23,7 +23,7 @@ require("AlboComuneCTParser.php");
 require("../RSS/RSSFeedGenerator.php");
 define ("RSSPATH","http://dev.opendatasicilia.it/albopop/catania/");
 
-$parser = AlboComuneCTParser::create();
+$parser = AlboComuneCTParser::createByDate();
 $feed=new RSSFeedGenerator("Albo del Comune di Catania", "Versione POP e social dell'Albo Pretorio del Comune di Catania", 
 		"http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/HomePage?Open&buffer=A20110301121017437GH",RSSPATH."alboct2RSS-social.php");
 foreach($parser as $r){

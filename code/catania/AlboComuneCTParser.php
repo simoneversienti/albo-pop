@@ -73,12 +73,12 @@ class AlboComuneCTParser implements Iterator{
 	private $i=1;
 	
 	/**
-	 *  Retrieve the entries relatives to the specified period.
+	 *  Retrieve the entries in the notice board results page.
+	 *  
 	 *  @param $from_date a DateTime object
 	 *  @param $to_date a DataTime object
 	 */
-	public function __construct($from_date) {		
-		$page=$this->getPage($from_date);
+	public function __construct($page) {		
 		$this->rows=$this->getRows($page);
 	}
 
@@ -86,27 +86,17 @@ class AlboComuneCTParser implements Iterator{
 	 * Factory method to construct an instance which retrieves entries from
 	 * a default period of time ago.
 	 */
-	public static function create(){
+	public static function createByDate(){
 		$date=new DateTimeImmutable();
-		$pd=$date->sub(new DateInterval('P'.NMONTHS.'M'));
-		$parser = new AlboComuneCTParser($pd);
-		return $parser;
-	}
-	/**
-	 * Retrieve the notices whose validity period falls entirely in 
-	 * the specified one.
-	 * 
-	 * @param $from_date a DateTime object
-	 * @param $to_date a DataTime object
-	 */
-	private function getPage($from_date){
+		$from_date=$date->sub(new DateInterval('P'.NMONTHS.'M'));
+		
 		$h=curl_init(ALBO_CT_URL);
 		if (!$h) throw new Exception("Unable to initialize cURL session");
 		
 		curl_setopt($h, CURLOPT_POST, TRUE);
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($h, CURLOPT_POSTFIELDS, 
-				array("__Click" => 0, 
+		curl_setopt($h, CURLOPT_POSTFIELDS,
+				array("__Click" => 0,
 						"%%Surrogate_gg1"=>1, "gg1"=>$from_date->format('d'),
 						"%%Surrogate_mm1"=>1, "mm1"=>$from_date->format('m'),
 						"%%Surrogate_aa1"=>1, "aa1"=>$from_date->format('Y')
@@ -115,10 +105,31 @@ class AlboComuneCTParser implements Iterator{
 		$page=curl_exec($h);
 		if( $page==FALSE)
 			throw new Exception("Unable to execute POST request: ".curl_error($h));
-		curl_close($h);
-		return $page;
+		curl_close($h);		
+		return new AlboComuneCTParser($page);
 	}
+	
+	/**
+	 * Retrieve the single notice with the specified number and year.
 
+	 * @param $year
+	 * @param $number
+	 */
+	public static function createByRepertorio($year, $number){
+		$h=curl_init(ALBO_CT_URL);
+		if (!$h) throw new Exception("Unable to initialize cURL session");
+		curl_setopt($h, CURLOPT_POST, TRUE);
+		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year, "Numero"=>$number));
+				
+		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
+		$page=curl_exec($h);
+		if( $page==FALSE)
+			throw new Exception("Unable to execute POST request: "+curl_error());
+		curl_close($h);
+		return new AlboComuneCTParser($page);
+	}
+	
 	/**
 	 * Extract the rows of the table containing the Albo Entries from a result page.
 	 *
