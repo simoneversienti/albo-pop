@@ -96,7 +96,7 @@ class RSSFeedGenerator{
 		if (isset($pubDate))
 			$itemEl->appendChild($this->createEscapedElement('pubDate', 
 					$pubDate->format(DateTime::RFC822)));				
-		$guidEl=$this->doc->createElement('guid', $guid);
+		$guidEl=$this->createEscapedElement('guid', $guid);
 		$guidEl->setAttribute('isPermaLink', 'true');
 		$itemEl->appendChild($guidEl);
 	}
