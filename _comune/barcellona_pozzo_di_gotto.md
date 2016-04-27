@@ -8,6 +8,6 @@ La pagina dell'albo pretorio del comune di **Barcellona Pozzo di Gotto** è ques
 Adesso puoi seguire le nuove pubblicazioni in albo in due modi dedicati:
 
 * su un canale **Telegram** [https://telegram.me/albopopbarcellonapg](https://telegram.me/albopopbarcellonapg);
-* treamite un **Feed RSS** [https://script.googleusercontent.com/macros/echo?user_content_key=OCgOljAlYR_xZnyWWiNBR-Pb_WBb4y0DsjMylC2f2fbxljTiwsjzQVn417inLaXyo4MzacMb4RjTVc40K9JmQhdVh3pYp4_-m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIrA70ibAoZmhAV1kAkN3PYDe0HHQVJTGBvt5citoQfZw0ekSEqPngNqmWyeLzh276OIp7sEUsJ2&lib=MskrfZzlx7zN6WacoCyLLcTcqYDhQuE81](https://script.googleusercontent.com/macros/echo?user_content_key=OCgOljAlYR_xZnyWWiNBR-Pb_WBb4y0DsjMylC2f2fbxljTiwsjzQVn417inLaXyo4MzacMb4RjTVc40K9JmQhdVh3pYp4_-m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIrA70ibAoZmhAV1kAkN3PYDe0HHQVJTGBvt5citoQfZw0ekSEqPngNqmWyeLzh276OIp7sEUsJ2&lib=MskrfZzlx7zN6WacoCyLLcTcqYDhQuE81).
+* treamite un **Feed RSS** [https://script.google.com/macros/s/AKfycbzDyOP18Jwt0k6VSHskxHsFKdv9V47yYzQT8LWwgicwVeWGerE/exec](https://script.google.com/macros/s/AKfycbzDyOP18Jwt0k6VSHskxHsFKdv9V47yYzQT8LWwgicwVeWGerE/exec).
 
 **Autore**: [salvob84](https://github.com/salvob84)
