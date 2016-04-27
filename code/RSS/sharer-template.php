@@ -104,7 +104,7 @@ function sharefb(){
 				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
 				alt="LEARN MAKE HACK SHARE. Hackspace Catania" />
 			</a> <a href="http://opendatahacklab.org" target="_blank"> <img
-				src="http://opendatahacklab.github.io/imgs/logo_cog4_ter.png"
+				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
 				alt="logo opendatahacklab" />
 			</a>
 		</p>
