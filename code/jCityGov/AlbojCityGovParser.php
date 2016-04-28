@@ -118,13 +118,11 @@ class  AlbojCityGovParser implements Iterator{
 		curl_close($h);
 		$this->rows=str_getcsv($retrievedData,"\n");
 		$this->index=1;
-		echo $retrievedData;
 	}	
 	
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
 	
 	public function current(){
-		echo "Index ".$this->index;
 		return new AlbojCityGovEntry($this->rows[$this->index]);
 	}
 	
