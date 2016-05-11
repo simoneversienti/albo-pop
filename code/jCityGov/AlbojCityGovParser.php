@@ -53,11 +53,20 @@ class AlbojCityGovEntry{
 	public $data_inizio_pubblicazione;
 	public $data_fine_pubblicazione;
 	
+	public $is_well_formed;
+	
 	/**
 	 * Create an entry from a csv row
 	 */
 	public function __construct($rowStr){
 		$row=str_getcsv($rowStr);
+		$size=count($row);
+		
+		if ($size<24){
+			$this->is_well_formed=false;
+			return;
+		} 
+				
 		$this->proponente=$row[0];
 		$this->proponente_descrizione=$row[1];
 		$this->oggetto=$row[2];
@@ -82,8 +91,10 @@ class AlbojCityGovEntry{
 		$this->estremi_dei_principali_documenti=$row[21];
 		$this->data_inizio_pubblicazione=AlbojCityGovEntry::getDate($row[22]);
 		$this->data_fine_pubblicazione=AlbojCityGovEntry::getDate($row[23]);
+		$this->is_well_formed=$this->data_inizio_pubblicazione!=null && $this->data_fine_pubblicazione!=null;		
 	}	
 	
+
 	/**
 	 * Get a date from a string, if the string is not null and not empty.
 	 * Otherwise, return null.
@@ -117,6 +128,8 @@ class  AlbojCityGovParser implements Iterator{
 			throw new Exception("Unable to execute request: ".curl_error($h));
 		curl_close($h);
 		$this->rows=str_getcsv($retrievedData,"\n");
+//		$handle=fopen("feed.csv", "r");
+//		$this->rows=fgetcsv($handle,"\n");
 		$this->index=1;
 	}	
 	

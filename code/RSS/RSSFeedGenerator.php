@@ -101,6 +101,16 @@ class RSSFeedGenerator{
 		$itemEl->appendChild($guidEl);
 	}
 	
+	/**
+	 * Add a comment as next child of the channel element.
+	 * 
+	 * @param unknown_type $comment
+	 */
+	public function addComment($comment){
+		$commentEl=$this->doc->createComment($comment);
+		$this->channelEl->appendChild($commentEl);
+		
+	}
 	
 	/**
 	 * Create a DOM element with the specified tag name and a text child with the specified content.

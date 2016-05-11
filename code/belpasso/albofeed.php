@@ -21,16 +21,19 @@
 
 require("../jCityGov/AlbojCityGovParser.php");
 require("../RSS/RSSFeedGenerator.php");
-define("ALBO_URL","http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=80B6AF9A15507BC123B7E2811D89A54B?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=exportList&p_p_cacheability=cacheLevelPage&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_format=csv");
+define("ALBO_URL","http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=exportList&p_p_cacheability=cacheLevelPage&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_format=csv");
 
 $parser = new AlbojCityGovParser(ALBO_URL);
 $feed=new RSSFeedGenerator("Albo del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
  		ALBO_URL,"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
 foreach($parser as $r){
- 	$link="http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php?anno=".urlencode($r->anno_registrazione)."&numero=".urlencode($r->numero_registrazione);
- 	$feed->addItem($r->oggetto, 
- 			$r->anno_registrazione.'/'.$r->numero_registrazione.'['.$r->titolo_categoria.','.$r->titolo_sottocategoria.','.$r->proponente_descrizione.']'.$r->oggetto, 
- 		$r->data_inizio_pubblicazione, $link, $link);
+	if ($r->is_well_formed){
+	 	$link="http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php?anno=".urlencode($r->anno_registrazione)."&numero=".urlencode($r->numero_registrazione);
+	 	$feed->addItem($r->oggetto, 
+	 			$r->anno_registrazione.'/'.$r->numero_registrazione.'['.$r->titolo_categoria.','.$r->titolo_sottocategoria.','.$r->proponente_descrizione.']'.$r->oggetto, 
+	 		$r->data_inizio_pubblicazione, $link, $link);
+	} else
+		$feed->addComment("Invalid element at line ".$parser->key());
 }
 
 //output
