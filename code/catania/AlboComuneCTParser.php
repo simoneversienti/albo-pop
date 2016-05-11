@@ -25,7 +25,7 @@
 define('ALBO_CT_URL','http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/Web%20Ricerca?OpenForm&AutoFramed');
 
 //number of months before today from which retrieve the notices
-define("NMONTHS","4");
+define("NMONTHS","1");
 
 /**
  * Convenience class to represent single entry of the municipality of Catania Albo.
@@ -125,6 +125,26 @@ class AlboComuneCTParser implements Iterator{
 		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year, "Numero"=>$number));
 				
+		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
+		$page=curl_exec($h);
+		if( $page==FALSE)
+			throw new Exception("Unable to execute POST request: "+curl_error());
+		curl_close($h);
+		return new AlboComuneCTParser($page);
+	}
+	
+	/**
+	 * Retrieve the albo pages with all the notices of the current year
+	 */
+	public static function createByYear(){
+		$currentYear=(new DateTimeImmutable())->format('Y');
+		
+		$h=curl_init(ALBO_CT_URL);
+		if (!$h) throw new Exception("Unable to initialize cURL session");
+		curl_setopt($h, CURLOPT_POST, TRUE);
+		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$currentYear, "Numero" => ""));
+	
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
 		if( $page==FALSE)
