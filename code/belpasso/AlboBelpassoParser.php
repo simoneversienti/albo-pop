@@ -95,7 +95,7 @@ class AlboBelpassoEntry{
 		//both start and end time
 		$inizio_pubblicazione=substr($inizio_fine_pubblicazione,0,10);
 		$fine_pubblicazione=substr($inizio_fine_pubblicazione,10);
-		return array($this->parseDate($fine_pubblicazione), 
+		return array($this->parseDate($inizio_pubblicazione), 
 				$this->parseDate($fine_pubblicazione));		
 	}
 
