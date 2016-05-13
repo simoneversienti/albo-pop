@@ -18,8 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio');
-//define('ALBO_UNICT_URL','sample.html');
 define('DATE_FORMAT','d/m/Y');
 define('CONTENT_SEPARATOR','/');
 
@@ -151,9 +149,9 @@ class AlboBelpassoParser implements Iterator{
 	/**
 	 * Factory Method. Get the entries from the albo pretorio web page.
 	 */
-	public static function createFromWebPage(){
+	public static function createFromWebPage($url){
 		$page = new DOMDocument();
-		$page->loadHTMLfile(ALBO_URL);
+		$page->loadHTMLfile($url);
 		return new AlboBelpassoParser($page);
 	}
 	
@@ -192,12 +190,4 @@ class AlboBelpassoParser implements Iterator{
 		return $this->rows->length>1 && $this->index<$this->rows->length;
 	}
 }
-
-$albo=AlboBelpassoParser::createFromWebPage();
-foreach($albo as $e){
-	echo "Anno ".$e->anno_registro." numero ".$e->numero_registro.
-		"tipo ".$e->tipo_atto." sottotipo ".$e->sottotipo_atto." oggetto ".$e->oggetto.
-		" inizio ".$e->data_inizio_pubblicazione->format(DATE_FORMAT)." fine ".$e->data_fine_pubblicazione->format(DATE_FORMAT)." URL ".$e->url."\n";
-}
-
 ?>
