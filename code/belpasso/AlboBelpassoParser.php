@@ -34,6 +34,7 @@ class AlboBelpassoEntry{
 	var $oggetto;
 	var $data_inizio_pubblicazione;
 	var $data_fine_pubblicazione;
+	var $url;
 
 	/**
 	 * Create an entry by parsing a table row.
@@ -57,6 +58,8 @@ class AlboBelpassoEntry{
 		$this->data_inizio_pubblicazione=$inizio_fine_pubblicazione[0];
 		if (count($inizio_fine_pubblicazione)>1)
 			$this->data_fine_pubblicazione=$inizio_fine_pubblicazione[1];
+		
+		$this->url=$this->parseURL($cells->item(4));
 		
 	}	
 	
@@ -97,16 +100,27 @@ class AlboBelpassoEntry{
 		return array($this->parseDate($fine_pubblicazione), 
 				$this->parseDate($fine_pubblicazione));		
 	}
+
+	/**
+	 * Get the url from the corresponding table cell.
+	 * 
+	 * @return the url as string if any
+	 */
+	private function parseURL($td){
+		$anchors=$td->getElementsByTagName('a');
+		foreach($anchors as $a)
+			if (strcmp($a->getAttribute('title'), 'Apri Dettaglio')==0)
+				return $a->getAttribute('href');
+		throw new Exception("No URL found.");		
+	}
 	
 	/**
 	 *
 	 * @param string $dateStr
 	 */
 	private function parseDate($dateStr){
-		echo "Parsing ".$dateStr;
 		$d=DateTime::createFromFormat(DATE_FORMAT,
 				trim($dateStr));
-		echo "- the new ".$dateStr;
 		if ($d==FALSE) throw new Exception("Unable to parse date - $dateStr -");
 		$d->setTime(0,0);
 		return $d;
@@ -183,7 +197,7 @@ $albo=AlboBelpassoParser::createFromWebPage();
 foreach($albo as $e){
 	echo "Anno ".$e->anno_registro." numero ".$e->numero_registro.
 		"tipo ".$e->tipo_atto." sottotipo ".$e->sottotipo_atto." oggetto ".$e->oggetto.
-		" inizio ".$e->data_inizio_pubblicazione->format(DATE_FORMAT)." fine ".$e->data_fine_pubblicazione->format(DATE_FORMAT)."\n";
+		" inizio ".$e->data_inizio_pubblicazione->format(DATE_FORMAT)." fine ".$e->data_fine_pubblicazione->format(DATE_FORMAT)." URL ".$e->url."\n";
 }
 
 ?>
