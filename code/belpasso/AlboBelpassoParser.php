@@ -155,8 +155,6 @@ class AlboBelpassoParser implements Iterator{
 		return new AlboBelpassoParser($page);
 	}
 
-//numeroRegistrazioneDa=1216&annoRegistrazioneDa=2016
-
 	/**
 	 * Factory Method. Get a parser instance with a single item corresponding to the 
 	 * notice with the specified parameters.
@@ -164,44 +162,7 @@ class AlboBelpassoParser implements Iterator{
 	 * Actually this method does not work, see 
 	 */
 	public static function getSingleEntry($formurl, $year, $number){
-		$h=curl_init($formurl);
-		if (!$h) throw new Exception("Unable to initialize cURL session");
-		curl_setopt($h, CURLOPT_POST, TRUE);
-		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($h, CURLOPT_POSTFIELDS, array("annoRegistrazioneDa"=>"$year", 
-			"numeroRegistrazioneDa"=>"$number", 
-			"submitButton"=>"doFilter",
-			"ritornaRicercaAvanzata"=>"false",
-			"proponenteDescrizione"=>"",
-			"proponenteDescrizioneType"=>"almenoUnaParola",
-			"oggetto" =>"",
-			"oggettoType"=>"almenoUnaParola",
-			"annoRegistrazioneA"=>"",
-			"numeroRegistrazioneA"=>"",
-			"annoDa"=>"",
-			"annoA"=>"",
-			"numeroDa"=>"",
-			"numeroA"=>"",
-			"annoProtocolloDa"=>"",
-			"annoProtocolloA"=>"",
-			"dirigenteDescrizione"=>"",
-			"dirigenteDescrizioneType"=>"almenoUnaParola",
-			"assessoreDescrizione"=>"",
-			"assessoreDescrizioneType"=>"almenoUnaParola",
-			"mittente"=>"",
-			"mittenteType"=>"almenoUnaParola",
-			"orderBy"=>"oggetto",
-			"orderType"=>"ASC"
-			));
-				
-		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
-		$page=curl_exec($h);
-		if( $page==FALSE)
-			throw new Exception("Unable to execute POST request: "+curl_error());
-		curl_close($h);
-		$pageXML = new DOMDocument();
-		$pageXML->loadHTML($page);
-		return new AlboBelpassoParser($pageXML);
+		return AlboBelpassoParser::createFromWebPage($formurl."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
 	}
 	
 	/**
@@ -221,6 +182,7 @@ class AlboBelpassoParser implements Iterator{
 		if ($table==null) throw new Exception("No table element found.");
 		return $table;
 	}	
+	
 	/**
 	 * Get the first element with the specified tag name in the
 	 * subtree with the specified root.

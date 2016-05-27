@@ -23,9 +23,8 @@ require("AlboBelpassoParser.php");
 require("../RSS/RSSFeedGenerator.php");
 define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio');
 define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro'); 
-//$parser = AlboBelpassoParser::createFromWebPage(ALBO_URL);
-//$parser = AlboBelpassoParser::createFromWebPage('http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro&numeroRegistrazioneDa=1216&annoRegistrazioneDa=2016');
-$parser = AlboBelpassoParser::getSingleEntry(SELECTION_FORM_URL, '2016','1216');
+$parser = AlboBelpassoParser::createFromWebPage(ALBO_URL);
+//$parser = AlboBelpassoParser::getSingleEntry(SELECTION_FORM_URL, '2016','1216');
 $feed=new RSSFeedGenerator("Albo del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
  		ALBO_URL,"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
 foreach($parser as $r){
