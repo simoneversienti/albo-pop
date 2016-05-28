@@ -28,10 +28,10 @@ $feed=new RSSFeedGenerator("Albo del Comune di Belpasso", "Versione POP dell'Alb
  		ALBO_URL,"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
 foreach($parser as $r){
  	//$link="http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php?anno=".urlencode($r->anno_registrazione)."&numero=".urlencode($r->numero_registrazione);
- 	$sharer_url="sharer.php?year=".$r->anno_registro."&number=".$r->numero_registro;
+ 	$sharer_url="http://dev.opendatasicilia.it/albopop/belpasso/sharer.php?year=".$r->anno_registro."&number=".$r->numero_registro;
  	$feed->addItem($r->oggetto, 
  			$r->anno_registro.'/'.$r->numero_registro.'['.$r->tipo_atto.','.$r->sottotipo_atto.']'.$r->oggetto, 
- 		$r->data_inizio_pubblicazione, $r->url, $r->url);
+ 		$r->data_inizio_pubblicazione, $sharer_url, $sharer_url);
 }
 
 //output
