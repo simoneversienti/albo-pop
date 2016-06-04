@@ -35,10 +35,10 @@ $date=$entry->data_inizio_pubblicazione->format(DATE_FORMAT);
 $title="Albo POP Comune di Belpasso - Avviso $year / $number del $date";
 	
 $logo="logo_small.jpg";
-$description='<em>Tipologia</em>:'.$entry->tipo_atto.','.$entry->sottotipo_atto
-.'. <em>Oggetto:</em>'.$entry->oggetto;
+$description='Tipologia:'.$entry->tipo_atto.','.$entry->sottotipo_atto
+.'. Oggetto:'.$entry->oggetto;
 
-$link=$entry->link;
+$link=$entry->url;
 $css="../RSS/sharer.css";
 $credits="<p>Il logo di questo albo pop &egrave; stato ottenuto dallo stemma del comune di Belpasso
 			riportato sulla <a href=\"http://turismo.provincia.ct.it/il-territorio/i-58-comuni/belpasso.aspx\">pagina del sito della citt&agrave; metropolitana di catania</a>,
