@@ -21,7 +21,9 @@
 
 require("AlboBelpassoParser.php");
 require("../RSS/RSSFeedGenerator.php");
-define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio');
+//define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio');
+define('MAX_NUM_ITEMS','200');
+define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio?p_auth=92oCQYZB&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiPaginazione&hidden_page_size='.MAX_NUM_ITEMS);
 $parser = AlboBelpassoParser::createFromWebPage(ALBO_URL);
 //$parser = AlboBelpassoParser::getSingleEntry(SELECTION_FORM_URL, '2016','1216');
 $feed=new RSSFeedGenerator("Albo del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
