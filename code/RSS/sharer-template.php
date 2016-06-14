@@ -70,6 +70,9 @@ function sharefb(){
 			<?php echo $title;?>
 		</h1>
 	</header>
+	<?php if (isset($news))
+		echo "\t<section id=\"news\">\n\t\t<p>$news</p>\n\t</section>\n";
+		?>
 	<section id="avviso">
 		<blockquote cite="<?php echo $link?>">
 			<p>
@@ -97,8 +100,10 @@ function sharefb(){
 			Questo albo pop &egrave; stato realizzato da <a
 				href="http://hackspacecatania.it" target="_blank">Hackspace Catania</a>
 			nell'ambito del progetto <a href="http://opendatahacklab.org"
-				target="_blank"><code>opendatahacklab</code> </a>.
-		</p>
+				target="_blank"><code>opendatahacklab</code> </a>
+<?php if (isset($supporter_name))
+	echo " col supporto di <em>$supporter_name</em>"?>
+		.</p>
 		<p class="links">
 			<a href="http://hackspacecatania.it/" target="_blank"> <img
 				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
@@ -107,9 +112,11 @@ function sharefb(){
 				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
 				alt="logo opendatahacklab" />
 			</a>
+		<?php if (isset($supporter_name) && isset($supporter_img))
+			echo "<img src=\"$supporter_img\" alt=\"$supporter_name\" />"?>	
 		</p>
 		<?php 
-		if (isset($credits)) echo $credits;
+		if (isset($credits)) echo "<p class=\"credits\">$credits</p>\n";
 		?>
 	</section>
 

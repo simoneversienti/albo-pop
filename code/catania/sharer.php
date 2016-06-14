@@ -42,9 +42,12 @@ $logo="ct-logo-pop.jpg";
 $description=$entry->repertorio." - ".$entry->tipo.": ".$entry->mittente_descrizione;
 $link=$entry->link;
 $css="../RSS/sharer.css";
-$credits="<p>Il logo di questo albo pop &egrave; stato ottenuto dalla 
+$news="Vieni a conoscere il progetto <a href=\"http://albopop.it\">Albo POP</a> al prossimo <a href=\"http://www.opendatahacklab.org/site/eventdetails.html?iri=http%3A%2F%2Fopendatahacklab.org%2Fontology%2Fevents%2F02072016\">Aperitivo Pop</a></em>
+a Belpasso (CT) Sabato 2 Luglio 2016 alle ore 19:00 presso il Wine Bar Efesto in via XIX traversa numero 66
+		(vedi anche l'<a href=\"https://www.facebook.com/events/602434039925008/\">Evento Facebook</a>).";
+
+$credits="Il logo di questo albo pop &egrave; stato ottenuto dalla 
 			pagina di Wikipedia che riporta lo <a href=\"https://it.wikipedia.org/wiki/File:Catania-Stemma.png\">stemma del comune di Catania</a>,
-			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.
-		</p>";
+			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.";
 require("../RSS/sharer-template.php");
 ?>

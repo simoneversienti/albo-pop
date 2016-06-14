@@ -33,16 +33,19 @@ if ($entry==null)
 $date=$entry->data_inizio_pubblicazione->format(DATE_FORMAT);
   
 $title="Albo POP Comune di Belpasso - Avviso $year / $number del $date";
-	
-$logo="logo_small.jpg";
+$logo="logo.png";
+$news="Vieni a conoscere il progetto <a href=\"http://albopop.it\">Albo POP</a> al prossimo <a href=\"http://www.opendatahacklab.org/site/eventdetails.html?iri=http%3A%2F%2Fopendatahacklab.org%2Fontology%2Fevents%2F02072016\">Aperitivo Pop</a></em>
+a Belpasso (CT) Sabato 2 Luglio 2016 alle ore 19:00 presso il Wine Bar Efesto in via XIX traversa numero 66
+		(vedi anche l'<a href=\"https://www.facebook.com/events/602434039925008/\">Evento Facebook</a>).";
 $description='Tipologia:'.$entry->tipo_atto.','.$entry->sottotipo_atto
 .'. Oggetto:'.$entry->oggetto;
 
 $link=$entry->url;
 $css="../RSS/sharer.css";
-$credits="<p>Il logo di questo albo pop &egrave; stato ottenuto dallo stemma del comune di Belpasso
+$supporter_name="David Montenegro";
+$supporter_img="montenegro.png";
+$credits="Il logo di questo albo pop &egrave; stato ottenuto dallo stemma del comune di Belpasso
 			riportato sulla <a href=\"http://turismo.provincia.ct.it/il-territorio/i-58-comuni/belpasso.aspx\">pagina del sito della citt&agrave; metropolitana di catania</a>,
-			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.
-		</p>";
+			elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.";
 require("../RSS/sharer-template.php");
 ?>

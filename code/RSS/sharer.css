@@ -50,6 +50,15 @@ section {
 	padding: 0 0 0 0;
 }
 
+#news{
+	margin: 0 0 0 0;
+	background-color : #000066;
+	color : white;
+}
+
+#news a{
+	color : #dddddd;
+}
 p {
 	margin: 0 0 0 0;
 	padding: 1em 2em 1em 2em;
@@ -91,4 +100,8 @@ nav {
 
 nav a {
 	text-decoration: none;
+}
+
+p.credits{
+	clear : both;
 }
