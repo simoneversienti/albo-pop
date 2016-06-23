@@ -74,10 +74,11 @@ class AlboTorinoSubPageParser implements Iterator{
 	 * @param unknown $row
 	 */
 	private function parseRow($row){
-		$e=new AlboTorinoEntry();
-		$codice_meccanografico_cell_values=$this->parseCodiceMeccanograficoCell($row->childNodes->item(0), $e);
-//		$oggetto_cell=$row->childNodes(0);
-		return $e;
+		$entry=new AlboTorinoEntry();
+		$tds=$row->getElementsByTagName('td');
+		$this->parseCodiceMeccanograficoCell($tds->item(0), $entry);
+		$this->parseOggettoCell($tds->item(1), $entry);
+		return $entry;
 	}
 	
 	/**
@@ -118,11 +119,33 @@ class AlboTorinoSubPageParser implements Iterator{
 		$entry->year=trim($codice_meccanografico_pieces[0]);
 		$entry->number=trim($codice_meccanografico_pieces[1]);
 	} 
+	
+	/**
+	 * Parse the cell oggetto
+	 *
+	 * @param DOMElement $cell the table row cell
+	 * #param AlboTorinoEntry $entry the entry which will receive the parsed content
+	 */
+	private function parseOggettoCell($cell, $entry){
+		for($i=0; $i<$cell->childNodes->length; $i++){
+			$n=$cell->childNodes->item($i);
+			if ($n->nodeType==XML_ELEMENT_NODE && !strcmp('span',$n->tagName))
+				$entry->subject=$n->textContent;			
+		}
+		if ($entry->subject==null)
+			$entry->parseErrors.="No subject specified.";		
+	}	
 }
 
-$a=new AlboTorinoSubPageParser("http://www.comune.torino.it/albopretorio/albogiunta.shtml", "tipe");
+
+
+//$a=new AlboTorinoSubPageParser("http://www.comune.torino.it/albopretorio/albogiunta.shtml", "tipe");
+$a=new AlboTorinoSubPageParser("http://www.comune.torino.it/albopretorio/albodetermine.shtml", "tipe");
 $i=0;
 foreach($a as $e){
-	echo "$i year ".($e->year)." number ".($e->number)." link \"".($e->link)."\" errors ".$e->parseErrors."\n";
+	echo "$i year ".($e->year)." number ".($e->number)."\n"; 
+	echo "link ".($e->link)." \n";
+	echo "subject ".$e->subject." \n";
+	echo "errors ".$e->parseErrors."\n -------------------- \n";
 	$i++;
 }
