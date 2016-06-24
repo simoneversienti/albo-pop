@@ -130,10 +130,24 @@ class AlboTorinoSubPageParser implements Iterator{
 		for($i=0; $i<$cell->childNodes->length; $i++){
 			$n=$cell->childNodes->item($i);
 			if ($n->nodeType==XML_ELEMENT_NODE && !strcmp('span',$n->tagName))
-				$entry->subject=$n->textContent;			
+				$entry->subject=$n->textContent;
+			else if ($n->nodeType==XML_TEXT_NODE && 
+					strpos($n->textContent,'In pubblicazione dal')){
+				$dateStr=preg_replace('/.*In pubblicazione dal /','',$n->textContent);
+				$startDateStr=substr($dateStr,0,10);
+				$entry->startDate=DateTimeImmutable::createFromFormat('d/m/Y',$startDateStr);
+				$entry->startDate->setTime(0,0);
+				$endDateStr=substr($dateStr,14,10);
+				$entry->endDate=DateTimeImmutable::createFromFormat('d/m/Y', $endDateStr);
+				$entry->endDate->setTime(0,0);
+			}
 		}
 		if ($entry->subject==null)
 			$entry->parseErrors.="No subject specified.";		
+		if ($entry->startDate==null)
+			$entry->parseErrors.="No start date specified.";		
+		if ($entry->endDate==null)
+			$entry->parseErrors.="No end date specified.";		
 	}	
 }
 
@@ -146,6 +160,7 @@ foreach($a as $e){
 	echo "$i year ".($e->year)." number ".($e->number)."\n"; 
 	echo "link ".($e->link)." \n";
 	echo "subject ".$e->subject." \n";
+	echo "start ".$e->startDate->format('d/m/Y')." end ".$e->endDate->format('d/m/Y')."\n";
 	echo "errors ".$e->parseErrors."\n -------------------- \n";
 	$i++;
 }
