@@ -147,10 +147,10 @@ class AlboTorinoSubPageParser implements Iterator{
 					preg_match($inPubblicazionePattern, $n->textContent)){
 				$dateStr=preg_replace($inPubblicazionePattern,'',strtoupper($n->textContent));
 				$startDateStr=substr($dateStr,0,10);
-				$entry->startDate=DateTimeImmutable::createFromFormat('d/m/Y',$startDateStr);
+				$entry->startDate=DateTime::createFromFormat('d/m/Y',$startDateStr);
 				$entry->startDate->setTime(0,0);
 				$endDateStr=substr($dateStr,14,10);
-				$entry->endDate=DateTimeImmutable::createFromFormat('d/m/Y', $endDateStr);
+				$entry->endDate=DateTime::createFromFormat('d/m/Y', $endDateStr);
 				$entry->endDate->setTime(0,0);
 			}
 		}
