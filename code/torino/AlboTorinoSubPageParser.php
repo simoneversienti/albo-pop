@@ -21,30 +21,30 @@
 require('AlboTorinoEntry.php');
 
 class AlboTorinoSubPageParser implements Iterator{
-
-	private $category;
 	private $rows;
 	private $index;
 	
 	/**
 	 * Parse the entries of the Albo from the rows of the table in the Albo Pretorio page.
 	 *
-	 * @param $url string url to retrieve the subpage
+	 * @param $page the DOMDocument containing the web page
 	 * @param $category category of the retrieved notices
 	 */
-	public function __construct($url, $category) {
-		$page = new DOMDocument();
-		$page->loadHTMLfile($url);
+	public function __construct($page) {
 		$tables=$page->getElementsByTagName("table");
-		if ($tables->length<1)
-			throw new Exception("No table element found");
-		if ($tables->length>1)
+		if ($tables->length<1){
+			$this->rows=new DOMNodeList();
+			$this->index=-1;
+		}
+		else if ($tables->length>1)
 			throw new Exception("Multiple table elements found");
-		$this->rows=$tables->item(0)->getElementsByTagName('tr');
-		$this->index=1;
-		$count=$this->rows->length;
+		else{
+			$this->rows=$tables->item(0)->getElementsByTagName('tr');
+			$this->index=1;
+			$count=$this->rows->length;
+		}
 	}
-
+	
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
 	
 	public function current(){
@@ -106,10 +106,6 @@ class AlboTorinoSubPageParser implements Iterator{
 			$entry->parseErrors.="Link not found.";
 			return;
 		}
-		if ($aElements->length>1){
-			$entry->parseErrors.="Multiple links";
-			return;
-		}
 		$aElement=$aElements->item(0);		
 		$entry->link=$aElement->getAttribute('href');
 		
@@ -127,13 +123,16 @@ class AlboTorinoSubPageParser implements Iterator{
 	 * #param AlboTorinoEntry $entry the entry which will receive the parsed content
 	 */
 	private function parseOggettoCell($cell, $entry){
+		$inPubblicazionePattern='/.*IN PUBBLICAZIONE DAL /i';
 		for($i=0; $i<$cell->childNodes->length; $i++){
 			$n=$cell->childNodes->item($i);
-			if ($n->nodeType==XML_ELEMENT_NODE && !strcmp('span',$n->tagName))
+			if ($n->nodeType==XML_ELEMENT_NODE && 
+					!strcmp('span',$n->tagName) &&
+					!strcmp('oggetto', $n->getAttribute('class')))
 				$entry->subject=$n->textContent;
 			else if ($n->nodeType==XML_TEXT_NODE && 
-					strpos($n->textContent,'In pubblicazione dal')){
-				$dateStr=preg_replace('/.*In pubblicazione dal /','',$n->textContent);
+					preg_match($inPubblicazionePattern, $n->textContent)){
+				$dateStr=preg_replace($inPubblicazionePattern,'',strtoupper($n->textContent));
 				$startDateStr=substr($dateStr,0,10);
 				$entry->startDate=DateTimeImmutable::createFromFormat('d/m/Y',$startDateStr);
 				$entry->startDate->setTime(0,0);
@@ -150,17 +149,4 @@ class AlboTorinoSubPageParser implements Iterator{
 			$entry->parseErrors.="No end date specified.";		
 	}	
 }
-
-
-
-//$a=new AlboTorinoSubPageParser("http://www.comune.torino.it/albopretorio/albogiunta.shtml", "tipe");
-$a=new AlboTorinoSubPageParser("http://www.comune.torino.it/albopretorio/albodetermine.shtml", "tipe");
-$i=0;
-foreach($a as $e){
-	echo "$i year ".($e->year)." number ".($e->number)."\n"; 
-	echo "link ".($e->link)." \n";
-	echo "subject ".$e->subject." \n";
-	echo "start ".$e->startDate->format('d/m/Y')." end ".$e->endDate->format('d/m/Y')."\n";
-	echo "errors ".$e->parseErrors."\n -------------------- \n";
-	$i++;
-}
+?>
