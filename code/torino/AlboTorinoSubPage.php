@@ -22,32 +22,12 @@
 require('AlboTorinoSubPageParser.php');
 
 class AlboTorinoSubPage{
-	private $uri;
-	private $title;
+	public $uri;
+	public $title;
 	
 	public function __construct($uri, $title){
 		$this->uri=$uri;
 		$this->title=$title;
-	}
-	
-	/**
-	 * Retrieve the web page from the internet
-	 * 
-	 * @return an Iterator of AlboTorinoEntry instances representing the entries of the page.
-	 * @throws Exception if retrieving fails for some reason
-	 */
-	public function retrieve(){
-		$page = new DOMDocument();
-		if (!$page->loadHTMLfile($this->uri))
-			throw new Exception("Unable to download page $this->uri");
-		return new AlboTorinoSubPageParser($page);
-	}
-	
-	/**
-	 * Return the title of the subpage. It represents a sort of category.
-	 */
-	public function getTitle(){
-		return $this->title;
-	}
+	}		
 } 
 ?>

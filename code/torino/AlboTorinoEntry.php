@@ -20,7 +20,8 @@
 class AlboTorinoEntry{
 	public $year; 
 	public $number;
-	public $type; //string
+	public $category; //string
+	public $subPageURI;
 	public $subject;
 	public $link; //url as String
 	public $startDate; //DateTime

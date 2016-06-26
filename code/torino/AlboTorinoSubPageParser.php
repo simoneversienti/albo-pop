@@ -21,16 +21,36 @@
 require('AlboTorinoEntry.php');
 
 class AlboTorinoSubPageParser implements Iterator{
+	private $uri;
+	private $category;	
+	private $linkUriPrefix;
 	private $rows;
 	private $index;
 	
 	/**
+	 * Retrieve the web page from the internet
+	 *
+	 * @return an Iterator of AlboTorinoEntry instances representing the entries of the page.
+	 * @throws Exception if retrieving fails for some reason
+	 */
+	public function retrieve(){
+			return new AlboTorinoSubPageParser($page, $this->title);
+	}
+	
+	/**
 	 * Parse the entries of the Albo from the rows of the table in the Albo Pretorio page.
 	 *
-	 * @param $page the DOMDocument containing the web page
+	 * @param $uri of the sub page to be parsed
 	 * @param $category category of the retrieved notices
+	 * @param $linkUriPrefix prefix for links
 	 */
-	public function __construct($page) {
+	public function __construct($uri, $category, $linkUriPrefix) {
+		$this->uri=$uri;
+		$this->linkUriPrefix=$linkUriPrefix;
+		$page = new DOMDocument();
+		if (!$page->loadHTMLfile($uri))
+			throw new Exception("Unable to download page $uri");
+		$this->category=$category;
 		$tables=$page->getElementsByTagName("table");
 		if ($tables->length<1){
 			$this->rows=new DOMNodeList();
@@ -44,7 +64,7 @@ class AlboTorinoSubPageParser implements Iterator{
 			$count=$this->rows->length;
 		}
 	}
-	
+			
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
 	
 	public function current(){
@@ -75,9 +95,11 @@ class AlboTorinoSubPageParser implements Iterator{
 	 */
 	private function parseRow($row){
 		$entry=new AlboTorinoEntry();
+		$entry->subPageURI=$this->uri;
 		$tds=$row->getElementsByTagName('td');
 		$this->parseCodiceMeccanograficoCell($tds->item(0), $entry);
 		$this->parseOggettoCell($tds->item(1), $entry);
+		$entry->category=$this->category;
 		return $entry;
 	}
 	
@@ -107,7 +129,7 @@ class AlboTorinoSubPageParser implements Iterator{
 			return;
 		}
 		$aElement=$aElements->item(0);		
-		$entry->link=$aElement->getAttribute('href');
+		$entry->link=$this->linkUriPrefix.$aElement->getAttribute('href');
 		
 		//and that it has a single child as well which contains the code as child text node
 		$codice_meccanografico=$aElement->textContent;

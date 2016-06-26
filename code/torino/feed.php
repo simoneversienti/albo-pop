@@ -23,8 +23,9 @@ require('AlboTorinoParser.php');
 $i=0;
 $a=new AlboTorinoParser();
 foreach($a as $e){
-	echo "$i year ".($e->year)." number ".($e->number)."\n";
+	echo "$i year ".($e->year)." number ".($e->number)." category $e->category \n";
 	echo "link ".($e->link)." \n";
+	echo "subPage uri $e->subPageURI \n";
 	echo "subject ".$e->subject." \n";
 	if ($e->startDate!=null && $e->endDate!=null)
 		echo "start ".$e->startDate->format('d/m/Y')." end ".$e->endDate->format('d/m/Y')."\n";
