@@ -39,8 +39,8 @@ $description=$entry->category.'-'.$entry->subject;
 $link=$entry->link;
 $css="../RSS/sharer.css";
 $supporter_name="Riccardo Grosso";
-$supporter_img="montenegro.png";
+$supporter_img="grosso.png";
 $credits="Il logo di questo albo pop &egrave; stato ottenuto da una foto di Marta Grosso
-		della Mole Antonelliana elaborandolo poi con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.";
+		della Mole Antonelliana elaborata con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.";
 require("../RSS/sharer-template.php");
 ?>
