@@ -83,7 +83,7 @@ class AlboTorinoParser implements Iterator {
 	 * Throws an exception otherwise.
 	 */
 	private function getEntryInSubPage($subPage, $year, $number) {
-		$subPageParser = new AlboTorinoSubPageParser ( $subPage->uri, $subPage->title );
+		$subPageParser = new AlboTorinoSubPageParser ( $subPage->uri, $subPage->title, LINK_URI_PREFIX );
 		foreach ( $subPageParser as $e )
 			if (! strcmp ( $e->year, $year ) && ! strcmp ( $e->number, $number ))
 				return $e;

@@ -27,15 +27,6 @@ class AlboTorinoSubPageParser implements Iterator{
 	private $rows;
 	private $index;
 	
-	/**
-	 * Retrieve the web page from the internet
-	 *
-	 * @return an Iterator of AlboTorinoEntry instances representing the entries of the page.
-	 * @throws Exception if retrieving fails for some reason
-	 */
-	public function retrieve(){
-			return new AlboTorinoSubPageParser($page, $this->title);
-	}
 	
 	/**
 	 * Parse the entries of the Albo from the rows of the table in the Albo Pretorio page.
