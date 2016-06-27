@@ -26,10 +26,14 @@ $feed=new RSSFeedGenerator("Albo POP del Comune di Torino", "Versione POP dell'A
 
 foreach($parser as $e){
 	//$link="http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php?anno=".urlencode($r->anno_registrazione)."&numero=".urlencode($r->numero_registrazione);
-	$sharer_url="http://dev.opendatasicilia.it/albopop/torino/sharer.php?subpage=".urlencode($e->subPageURI)."&year=".$e->year."&number=".$e->number;
-	$feed->addItem($e->subject,
-			"$e->year/$e->number $e->category - $e->subject",
-			$e->startDate, $sharer_url, $sharer_url);
+	if (strlen($e->parseErrors))
+		$feed->addComment($e->parseErrors);
+	else{
+		$sharer_url="http://dev.opendatasicilia.it/albopop/torino/sharer.php?subpage=".urlencode($e->subPageURI)."&year=".$e->year."&number=".$e->number;
+		$feed->addItem($e->subject,
+				"$e->year/$e->number $e->category - $e->subject",
+				$e->startDate, $sharer_url, $sharer_url);
+	}
 }
 //output
 header('Content-type: application/rss+xml; charset=UTF-8');
