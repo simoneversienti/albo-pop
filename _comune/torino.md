@@ -1,6 +1,6 @@
 ---
 layout: comune
-title: Torino (Sicilia)
+title: Torino (Piemonte)
 ---
 
 La pagina dell'albo pretorio del **Comune di Torino** è questa: [http://www.comune.torino.it/albopretorio/](http://www.comune.torino.it/albopretorio/)
