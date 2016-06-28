@@ -120,7 +120,7 @@ class AlboTorinoSubPageParser implements Iterator{
 			return;
 		}
 		$aElement=$aElements->item(0);		
-		$entry->link=$this->linkUriPrefix.$aElement->getAttribute('href');
+		$entry->link=$this->getAbsoluteURI($aElement->getAttribute('href'));
 		
 		//and that it has a single child as well which contains the code as child text node
 		$codice_meccanografico=$aElement->textContent;
@@ -128,6 +128,15 @@ class AlboTorinoSubPageParser implements Iterator{
 		$entry->year=trim($codice_meccanografico_pieces[0]);
 		$entry->number=trim($codice_meccanografico_pieces[1]);
 	} 
+	
+	/**
+	 * Complete the URI given as argument to an absolute one if
+	 * the uri is relative.
+	 */
+	private function getAbsoluteURI($uri){
+		return(preg_match('/^http:/', $uri)) ? $uri : $this->linkUriPrefix.$uri;
+		
+	}
 	
 	/**
 	 * Parse the cell oggetto
