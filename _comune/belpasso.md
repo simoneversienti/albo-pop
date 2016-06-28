@@ -16,8 +16,3 @@ Adesso puoi seguire le nuove pubblicazioni in albo e condividerle sui social
 [opendatahacklab](http://opendatahacklab.org) grazie al sostegno di David Montenegro. 
 
 ![Foto di David](http://dev.opendatasicilia.it/albopop/belpasso/montenegro.png)
-
-
-**ATTENZIONE**: questa versione dell'albo pop del comune di Belpasso riporta solo
-gli ultimi 20 avvisi pubblicati. In virtù di questo, se il comune dovesse pubblicare più di 20 avvisi nello stesso giorno alcuni di questi potrebbero andare perduti.
-
