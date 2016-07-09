@@ -1,8 +1,9 @@
 <?php 
 require('AlboUnitoParserFactory.php');
 require('AlboUnitoItemConverter.php');
-define('ALBO_UNITO_URL','https://www.serviziweb.unito.it/albo_ateneo/');
-$a=AlboUnitoParserFactory::createFromWebPage(ALBO_UNITO_URL);
+//$a=AlboUnitoParserFactory::createFromWebPage(ALBO_UNITO_URL);
+$f=new AlboUnitoParserFactory();
+$a=$f->createByYearAndNumber(2016,1715);
 
 foreach($a as $e){
 	echo "Numero repertorio $e->numero_repertorio\n";

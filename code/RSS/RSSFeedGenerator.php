@@ -110,8 +110,6 @@ class RSSFeedGenerator{
 			if (isset($item->link))
 				$itemEl->appendChild($this->createEscapedElement('link', $item->link));
 				if (isset($item->pubDate))
-// 					$itemEl->appendChild($this->createEscapedElement('pubDate',
-// 							$item->pubDate->format(DateTime::RFC822)));
 					$itemEl->appendChild($this->createEscapedElement('pubDate',
 							$item->pubDate->format(DateTime::RSS)));
 					$guidEl=$this->createEscapedElement('guid', $item->guid);

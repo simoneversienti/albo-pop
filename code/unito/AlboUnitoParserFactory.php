@@ -22,13 +22,15 @@
 require ('../phpparsing/AlboParserFactory.php');
 require ('../phpparsing/AlboTableParser.php');
 require ('AlboUnitoRowParser.php');
-class AlboUnitoParserFactory implements AlboParserFactory{
-	public static $alboPageUri = 'https://www.serviziweb.unito.it/albo_ateneo/';
 
+https: // www.serviziweb.unito.it/albo_ateneo/?area=Albo&action=Read&go=Cerca&advsearch%5Bnum_rep%5D=1715&advsearch%5Byear%5D=2016
+class AlboUnitoParserFactory implements AlboParserFactory {
+	public static $alboPageUri = 'https://www.serviziweb.unito.it/albo_ateneo/';
+	
 	/**
 	 * The landing page of the Official Albo
 	 */
-	function getAlboPretorioLandingPage(){
+	function getAlboPretorioLandingPage() {
 		return AlboUnitoParserFactory::$alboPageUri;
 	}
 	
@@ -38,9 +40,26 @@ class AlboUnitoParserFactory implements AlboParserFactory{
 	 * @return the AlboUnitoParser instance obtained by parsing the specified page.
 	 */
 	public function createFromWebPage() {
+		return $this->readPage ( AlboUnitoParserFactory::$alboPageUri );
+	}
+	
+	/**
+	 * Create a parser with the solely entry with the specified year and number, if
+	 * exists, empty otherwise.
+	 */
+	public function createByYearAndNumber($year, $number) {
+		$uriWithSearchParameters = AlboUnitoParserFactory::$alboPageUri."?area=Albo&action=Read&go=Cerca&advsearch%5Bnum_rep%5D=$number&advsearch%5Byear%5D=$year";
+		return $this->readPage ( $uriWithSearchParameters );
+	}
+	
+	/**
+	 * Read all the entries from the page with the specified uri.
+	 *
+	 * @return the AlboUnitoParser instance obtained by parsing the specified page.
+	 */
+	private function readPage($uri) {
 		$htmlPage = new DOMDocument ();
-		$uri = AlboUnitoParserFactory::$alboPageUri;
-		$rowParser=new AlboUnitoRowParser($uri);
+		$rowParser = new AlboUnitoRowParser ( $uri );
 		if (! $htmlPage->loadHTMLfile ( $uri ))
 			throw new Exception ( "Unable to download page $uri" );
 		return new AlboTableParser ( $htmlPage, $rowParser );
