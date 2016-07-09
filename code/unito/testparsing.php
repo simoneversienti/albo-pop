@@ -3,7 +3,7 @@ require('AlboUnitoParserFactory.php');
 require('AlboUnitoItemConverter.php');
 //$a=AlboUnitoParserFactory::createFromWebPage(ALBO_UNITO_URL);
 $f=new AlboUnitoParserFactory();
-$a=$f->createByYearAndNumber(2016,1715);
+$a=$f->createByYearAndNumber('2016','1715');
 
 foreach($a as $e){
 	echo "Numero repertorio $e->numero_repertorio\n";

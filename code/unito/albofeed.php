@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-require('../phpalbogenerator/AlboPopGenerator.php');
-require('AlboUnitoParserFactory.php');
-require('AlboUnitoItemConverter.php');
+require ('../phpalbogenerator/AlboPopGenerator.php');
+require ('AlboUnitoParserFactory.php');
+require ('AlboUnitoItemForSharerConverter.php');
 
-$generator=new AlboPopGenerator(new AlboUnitoParserFactory(), new AlboUnitoItemConverter());
-$generator->outputFeed("Albo POP del Universita` di Torino", "Versione POP dell'Albo Ufficiale dell'Universita` di Torino", "http://dev.opendatasicilia.it/albopop/unito/albofeed.php");
+$generator = new AlboPopGenerator ( new AlboUnitoParserFactory (), new AlboUnitoItemForSharerConverter ( "http://dev.opendatasicilia.it/albopop/unito/sharer.php" ) );
+$generator->outputFeed ( "Albo POP del Universita` di Torino", "Versione POP dell'Albo Ufficiale dell'Universita` di Torino", "http://dev.opendatasicilia.it/albopop/unito/albofeed.php" );
 ?>

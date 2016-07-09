@@ -30,6 +30,12 @@ interface AlboParserFactory{
 	 * Create a parser for the albo which retrieves all the albo entries.
 	 */
 	function createFromWebPage();	
+	
+	/**
+	 * Create a parser with the solely entry with the specified year and number, if 
+	 * exists, empty otherwise.
+	 */
+	function createByYearAndNumber($year, $number);
 }
 
 ?>
