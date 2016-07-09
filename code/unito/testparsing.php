@@ -11,6 +11,9 @@ foreach($a as $e){
 	echo "Oggetto $e->oggetto\n";
 	echo "Data inizio pubblicazione ".($e->inizio_pubblicazione)->format('d/m/Y')."\n";
 	echo "Data fine pubblicazione ".($e->fine_pubblicazione)->format('d/m/Y')."\n";
+	echo "Links\n";
+	foreach($e->links as $l)
+		echo "\t$l\n";
 	echo "--------\n";
 }
 ?>

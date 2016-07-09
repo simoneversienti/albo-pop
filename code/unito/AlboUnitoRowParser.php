@@ -25,6 +25,18 @@ require('AlboUnitoEntry.php');
 
 class AlboUnitoRowParser implements AlboRowParser{
 
+	private $baseURI;
+	
+	/**
+	 * Create a parser which will use the specified baseURI to generate
+	 * absolute uris.
+	 * 
+	 * @param string $baseURI
+	 */
+	public function __construct($baseURI){
+		$this->baseURI=$baseURI;
+	}
+	
 	/**
 	 * Convert a table row into an Albo-specific entry object.
 	 *
@@ -40,7 +52,21 @@ class AlboUnitoRowParser implements AlboRowParser{
 		$e->oggetto=$tds->item(3)->textContent;
 		$e->inizio_pubblicazione=DateTime::createFromFormat('d/m/Y', $tds->item(4)->textContent);
 		$e->fine_pubblicazione=DateTime::createFromFormat('d/m/Y', $tds->item(5)->textContent);
+		$e->links=$this->parseLinks($tds->item(6));
 		return $e;
+	}
+	
+	/**
+	 * Parse all the links in the corrisponding table cell
+	 * 
+	 * @return an array of URIs as string
+	 */
+	function parseLinks($td){
+		$anchors=$td->getElementsByTagName('a');
+		$linksArray=array();
+		for($i=0; $i<$anchors->length; $i++)
+			$linksArray[$i]=$this->baseURI.$anchors->item($i)->getAttribute('href');
+		return $linksArray;
 	}
 }
 ?>

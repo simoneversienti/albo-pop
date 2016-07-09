@@ -32,7 +32,7 @@ class AlboUnitoParserFactory {
 	public static function createFromWebPage() {
 		$htmlPage = new DOMDocument ();
 		$uri = AlboUnitoParserFactory::$alboPageUri;
-		$rowParser=new AlboUnitoRowParser();
+		$rowParser=new AlboUnitoRowParser($uri);
 		if (! $htmlPage->loadHTMLfile ( $uri ))
 			throw new Exception ( "Unable to download page $uri" );
 		return new AlboTableParser ( $htmlPage, $rowParser );

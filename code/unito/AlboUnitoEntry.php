@@ -28,7 +28,7 @@ class AlboUnitoEntry{
 	public $oggetto;
 	public $inizio_pubblicazione;
 	public $fine_pubblicazione;
-	public $link;
+	public $links; //an array of URIs
 	public $parseErrors=""; //empty string if no parse error has been detected
 }
 ?>
