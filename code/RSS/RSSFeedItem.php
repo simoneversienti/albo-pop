@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
- * Instances of this class represent entries in the notice board of the university of Turin (unito.it).
-  
+ * An RSS (2.0) feed entry
+ * 
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,19 +16,13 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * @author Cristiano Longo
  */
-
-class AlboUnitoEntry{
-	public $numero_repertorio;
-	public $anno_repertorio;
-	public $data_inserimento;
-	public $struttura;
-	public $oggetto;
-	public $inizio_pubblicazione;
-	public $fine_pubblicazione;
-	public $links; //an array of URIs -> link text
-	public $parseErrors=""; //empty string if no parse error has been detected
+class RSSFeedItem{
+	public $title;
+	public $description;
+	public $pubDate;
+	public $link;
+	public $guid;
+	public $errors=''; //put here errors which make the entry invalid
 }
 ?>

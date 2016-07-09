@@ -22,7 +22,6 @@
  *
  * @author Cristiano Longo
  */
-require('AlboRowParser.php');
 
 class AlboTableParser implements Iterator{
 	private $rowParser;

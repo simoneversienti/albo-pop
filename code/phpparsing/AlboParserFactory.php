@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
- * Instances of this class represent entries in the notice board of the university of Turin (unito.it).
-  
+ * Factory object to create parser for a specific Albo Pretorio.
+ * 
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,16 +19,17 @@
  *
  * @author Cristiano Longo
  */
+interface AlboParserFactory{
+	
+	/**
+	 * The landing page of the Official Albo
+	 */
+	function getAlboPretorioLandingPage();
 
-class AlboUnitoEntry{
-	public $numero_repertorio;
-	public $anno_repertorio;
-	public $data_inserimento;
-	public $struttura;
-	public $oggetto;
-	public $inizio_pubblicazione;
-	public $fine_pubblicazione;
-	public $links; //an array of URIs -> link text
-	public $parseErrors=""; //empty string if no parse error has been detected
+	/**
+	 * Create a parser for the albo which retrieves all the albo entries.
+	 */
+	function createFromWebPage();	
 }
+
 ?>

@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
- * Instances of this class represent entries in the notice board of the university of Turin (unito.it).
-  
+ * Generate the feed of Albo POP of the University of Torino
+ * 
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,19 +16,11 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * @author Cristiano Longo
  */
+require('../phpalbogenerator/AlboPopGenerator.php');
+require('AlboUnitoParserFactory.php');
+require('AlboUnitoItemConverter.php');
 
-class AlboUnitoEntry{
-	public $numero_repertorio;
-	public $anno_repertorio;
-	public $data_inserimento;
-	public $struttura;
-	public $oggetto;
-	public $inizio_pubblicazione;
-	public $fine_pubblicazione;
-	public $links; //an array of URIs -> link text
-	public $parseErrors=""; //empty string if no parse error has been detected
-}
+$generator=new AlboPopGenerator(new AlboUnitoParserFactory(), new AlboUnitoItemConverter());
+$generator->outputFeed("Albo POP del Universita` di Torino", "Versione POP dell'Albo Ufficiale dell'Universita` di Torino", "http://dev.opendatasicilia.it/albopop/unito/albofeed.php");
 ?>

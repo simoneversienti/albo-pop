@@ -1,5 +1,6 @@
 <?php 
 require('AlboUnitoParserFactory.php');
+require('AlboUnitoItemConverter.php');
 define('ALBO_UNITO_URL','https://www.serviziweb.unito.it/albo_ateneo/');
 $a=AlboUnitoParserFactory::createFromWebPage(ALBO_UNITO_URL);
 
@@ -12,8 +13,8 @@ foreach($a as $e){
 	echo "Data inizio pubblicazione ".($e->inizio_pubblicazione)->format('d/m/Y')."\n";
 	echo "Data fine pubblicazione ".($e->fine_pubblicazione)->format('d/m/Y')."\n";
 	echo "Links\n";
-	foreach($e->links as $l)
-		echo "\t$l\n";
+	foreach($e->links as $l => $t)
+		echo "\t$t $l \n";
 	echo "--------\n";
 }
 ?>

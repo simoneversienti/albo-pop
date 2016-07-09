@@ -20,7 +20,7 @@
  * @author Cristiano Longo
  */
 
-//require('../phpparsing/AlboTableParser.php');
+require('../phpparsing/AlboRowParser.php');
 require('AlboUnitoEntry.php');
 
 class AlboUnitoRowParser implements AlboRowParser{
@@ -64,8 +64,12 @@ class AlboUnitoRowParser implements AlboRowParser{
 	function parseLinks($td){
 		$anchors=$td->getElementsByTagName('a');
 		$linksArray=array();
-		for($i=0; $i<$anchors->length; $i++)
-			$linksArray[$i]=$this->baseURI.$anchors->item($i)->getAttribute('href');
+		for($i=0; $i<$anchors->length; $i++){
+			$anchor=$anchors->item($i);
+			$fullUri=$this->baseURI.$anchor->getAttribute('href');
+			$text=$anchor->textContent;
+			$linksArray[$fullUri]=$text;
+		}
 		return $linksArray;
 	}
 }

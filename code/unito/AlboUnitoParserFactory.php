@@ -19,17 +19,25 @@
  *
  * @author Cristiano Longo
  */
+require ('../phpparsing/AlboParserFactory.php');
 require ('../phpparsing/AlboTableParser.php');
 require ('AlboUnitoRowParser.php');
-class AlboUnitoParserFactory {
+class AlboUnitoParserFactory implements AlboParserFactory{
 	public static $alboPageUri = 'https://www.serviziweb.unito.it/albo_ateneo/';
+
+	/**
+	 * The landing page of the Official Albo
+	 */
+	function getAlboPretorioLandingPage(){
+		return AlboUnitoParserFactory::$alboPageUri;
+	}
 	
 	/**
 	 * Read all the entries in the albo web page.
 	 *
 	 * @return the AlboUnitoParser instance obtained by parsing the specified page.
 	 */
-	public static function createFromWebPage() {
+	public function createFromWebPage() {
 		$htmlPage = new DOMDocument ();
 		$uri = AlboUnitoParserFactory::$alboPageUri;
 		$rowParser=new AlboUnitoRowParser($uri);

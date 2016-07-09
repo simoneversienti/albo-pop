@@ -1,5 +1,4 @@
 <?php 
-
 /**
  * An utility to produce rss feeds.
  * 
@@ -84,21 +83,40 @@ class RSSFeedGenerator{
 	 * @param DateTime $pubDate
 	 * @param string $link
 	 * @param string $guid
+	 * 
+	 * @deprecated
 	 */
 	public function addItem($title, $description, $pubDate, $link, $guid){
+		$item=new RSSFeedItem();
+		$item->title=$title;
+		$item->description=$description;
+		$item->pubDate=$pubDate;
+		$item->link=$link;
+		$item->guid=$guid;
+		$this->addItemObject($item);
+	}
+	
+	/**
+	 * Add an item with the specified parameters to the feed
+	 *
+	 * @param RSSFeedItem item
+	 */
+	public function addItemObject($item){
 		$itemEl=$this->doc->createElement("item");
 		$this->channelEl->appendChild($itemEl);
-		$itemEl->appendChild($this->createEscapedElement('title', $title));
-		if (isset($description))
-			$itemEl->appendChild($this->createEscapedElement('description', $description));
-		if (isset($link))
-			$itemEl->appendChild($this->createEscapedElement('link', $link));
-		if (isset($pubDate))
-			$itemEl->appendChild($this->createEscapedElement('pubDate', 
-					$pubDate->format(DateTime::RFC822)));				
-		$guidEl=$this->createEscapedElement('guid', $guid);
-		$guidEl->setAttribute('isPermaLink', 'true');
-		$itemEl->appendChild($guidEl);
+		$itemEl->appendChild($this->createEscapedElement('title', $item->title));
+		if (isset($item->description))
+			$itemEl->appendChild($this->createEscapedElement('description', $item->description));
+			if (isset($item->link))
+				$itemEl->appendChild($this->createEscapedElement('link', $item->link));
+				if (isset($item->pubDate))
+// 					$itemEl->appendChild($this->createEscapedElement('pubDate',
+// 							$item->pubDate->format(DateTime::RFC822)));
+					$itemEl->appendChild($this->createEscapedElement('pubDate',
+							$item->pubDate->format(DateTime::RSS)));
+					$guidEl=$this->createEscapedElement('guid', $item->guid);
+					$guidEl->setAttribute('isPermaLink', 'true');
+					$itemEl->appendChild($guidEl);
 	}
 	
 	/**
