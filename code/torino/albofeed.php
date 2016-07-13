@@ -17,30 +17,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-require('AlboTorinoParser.php');
-require("../RSS/RSSFeedGenerator.php");
+require ('../phpalbogenerator/AlboPopGenerator.php');
+require ('AlboTorinoParserFactory.php');
+require ('AlboTorinoItemConverter.php');
 
-$parser=new AlboTorinoParser();
-$feed=new RSSFeedGenerator("Albo POP del Comune di Torino", "Versione POP dell'Albo Pretorio del Comune di Torino",
-		'http://www.comune.torino.it/albopretorio/',"http://dev.opendatasicilia.it/albopop/torino/albofeed.php");
-
-foreach($parser as $e){
-	//$link="http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php?anno=".urlencode($r->anno_registrazione)."&numero=".urlencode($r->numero_registrazione);
-	if (strlen($e->parseErrors))
-		$feed->addComment($e->parseErrors);
-	else{
-		$sharer_url="http://dev.opendatasicilia.it/albopop/torino/sharer.php?subpage=".urlencode($e->subPageURI)."&year=".$e->year."&number=".$e->number;
-		$feed->addItem($e->subject,
-				"$e->year/$e->number $e->category - $e->subject",
-				$e->startDate, $sharer_url, $sharer_url);
-	}
-}
-//output
-header('Content-type: application/rss+xml; charset=UTF-8');
-/*
- * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
- * (il server deve avere il locale italiano installato
- */
-setlocale(LC_TIME, 'it_IT');
-echo $feed->getFeed();
+$generator = new AlboPopGenerator ( new AlboTorinoParserFactory (), new AlboTorinoItemConverter () );
+$generator->outputFeed ( "Albo POP del Comune di Torino", "Versione POP dell'Albo Pretorio del Comune di Torino", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php" );
 ?>
