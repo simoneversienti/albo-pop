@@ -19,22 +19,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require("AlboUnictParser.php");
-require("../RSS/RSSFeedGenerator.php");
-define("RSSPATH","http://dev.opendatasicilia.it/albopop/unict/");
-//parsing
-$parser = new AlboUnictParser();
-$feed=new RSSFeedGenerator("Albo dell'Universita` di Catania", "Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania", 
-		"http://ws1.unict.it/albo/",RSSPATH.'unict2RSS.php');
-foreach($parser as $r){
-	$feed->addItem($r->description,"Avviso ".$r->numero.".".$r->richiedente.": ".$r->description, $r->inizio_pubblicazione, $r->link, RSSPATH.'sharer.php?number='.$r->numero);
-}
-//output
-header('Content-type: application/rss+xml; charset=UTF-8');
-/*
- * Impostazioni locali in italiano, utilizzato per la stampa di data e ora
-* (il server deve avere il locale italiano installato
-		*/
-setlocale(LC_TIME, 'it_IT');
-echo $feed->getFeed();
+require ('../phpalbogenerator/AlboPopGenerator.php');
+require ('AlboUnictParserFactory.php');
+require ('AlboUnictItemConverter.php');
+
+$generator = new AlboPopGenerator ( new AlboUnictParserFactory (), new AlboUnictItemConverter () );
+$generator->outputFeed ("Albo dell'Universita` di Catania",
+		"Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania",
+		'http://dev.opendatasicilia.it/albopop/unict/');
 ?>
