@@ -33,7 +33,8 @@ $date=$entry->startDate->format('d/m/Y');
   
 $title="Albo POP Comune di Torino - Avviso $year / $number del $date";
 $logo="logo.png";
-$news=null;
+$news="Albo Pop Torino sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
+per la liberazione dei dati sul trasporto pubblico a Palermo.";
 $description=$entry->category.'-'.$entry->subject;
 
 $link=$entry->link;
