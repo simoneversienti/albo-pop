@@ -21,6 +21,7 @@
 
 require("AlboComuneCTParser.php");
 require("../RSS/RSSFeedGenerator.php");
+require("../RSS/RSSFeedItem.php");
 define ("RSSPATH","http://dev.opendatasicilia.it/albopop/catania/");
 
 $parser = AlboComuneCTParser::createByYear();

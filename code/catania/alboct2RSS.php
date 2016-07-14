@@ -21,6 +21,7 @@
 
 require("AlboComuneCTParser.php");
 require("../RSS/RSSFeedGenerator.php");
+require("../RSS/RSSFeedItem.php");
 
 $parser = AlboComuneCTParser::createByYear();
 $feed=new RSSFeedGenerator("Albo del Comune di Catania", "Versione POP dell'Albo Pretorio del Comune di Catania", 
