@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require("AlboUnictParser.php");
+require("AlboUnictParserFactory.php");
 $number=$_GET['number'];
 if (!isset($number))
 	die("E' necessario specificare un numero di avviso.");
 
-$entry = (new AlboUnictParser())->getByNumber($number);
+$entry = (new AlboUnictParserFactory())->createFromWebPage()->getByNumber($number);
 if ($entry==null)
   die("Nessun elemento con numero $number");
 
@@ -32,9 +32,8 @@ $title="Albo POP Universit&agrave; di Catania - Avviso $number";
 $logo="logo.png";
 $description=$entry->richiedente.": ".$entry->description;
 $link=$entry->link;
-$news="Vieni a conoscere il progetto <a href=\"http://albopop.it\">Albo POP</a> al prossimo <a href=\"http://www.opendatahacklab.org/site/eventdetails.html?iri=http%3A%2F%2Fopendatahacklab.org%2Fontology%2Fevents%2F02072016\">Aperitivo Pop</a></em>
-a Belpasso (CT) Sabato 2 Luglio 2016 alle ore 19:00 presso il Wine Bar Efesto in via XIX traversa numero 66
-		(vedi anche l'<a href=\"https://www.facebook.com/events/602434039925008/\">Evento Facebook</a>).";
+$news="Albo Pop UniCT sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
+per la liberazione dei dati sul trasporto pubblico a Palermo.";
 
 require("../RSS/sharer-template.php");
 ?>

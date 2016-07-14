@@ -21,7 +21,7 @@
 require ('../phpalbogenerator/AlboToRSSItemConverter.php');
 require ('../RSS/RSSFeedItem.php');
 class AlboUnictItemConverter implements AlboToRSSItemConverter {
-	/**
+	/** 
 	 *
 	 * @param AlboUnitoEntry $alboTorinoItem        	
 	 */

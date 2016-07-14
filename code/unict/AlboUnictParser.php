@@ -55,7 +55,7 @@ class AlboUnictParser implements Iterator{
 		if ($this->rows->length<2)
 			return null;
 		for($j=1; $j<$this->rows->length; $j++){
-			$entry=new AlboUnictEntry($this->rows->item($j));
+			$entry=new AlboUnictItem($this->rows->item($j));
 			if (!strcmp($number, $entry->numero))
 				return $entry;
 		}
