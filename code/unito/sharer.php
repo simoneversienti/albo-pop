@@ -39,6 +39,9 @@ $description= "$entry->struttura : $entry->oggetto";
 if (count ( $entry->links )>0)
 	$link = each ( $entry->links ) ['key'];
 
+$news="Albo Pop UniTO sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
+per la liberazione dei dati sul trasporto pubblico a Palermo.";
+	
 $css="../RSS/sharer.css";
 require("../RSS/sharer-template.php");
 ?>
