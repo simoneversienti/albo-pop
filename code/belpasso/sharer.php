@@ -18,8 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require("AlboBelpassoParser.php");
-define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro');
+require("AlboBelpassoParserFactory.php");
 
 $year=$_GET['year'];
 $number=$_GET['number'];
@@ -27,16 +26,15 @@ $number=$_GET['number'];
 if (!isset($year) || !isset($number))
 	die("E' necessario specificare anno e numero di gistro.");
 
-$entry = AlboBelpassoParser::getSingleEntry(SELECTION_FORM_URL, $year, $number)->current();
-if ($entry==null)
+$entryList = (new AlboBelpassoParserFactory())->createByYearAndNumber($year, $number);
+if (!$entryList->valid())
   die("Nessun elemento col numero anno registro $year e numero registro $number");
-$date=$entry->data_inizio_pubblicazione->format(DATE_FORMAT);
-  
+$entry=$entryList->current();
+$date=$entry->data_inizio_pubblicazione->format(DATE_FORMAT);  
 $title="Albo POP Comune di Belpasso - Avviso $year / $number del $date";
 $logo="logo.png";
-$news="Vieni a conoscere il progetto <a href=\"http://albopop.it\">Albo POP</a> al prossimo <a href=\"http://www.opendatahacklab.org/site/eventdetails.html?iri=http%3A%2F%2Fopendatahacklab.org%2Fontology%2Fevents%2F02072016\">Aperitivo Pop</a></em>
-a Belpasso (CT) Sabato 2 Luglio 2016 alle ore 19:00 presso il Wine Bar Efesto in via XIX traversa numero 66
-		(vedi anche l'<a href=\"https://www.facebook.com/events/602434039925008/\">Evento Facebook</a>).";
+$news="Albo Pop Belpasso sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
+per la liberazione dei dati sul trasporto pubblico a Palermo.";
 $description='Tipologia:'.$entry->tipo_atto.','.$entry->sottotipo_atto
 .'. Oggetto:'.$entry->oggetto;
 
