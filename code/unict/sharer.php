@@ -32,8 +32,9 @@ $title="Albo POP Universit&agrave; di Catania - Avviso $number";
 $logo="logo.png";
 $description=$entry->richiedente.": ".$entry->description;
 $link=$entry->link;
-$news="Albo Pop UniCT sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
-per la liberazione dei dati sul trasporto pubblico a Palermo.";
+$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> partecipa
+al raduno di Open Data Sicilia <a href=\"http://ods16.opendatahacklab.org\">#ODS16</a>
+che si terr&agrave; a Messina il 2,3 e 4 Settembre a Messina.";
 
 require("../RSS/sharer-template.php");
 ?>

@@ -42,7 +42,10 @@ $logo="ct-logo-pop.jpg";
 $description=$entry->repertorio." - ".$entry->tipo.": ".$entry->mittente_descrizione;
 $link=$entry->link;
 $css="../RSS/sharer.css";
-$news="Albo Pop Belpasso sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
+$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> partecipa
+al raduno di Open Data Sicilia <a href=\"http://ods16.opendatahacklab.org\">#ODS16</a>
+che si terr&agrave; a Messina il 2,3 e 4 Settembre a Messina.";
+		Albo Pop Belpasso sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
 per la liberazione dei dati sul trasporto pubblico a Palermo.";
 
 $credits="Il logo di questo albo pop &egrave; stato ottenuto dalla 
