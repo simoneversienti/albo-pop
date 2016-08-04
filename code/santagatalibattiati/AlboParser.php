@@ -85,54 +85,6 @@ class AlboParser implements Iterator{
 	}
 
 	/**
-	 * Factory method to construct an instance which retrieves entries from
-	 * a default period of time ago.
-	 */
-	public static function createByDate(){
-		$date=new DateTimeImmutable();
-		$from_date=$date->sub(new DateInterval('P'.NMONTHS.'M'));
-		
-		$h=curl_init(ALBO_URL);
-		if (!$h) throw new Exception("Unable to initialize cURL session");
-		
-		curl_setopt($h, CURLOPT_POST, TRUE);
-		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($h, CURLOPT_POSTFIELDS,
-				array("__Click" => 0,
-						"%%Surrogate_gg1"=>1, "gg1"=>$from_date->format('d'),
-						"%%Surrogate_mm1"=>1, "mm1"=>$from_date->format('m'),
-						"%%Surrogate_aa1"=>1, "aa1"=>$from_date->format('Y')
-				));
-		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
-		$page=curl_exec($h);
-		if( $page==FALSE)
-			throw new Exception("Unable to execute POST request: ".curl_error($h));
-		curl_close($h);		
-		return new AlboParser($page);
-	}
-	
-	/**
-	 * Retrieve the single notice with the specified number and year.
-
-	 * @param $year
-	 * @param $number
-	 */
-	public static function createByRepertorio($year, $number){
-		$h=curl_init(ALBO_URL);
-		if (!$h) throw new Exception("Unable to initialize cURL session");
-		curl_setopt($h, CURLOPT_POST, TRUE);
-		curl_setopt($h, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($h, CURLOPT_POSTFIELDS, array("__Click" => 0, "Anno"=>$year, "Numero"=>$number));
-				
-		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
-		$page=curl_exec($h);
-		if( $page==FALSE)
-			throw new Exception("Unable to execute POST request: "+curl_error());
-		curl_close($h);
-		return new AlboParser($page);
-	}
-	
-	/**
 	 * Retrieve the albo pages with all the notices of the current year
 	 */
 	public static function createByYear(){
