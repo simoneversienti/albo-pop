@@ -136,8 +136,7 @@ class AlboParser implements Iterator{
 	 * Retrieve the albo pages with all the notices of the current year
 	 */
 	public static function createByYear(){
-		//$currentYear=(new DateTimeImmutable())->format('Y');
-		$currentYear=2016; // fixme
+		$currentYear=(new DateTimeImmutable())->format('Y');
 		
 		$h=curl_init(ALBO_URL);
 		if (!$h) throw new Exception("Unable to initialize cURL session");
