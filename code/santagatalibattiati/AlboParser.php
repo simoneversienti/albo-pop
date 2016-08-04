@@ -26,7 +26,7 @@ define("NMONTHS","1");
 /**
  * Convenience class to represent single entry.
  */
-class AlboEntry{
+class AlboEntry {
 	public $anno;
 	public $numero;
 	public $link;
@@ -54,13 +54,25 @@ class AlboEntry{
 
 			$url = "http://albopretorio.datamanagement.it/ajax.jsp?Richiesta=Allegati&idAtto=".$guid;
 
-			$pageDetails = file_get_contents($url);
+			$ch=curl_init($url);
+			if (!$ch) throw new Exception("Unable to initialize cURL session");
+			
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-			$idxStart = strpos($pageDetails, "href");
-
-			$idxStop = strpos($pageDetails, ">", $idxStart);
-
-			$this->link = "http://albopretorio.datamanagement.it/" . substr($pageDetails, $idxStart + 6, $idxStop - $idxStart - 6 - 1);
+			// eseguo la chiamata, salvo il risultato in una variabile
+			$pageDetails = curl_exec($ch);
+			
+			// chiudo cURL
+			curl_close($ch);
+			$dom=new DOMDocument();
+			$dom->loadHTML($pageDetails);
+			$domNodeList = $dom->getElementsByTagName("a");
+			$href = "";
+			if ($domNodeList->length > 0) {
+				$href = $domNodeList->item(0)->getAttribute("href");
+			}
+			$this->link = "http://albopretorio.datamanagement.it/" . $href;
 		}
 
 	}
