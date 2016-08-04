@@ -208,12 +208,12 @@ class AlboParser implements Iterator{
 	}
 	
 	public function rewind(){
-		if ($this->rows->length>1)
-			$this->i=1;
+		if ($this->rows->length>2)
+			$this->i=2;
 	}
 	
 	public function valid(){
-		return $this->rows->length>1 && $this->i<$this->rows->length;
+		return $this->rows->length>2 && $this->i<$this->rows->length;
 	}
 }
 ?>
