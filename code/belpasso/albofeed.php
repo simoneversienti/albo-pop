@@ -23,6 +23,6 @@ require ('../phpalbogenerator/AlboPopGenerator.php');
 require ('AlboBelpassoParserFactory.php');
 require ('AlboBelpassoItemConverter.php');
 $generator = new AlboPopGenerator ( new AlboBelpassoParserFactory (), new AlboBelpassoItemConverter () );
-$generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php",
+$generator->outputFeed ("Albo POP della città della salute di Torino", "Versione POP dell'Albo Pretorio della città della salute del comune di Torino", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php",
 			"http://dev.opendatasicilia.it/albopop/torino/albofeed.php");
 ?>

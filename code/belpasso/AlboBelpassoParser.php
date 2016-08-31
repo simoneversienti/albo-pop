@@ -90,4 +90,5 @@ class AlboBelpassoParser implements Iterator{
 		return $this->rows->length>1 && $this->index<$this->rows->length;
 	}
 }
+
 ?>
