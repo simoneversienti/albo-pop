@@ -28,5 +28,5 @@ define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/w
 
 $generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL), new AlbojCityGovItemConverter () );
 $generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php",
-			"http://dev.opendatasicilia.it/albopop/torino/albofeed.php");
+			"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
 ?>
