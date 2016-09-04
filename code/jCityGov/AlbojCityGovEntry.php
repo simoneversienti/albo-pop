@@ -22,7 +22,7 @@
 define('DATE_FORMAT','d/m/Y');
 define('CONTENT_SEPARATOR','/');
 
-class AlboBelpassoEntry{
+class AlbojCityGovEntry{
 	var $anno_registro;
 	var $numero_registro;
 	var $tipo_atto;
