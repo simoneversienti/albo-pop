@@ -39,9 +39,7 @@ $description= "$entry->struttura : $entry->oggetto";
 if (count ( $entry->links )>0)
 	$link = each ( $entry->links ) ['key'];
 
-$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> partecipa
-al raduno di Open Data Sicilia <a href=\"http://ods16.opendatahacklab.org\">#ODS16</a>
-che si terr&agrave; a Messina il 2,3 e 4 Settembre a Messina.";
+$news="<a href=\"http://osmele.elilan.com/_ont/ont2.html\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
 	
 $css="../RSS/sharer.css";
 require("../RSS/sharer-template.php");
