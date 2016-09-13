@@ -25,15 +25,17 @@ require ('AlbojCityGovParser.php');
 class AlbojCityGovParserFactory implements AlboParserFactory {
 	private $alboPageUri;
 	private $selectionFormUri;
+	private $entryParser;
 	
 	/**
 	 * 
 	 * @param unknown $alboPageUri TODO write me
 	 * @param unknown $selectionFormUri TODO write me
 	 */
-	public function __construct($alboPageUri, $selectionFormUri){
+	public function __construct($alboPageUri, $selectionFormUri, $entryParser){
 		$this->alboPageUri=$alboPageUri;
 		$this->selectionFormUri=$selectionFormUri;
+		$this->entryParser=$entryParser;
 	}
 	
 	/**
@@ -51,7 +53,7 @@ class AlbojCityGovParserFactory implements AlboParserFactory {
 	public function createFromWebPage() {
 		$page = new DOMDocument();
 		$page->loadHTMLfile($this->alboPageUri);
-		return new AlbojCityGovParser($page);
+		return new AlbojCityGovParser($page, $this->entryParser);
 	}
 	
 	/**
@@ -61,7 +63,7 @@ class AlbojCityGovParserFactory implements AlboParserFactory {
 	public function createByYearAndNumber($year, $number) {
 		$page = new DOMDocument();
 		$page->loadHTMLfile($this->selectionFormUri."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
-		return new AlbojCityGovParser($page);
+		return new AlbojCityGovParser($page, $this->entryParser);
 	}
 }
 ?>

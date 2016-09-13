@@ -1,6 +1,8 @@
 <?php 
 /**
- * An entry in the bullettin board of the Municipality of Belpasso
+ * Parse an entry in the bullettin board of the albo. Customize this class depending
+ * on the albo structure.
+ * 
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,14 +21,11 @@
  * @author Cristiano Longo
  * 
  */
-class AlbojCityGovEntry{
-	var $anno_registro;
-	var $numero_registro;
-	var $tipo_atto;
-	var $sottotipo_atto;
-	var $oggetto;
-	var $data_inizio_pubblicazione;
-	var $data_fine_pubblicazione;
-	var $url;
+interface AlbojCityGovEntryParser{
+	
+	/**
+	 * Generate an AlbojCityGovEntry from a table row
+	 */
+	public function parse($row);
 }
 ?>

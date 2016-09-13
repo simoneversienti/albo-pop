@@ -23,14 +23,16 @@ require('AlbojCityGovEntry.php');
 class AlbojCityGovParser implements Iterator{
 	private $rows;
 	private $index;
+	private $entryParser;
 	
 	/**
 	 * Parse the entries of the Albo from the rows of the table in the Albo Pretorio page.
 	 */
-	public function __construct($page) {
+	public function __construct($page, $entryParser) {
 		$table=AlbojCityGovParser::getTableElement($page);
 		$this->rows=$table->getElementsByTagName('tr');
 		$this->index=1;
+		$this->entryParser=$entryParser;
 	}
 	
 	/**
@@ -70,7 +72,7 @@ class AlbojCityGovParser implements Iterator{
 	//Iterator functions,  see http://php.net/manual/en/class.iterator.php
 	
 	public function current(){
-		return new AlbojCityGovEntry($this->rows->item($this->index));
+		return $this->entryParser->parse($this->rows->item($this->index));
 	}
 	
 	
