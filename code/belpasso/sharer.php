@@ -33,8 +33,6 @@ $entry=$entryList->current();
 $date=$entry->data_inizio_pubblicazione->format(DATE_FORMAT);  
 $title="Albo POP Comune di Belpasso - Avviso $year / $number del $date";
 $logo="logo.png";
-$news="Albo Pop Belpasso sostiene l'iniziativa <a href=\"https://www.facebook.com/groups/271334679900477\">#openamat</a>
-per la liberazione dei dati sul trasporto pubblico a Palermo.";
 $description='Tipologia:'.$entry->tipo_atto.','.$entry->sottotipo_atto
 .'. Oggetto:'.$entry->oggetto;
 
