@@ -33,8 +33,7 @@ $date=$entry->startDate->format('d/m/Y');
   
 $title="Albo POP Comune di Torino - Avviso $year / $number del $date";
 $logo="logo.png";
-$news="<a href=\"http://osmele.elilan.com/_ont/ont2.html\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale
-		</a>";
+$news="<a href=\"http://osmele.elilan.com/_ont/ont2.html\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
 $description=$entry->category.'-'.$entry->subject;
 
 $link=$entry->link;
@@ -43,9 +42,6 @@ $supporter_name="Riccardo Grosso";
 $supporter_img="grosso.png";
 $credits="Il logo di questo albo pop &egrave; stato ottenuto da una foto di Marta Grosso
 		della Mole Antonelliana elaborata con il tool <a href=\"https://photofunia.com/effects/popart\">PhotoFunia</a>.";
-$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> partecipa
-al raduno di Open Data Sicilia <a href=\"http://ods16.opendatahacklab.org\">#ODS16</a>
-che si terr&agrave; a Messina il 2,3 e 4 Settembre a Messina.";
 
 require("../RSS/sharer-template.php");
 ?>
