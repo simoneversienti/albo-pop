@@ -108,4 +108,117 @@ Necessario per evitare l'indicizzazione da motore di ricerca delle pagine linkat
 ```
 
 # Tag item<a name="item"></a>
-[under construction]
+Sono gli elementi che rappresentano un singolo atto dell'albo pretorio. Possono essere zero (feed vuoto) o più, fino a 25, in ordine inverso di data e orario di pubblicazione.
+
+```
+<item>[...]</item>
+```
+
+## Tag title<a name="item-title"></a>
+Il titolo dell'atto, così come riportato dalla pagina dedicata dell'albo pretorio. Si sconsiglia ogni intervento sul testo, come riduzione in lettere minuscole, a parte l'eliminazione di spazi e tabulazioni consecutivi e/o agli estremi della stringa.
+
+```
+<title>[...]</title>
+```
+
+## Tag link<a name="item-link"></a>
+L'URL diretto alla pagina ufficiale dell'atto.
+
+```
+<link>[...]</link>
+```
+
+## Tag description<a name="item-description"></a>
+L'excerpt dell'atto, così come riportato in forma sintetica nella pagina ufficiale. Se mancante, una copia del titolo.
+
+```
+<description>[...]</description>
+```
+
+## Tag pubDate<a name="item-pubdate"></a>
+Data e orario ufficiali di pubblicazione dell'atto all'interno dell'Albo Pretorio, in formato conforme alle specifiche [RFC 822](https://www.w3.org/Protocols/rfc822/#z28). Deve essere indipendente da data e orario di scraping.
+
+```
+<pubDate>[...]</pubDate>
+```
+
+## Tag guid<a name="item-guid"></a>
+Identificativo unico *universale* dell'atto. Non può essere il semplice id dell'atto (che non è universalmente unico), generalmente è uguale all'URL diretto alla pagina ufficiale (in questo caso deve contenere l'attributo `isPermalink`).
+
+```
+<guid isPermaLink="true">[...]</guid>
+```
+
+## Tag category<a name="item-category"></a>
+Devono essere due o più e contenere il maggior numero possibile delle seguenti informazioni:
+
+* nazione pa,
+* regione pa,
+* provincia pa,
+* comune pa,
+* tipo pa,
+* nome pa,
+* latitudine,
+* longitudine,
+* codice univoco con prefisso.
+
+### Domain nazione<a name="item-category-nazione"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-nazione"></category>
+```
+
+### Domain regione<a name="item-category-regione"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-regione"></category>
+```
+
+### Domain provincia<a name="item-category-provincia"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-provincia"></category>
+```
+
+### Domain comune<a name="item-category-comune"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-comune"></category>
+```
+
+### Domain tipo<a name="item-category-tipo"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-tipo"></category>
+```
+
+### Domain nome<a name="item-category-nome"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-nome"></category>
+```
+
+### Domain latitudine<a name="item-category-latitudine"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-latitudine"></category>
+```
+
+### Domain longitudine<a name="item-category-longitudine"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-longitudine"></category>
+```
+
+### Domain codice<a name="item-category-codice"></a>
+
+```
+<category domain="http://albopop.it/specs#item-category-codice"></category>
+```
+
+## Tag enclosure<a name="item-enclosure"></a>
+Uno o più allegati con l'URL diretto all'atto integrale, generalmente un file pdf. Esempio:
+
+```
+<enclosure url="[...]" length="[...]" type="application/pdf" />
+```
