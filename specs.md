@@ -174,21 +174,21 @@ La nazione a cui appartiene la pa che emette l'atto. Esempio:
 La regione a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-region">Liguria</category>
+<category domain="http://albopop.it/specs#item-category-region">Sicilia</category>
 ```
 
 ### Domain province<a name="item-category-province"></a>
 La provincia a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-province">Genova</category>
+<category domain="http://albopop.it/specs#item-category-province">Palermo</category>
 ```
 
 ### Domain municipality<a name="item-category-municipality"></a>
 Il comune a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-municipality">Genova</category>
+<category domain="http://albopop.it/specs#item-category-municipality">Bagheria</category>
 ```
 
 ### Domain type<a name="item-category-type"></a>
@@ -202,7 +202,7 @@ Il tipo di pa che emette l'atto. Esempio:
 Il nome della pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-name">Comune di Genova</category>
+<category domain="http://albopop.it/specs#item-category-name">Comune di Bagheria</category>
 ```
 
 ### Domain latitude<a name="item-category-latitude"></a>
