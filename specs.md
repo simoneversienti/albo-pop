@@ -9,6 +9,7 @@ Gli scraper di AlboPOP producono un [feed RSS](/feedrss/) il cui formato standar
 Quelle che seguono sono le regole condivise per produrre feed dal formato omogeneo, valido per tutti gli albi pretori di origine.
 I tag e gli attributi elencati qui sono da considerarsi *obbligatori* per i feed di AlboPOP.
 Altri elementi e attributi previsti dalle specifiche o da namespace aggiuntivi sono possibili, ma da considerarsi facoltativi.
+Gli URL devono essere tutti riferimenti *assoluti* (http:// ecc.).
 
 # Intestazione XML<a name="xml"></a>
 La prima riga del feed deve contenere l'indicazione della versione dell'xml e dell'encoding.
@@ -65,7 +66,7 @@ La lingua dei contenuti del feed in formato [ISO 639-1](https://en.wikipedia.org
 ```
 
 ## Tag pubDate<a name="channel-pubdate"></a>
-Data e orario dell'ultimo aggiornamento del feed, in formato conforme alle specifiche [RFC 822](https://www.w3.org/Protocols/rfc822/#z28).
+Data e orario dell'ultimo aggiornamento del feed (per esempio, dell'ultima esecuzione dello scraper), in formato conforme alle specifiche [RFC 822](https://www.w3.org/Protocols/rfc822/#z28).
 Esempio:
 
 ```
@@ -122,21 +123,21 @@ Il titolo dell'atto, così come riportato dalla pagina dedicata dell'albo pretor
 ```
 
 ## Tag link<a name="item-link"></a>
-L'URL diretto alla pagina ufficiale dell'atto.
+L'URL diretto alla pagina ufficiale dell'atto. Non a un documento (un file pdf, per esempio, vedi il tag [enclosure](#item-enclosure)), ma a una pagina web.
 
 ```
 <link>[...]</link>
 ```
 
 ## Tag description<a name="item-description"></a>
-L'excerpt dell'atto, così come riportato in forma sintetica nella pagina ufficiale. Se mancante, una copia del titolo.
+L'excerpt dell'atto, così come riportato in forma sintetica nella pagina ufficiale. Se mancante, una copia del titolo. Si sconsiglia ogni intervento sul testo, come riduzione in lettere minuscole, a parte l'eliminazione di spazi e tabulazioni consecutivi e/o agli estremi della stringa.
 
 ```
 <description>[...]</description>
 ```
 
 ## Tag pubDate<a name="item-pubdate"></a>
-Data e orario ufficiali di pubblicazione dell'atto all'interno dell'Albo Pretorio, in formato conforme alle specifiche [RFC 822](https://www.w3.org/Protocols/rfc822/#z28). Deve essere indipendente da data e orario di scraping.
+Data e orario ufficiali di pubblicazione dell'atto all'interno dell'Albo Pretorio, in formato conforme alle specifiche [RFC 822](https://www.w3.org/Protocols/rfc822/#z28). Deve essere indipendente da data e orario di scraping (che sono riportati nel [tag pubDate del tag channel](#channel-pubdate)).
 
 ```
 <pubDate>[...]</pubDate>
@@ -162,58 +163,68 @@ Devono essere due o più e contenere il maggior numero possibile delle seguenti 
 * longitudine,
 * codice univoco con prefisso.
 
-### Domain nazione<a name="item-category-nazione"></a>
+### Domain country<a name="item-category-country"></a>
+La nazione a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-nazione"></category>
+<category domain="http://albopop.it/specs#item-category-country">Italia</category>
 ```
 
-### Domain regione<a name="item-category-regione"></a>
+### Domain region<a name="item-category-region"></a>
+La regione a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-regione"></category>
+<category domain="http://albopop.it/specs#item-category-region">Liguria</category>
 ```
 
-### Domain provincia<a name="item-category-provincia"></a>
+### Domain province<a name="item-category-province"></a>
+La provincia a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-provincia"></category>
+<category domain="http://albopop.it/specs#item-category-province">Genova</category>
 ```
 
-### Domain comune<a name="item-category-comune"></a>
+### Domain municipality<a name="item-category-municipality"></a>
+Il comune a cui appartiene la pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-comune"></category>
+<category domain="http://albopop.it/specs#item-category-municipality">Genova</category>
 ```
 
-### Domain tipo<a name="item-category-tipo"></a>
+### Domain type<a name="item-category-type"></a>
+Il tipo di pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-tipo"></category>
+<category domain="http://albopop.it/specs#item-category-type">Comune</category>
 ```
 
-### Domain nome<a name="item-category-nome"></a>
+### Domain name<a name="item-category-name"></a>
+Il nome della pa che emette l'atto. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-nome"></category>
+<category domain="http://albopop.it/specs#item-category-name">Comune di Genova</category>
 ```
 
-### Domain latitudine<a name="item-category-latitudine"></a>
+### Domain latitude<a name="item-category-latitude"></a>
+La latitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica.
 
 ```
-<category domain="http://albopop.it/specs#item-category-latitudine"></category>
+<category domain="http://albopop.it/specs#item-category-latitude">[...]</category>
 ```
 
-### Domain longitudine<a name="item-category-longitudine"></a>
+### Domain longitude<a name="item-category-longitude"></a>
+La longitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica.
 
 ```
-<category domain="http://albopop.it/specs#item-category-longitudine"></category>
+<category domain="http://albopop.it/specs#item-category-longitude">[...]</category>
 ```
 
-### Domain codice<a name="item-category-codice"></a>
+### Domain uid<a name="item-category-uid"></a>
+L'identificativo univoco della pa che emette l'atto, con un prefisso che ne indica il database di riferimento.
+Per un comune valgono per esempio i codici ISTAT. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-codice"></category>
+<category domain="http://albopop.it/specs#item-category-uid">istat:010025</category>
 ```
 
 ## Tag enclosure<a name="item-enclosure"></a>
