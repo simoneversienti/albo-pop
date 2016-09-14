@@ -206,17 +206,17 @@ Il nome della pa che emette l'atto. Esempio:
 ```
 
 ### Domain latitude<a name="item-category-latitude"></a>
-La latitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica.
+La latitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-latitude">[...]</category>
+<category domain="http://albopop.it/specs#item-category-latitude">38.083333</category>
 ```
 
 ### Domain longitude<a name="item-category-longitude"></a>
-La longitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica.
+La longitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-longitude">[...]</category>
+<category domain="http://albopop.it/specs#item-category-longitude">13.5</category>
 ```
 
 ### Domain uid<a name="item-category-uid"></a>
@@ -224,7 +224,7 @@ L'identificativo univoco della pa che emette l'atto, con un prefisso che ne indi
 Per un comune valgono per esempio i codici ISTAT. Esempio:
 
 ```
-<category domain="http://albopop.it/specs#item-category-uid">istat:010025</category>
+<category domain="http://albopop.it/specs#item-category-uid">istat:082006</category>
 ```
 
 ### Domain act<a name="item-category-act"></a>
