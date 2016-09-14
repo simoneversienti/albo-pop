@@ -41,7 +41,7 @@ L'elemento figlio di [rss](#rss) deve essere l'elemento `channel`, senza attribu
 Il titolo del feed deve essere nella forma `AlboPOP - [tipo pa] - [nome pa]`. Esempio:
 
 ```
-<title>AlboPOP - Comune - Genova</title>
+<title>AlboPOP - Comune - Bagheria</title>
 ```
 
 ## Tag link<a name="channel-link"></a>
@@ -55,7 +55,7 @@ L'URL diretto al feed.
 La descrizione del feed. Deve essere nella forma `*non ufficiale* RSS feed dell'Albo Pretorio di [tipo pa] [nome pa]`. Esempio:
 
 ```
-<description>*non ufficiale* RSS feed dell'Albo Pretorio del Comune di Genova</description>
+<description>*non ufficiale* RSS feed dell'Albo Pretorio del Comune di Bagheria</description>
 ```
 
 ## Tag language<a href="channel-language"></a>
@@ -81,17 +81,17 @@ Nome ed email del curatore del feed e/o autore dello scraper. Esempio:
 ```
 
 ## Tag docs<a name="channel-docs"></a>
-URL al repository pubblico che contiene il codice dello scraper o alla pagina web che lo descrive. Esempio:
+URL al repository pubblico che contiene il codice dello scraper o alla pagina web che lo descrive (per esempio, http://albopop.it/[tipo pa]/[nome pa]/). Esempio:
 
 ```
-<docs>https://github.com/sabas/albopopGenova</docs>
+<docs>http://albopop.it/comune/bagheria/</docs>
 ```
 
 ## Tag copyright<a name="channel-copyright"></a>
 L'indicazione del copyright dei contenuti del feed, nella forma `Copyright [anno], [nome pa]`. Esempio:
 
 ```
-<copyright>Copyright 2016, Comune di Genova</copyright>
+<copyright>Copyright 2016, Comune di Bagheria</copyright>
 ```
 
 ## Tag creativeCommons:license<a name="channel-cc"></a>
@@ -232,4 +232,42 @@ Uno o più allegati con l'URL diretto all'atto integrale, generalmente un file p
 
 ```
 <enclosure url="[...]" length="[...]" type="application/pdf" />
+```
+
+# Esempio completo
+Qui di seguito è riportato un esempio completo di feed con un solo elemento a scopo dimostrativo.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:creativeCommons="http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html" xmlns:xhtml="http://www.w3.org/1999/xhtml" version="2.0">
+ <channel>
+  <title>AlboPOP - Comune - Bagheria</title>
+  <link>https://script.google.com/macros/s/AKfycbxiqe9sZ7Y1yT8dm3diccl0EBhGAQ5ZF60Stq8SgM4qSIabfeA/exec</link>
+  <description>*non ufficiale* RSS feed dell'Albo Pretorio del Comune di Bagheria</description>
+  <language>it</language>
+  <pubDate>Tue, 10 Jul 2016 04:00:00 GMT</pubDate>
+  <webMaster>john@smith.com (John Smith)</webMaster>
+  <docs>http://albopop.it/comune/bagheria/</docs>
+  <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
+  <xhtml:meta name="robots" content="noindex" />
+ 
+  <category domain="comune">Amatrice</category>
+  <category domain="provincia">Rieti</category>
+  <category domain="regione">Lazio</category>
+  <category domain="latitudine">42.629381</category>
+  <category domain="longitudine">13.288372</category>
+  <category domain="tipologia_pa">Comune</category>
+ 
+  <item>
+   <title>VINCOLO IDROGEOLOGICO. SIG. RAPONI SERGIO.</title>
+   <link>http://halleyweb.com/c057002/mc/mc_gridev_dettaglio.php?x=&amp;interno=1&amp;id_pubbl=5772</link>
+   <description>VINCOLO IDROGEOLOGICO. SIG. RAPONI SERGIO.</description>
+   <pubDate>Mon, 22 Aug 2016 10:00:00 +0000</pubDate>
+   <guid>http://halleyweb.com/c057002/mc/mc_gridev_dettaglio.php?x=&amp;interno=1&amp;id_pubbl=5772</guid>
+ 
+   <category domain="custom">Post-terremoto 24 agosto 2016</category>
+ 
+  </item>
+ </channel>
+</rss>
 ```
