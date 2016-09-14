@@ -267,7 +267,7 @@ Qui di seguito è riportato un esempio completo di feed con un solo elemento a s
    <category domain="http://albopop.it/specs#item-category-country">Italia</category>
    <category domain="http://albopop.it/specs#item-category-region">Sicilia</category>
    <category domain="http://albopop.it/specs#item-category-province">Palermo</category>
-   <category domain="http://albopop.it/specs#item-category-munipality">Bagheria</category>
+   <category domain="http://albopop.it/specs#item-category-municipality">Bagheria</category>
    <category domain="http://albopop.it/specs#item-category-latitude">38.083333</category>
    <category domain="http://albopop.it/specs#item-category-longitude">13.5</category>
    <category domain="http://albopop.it/specs#item-category-type">Comune</category>
