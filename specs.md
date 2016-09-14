@@ -123,17 +123,17 @@ Il titolo dell'atto, così come riportato dalla pagina dedicata dell'albo pretor
 ```
 
 ## Tag link<a name="item-link"></a>
-L'URL diretto alla pagina ufficiale dell'atto. Non a un documento (un file pdf, per esempio, vedi il tag [enclosure](#item-enclosure)), ma a una pagina web.
+L'URL diretto alla pagina ufficiale dell'atto. Non a un documento (un file pdf, per esempio, vedi il tag [enclosure](#item-enclosure)), ma a una pagina web. E possibilmente diretto alla pagina, non attraverso un redirect, uno short url o un feedproxy.
 
 ```
 <link>[...]</link>
 ```
 
 ## Tag description<a name="item-description"></a>
-L'excerpt dell'atto, così come riportato in forma sintetica nella pagina ufficiale. Se mancante, una copia del titolo. Si sconsiglia ogni intervento sul testo, come riduzione in lettere minuscole, a parte l'eliminazione di spazi e tabulazioni consecutivi e/o agli estremi della stringa.
+L'excerpt dell'atto, così come riportato in forma sintetica nella pagina ufficiale. Se mancante, una copia del titolo. Si sconsiglia ogni intervento sul testo, come riduzione in lettere minuscole, a parte l'eliminazione di spazi e tabulazioni consecutivi e/o agli estremi della stringa. Può contenere HTML, ma in tal caso deve essere racchiuso in un tag `<![CDATA[]]>` (vedi [CDATA Section](https://www.w3.org/TR/REC-xml/#sec-cdata-sect)).
 
 ```
-<description>[...]</description>
+<description><![CDATA[...]]></description>
 ```
 
 ## Tag pubDate<a name="item-pubdate"></a>
@@ -227,6 +227,13 @@ Per un comune valgono per esempio i codici ISTAT. Esempio:
 <category domain="http://albopop.it/specs#item-category-uid">istat:010025</category>
 ```
 
+### Domain act<a name="item-category-act"></a>
+L'identificativo numerico univoco dell'atto (numero di protocollo), univoco all'interno dell'Albo Pretorio in oggetto.
+
+```
+<category domain="http://albopop.it/specs#item-category-act">[...]</category>
+```
+
 ## Tag enclosure<a name="item-enclosure"></a>
 Uno o più allegati con l'URL diretto all'atto integrale, generalmente un file pdf. Esempio:
 
@@ -245,28 +252,29 @@ Qui di seguito è riportato un esempio completo di feed con un solo elemento a s
   <link>https://script.google.com/macros/s/AKfycbxiqe9sZ7Y1yT8dm3diccl0EBhGAQ5ZF60Stq8SgM4qSIabfeA/exec</link>
   <description>*non ufficiale* RSS feed dell'Albo Pretorio del Comune di Bagheria</description>
   <language>it</language>
-  <pubDate>Tue, 10 Jul 2016 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 14 Sep 2016 10:30:00 +000</pubDate>
   <webMaster>john@smith.com (John Smith)</webMaster>
   <docs>http://albopop.it/comune/bagheria/</docs>
+  <copyright>Copyright 2016, Comune di Bagheria</copyright>
   <creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license>
   <xhtml:meta name="robots" content="noindex" />
- 
-  <category domain="comune">Amatrice</category>
-  <category domain="provincia">Rieti</category>
-  <category domain="regione">Lazio</category>
-  <category domain="latitudine">42.629381</category>
-  <category domain="longitudine">13.288372</category>
-  <category domain="tipologia_pa">Comune</category>
- 
   <item>
-   <title>VINCOLO IDROGEOLOGICO. SIG. RAPONI SERGIO.</title>
-   <link>http://halleyweb.com/c057002/mc/mc_gridev_dettaglio.php?x=&amp;interno=1&amp;id_pubbl=5772</link>
-   <description>VINCOLO IDROGEOLOGICO. SIG. RAPONI SERGIO.</description>
-   <pubDate>Mon, 22 Aug 2016 10:00:00 +0000</pubDate>
-   <guid>http://halleyweb.com/c057002/mc/mc_gridev_dettaglio.php?x=&amp;interno=1&amp;id_pubbl=5772</guid>
- 
-   <category domain="custom">Post-terremoto 24 agosto 2016</category>
- 
+   <title>Servizio trasporto alunni Aspra-Bagheria</title>
+   <link>http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/?ap_id=26006&ap_show=detail</link>
+   <description><![CDATA[Servizio trasporto alunni Aspra-Bagheria]]></description>
+   <pubDate>Wed, 14 Sep 2016 10:00:00 +000</pubDate>
+   <guid isPermaLink="true">http://comune.bagheria.pa.it/albo-pretorio/albo-pretorio-online/?ap_id=26006&ap_show=detail</guid>
+   <category domain="http://albopop.it/specs#item-category-country">Italia</category>
+   <category domain="http://albopop.it/specs#item-category-region">Sicilia</category>
+   <category domain="http://albopop.it/specs#item-category-province">Palermo</category>
+   <category domain="http://albopop.it/specs#item-category-munipality">Bagheria</category>
+   <category domain="http://albopop.it/specs#item-category-latitude">38.083333</category>
+   <category domain="http://albopop.it/specs#item-category-longitude">13.5</category>
+   <category domain="http://albopop.it/specs#item-category-type">Comune</category>
+   <category domain="http://albopop.it/specs#item-category-name">Comune di Bagheria</category>
+   <category domain="http://albopop.it/specs#item-category-uid">istat:082006</category>
+   <category domain="http://albopop.it/specs#item-category-act">117</category>
+   <enclosure url="http://comune.bagheria.pa.it/wp-content/plugins/wp-albopretorio/download.ws.php?download=deed_doc&id=26976" length="222849" type="application/pdf" />
   </item>
  </channel>
 </rss>
