@@ -33,7 +33,7 @@ $date=$entry->startDate->format('d/m/Y');
   
 $title="Albo POP Comune di Torino - Avviso $year / $number del $date";
 $logo="logo.png";
-$news="<a href=\"http://osmele.elilan.com/_ont/ont2.html\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
+$news="<a href=\"http://osmele.elilan.com/ont/\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
 $description=$entry->category.'-'.$entry->subject;
 
 $link=$entry->link;

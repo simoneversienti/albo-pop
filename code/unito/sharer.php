@@ -39,7 +39,7 @@ $description= "$entry->struttura : $entry->oggetto";
 if (count ( $entry->links )>0)
 	$link = each ( $entry->links ) ['key'];
 
-$news="<a href=\"http://osmele.elilan.com/_ont/ont2.html\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
+$news="<a href=\"http://osmele.elilan.com/ont/\">Le entit&agrave; delle pubbliche amministrazioni mappate sul territorio nazionale</a>";
 	
 $css="../RSS/sharer.css";
 require("../RSS/sharer-template.php");
