@@ -108,6 +108,83 @@ Necessario per evitare l'indicizzazione da motore di ricerca delle pagine linkat
 <xhtml:meta name="robots" content="noindex" />
 ```
 
+## Tag category<a name="channel-category"></a>
+Devono essere due o più e contenere il maggior numero possibile delle seguenti informazioni:
+
+* nazione pa,
+* regione pa,
+* provincia pa,
+* comune pa,
+* tipo pa,
+* nome pa,
+* latitudine pa,
+* longitudine pa,
+* codice univoco con prefisso pa.
+
+### Domain country<a name="channel-category-country"></a>
+La nazione a cui appartiene la pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-country">Italia</category>
+```
+
+### Domain region<a name="channel-category-region"></a>
+La regione a cui appartiene la pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-region">Sicilia</category>
+```
+
+### Domain province<a name="channel-category-province"></a>
+La provincia a cui appartiene la pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-province">Palermo</category>
+```
+
+### Domain municipality<a name="channel-category-municipality"></a>
+Il comune a cui appartiene la pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-municipality">Bagheria</category>
+```
+
+### Domain type<a name="channel-category-type"></a>
+Il tipo di pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-type">Comune</category>
+```
+
+### Domain name<a name="channel-category-name"></a>
+Il nome della pa che emette l'atto. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-name">Comune di Bagheria</category>
+```
+
+### Domain latitude<a name="channel-category-latitude"></a>
+La latitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-latitude">38.083333</category>
+```
+
+### Domain longitude<a name="channel-category-longitude"></a>
+La longitudine della pa che emette l'atto. Quella del comune di riferimento in mancanza di una sede specifica. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-longitude">13.5</category>
+```
+
+### Domain uid<a name="channel-category-uid"></a>
+L'identificativo univoco della pa che emette l'atto, con un prefisso che ne indica il database di riferimento.
+Per un comune valgono per esempio i codici ISTAT. Esempio:
+
+```
+<category domain="http://albopop.it/specs#channel-category-uid">istat:082006</category>
+```
+
 # Tag item<a name="item"></a>
 Sono gli elementi che rappresentano un singolo atto dell'albo pretorio. Possono essere zero (feed vuoto) o più, fino a 25, in ordine inverso di data e orario di pubblicazione.
 
@@ -150,18 +227,18 @@ Identificativo unico *universale* dell'atto. Non può essere il semplice id dell
 <guid isPermaLink="true">[...]</guid>
 ```
 
-## Tag category<a name="item-category"></a>
+## Tag category<a name="item-category"></a> [TO FIX]
 Devono essere due o più e contenere il maggior numero possibile delle seguenti informazioni:
 
-* nazione pa,
-* regione pa,
-* provincia pa,
-* comune pa,
-* tipo pa,
-* nome pa,
-* latitudine,
-* longitudine,
-* codice univoco con prefisso.
+* nazione atto,
+* regione atto,
+* provincia atto,
+* comune atto,
+* tipo atto,
+* nome atto,
+* latitudine atto,
+* longitudine atto,
+* codice univoco con prefisso atto.
 
 ### Domain country<a name="item-category-country"></a>
 La nazione a cui appartiene la pa che emette l'atto. Esempio:
