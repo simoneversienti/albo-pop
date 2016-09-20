@@ -20,23 +20,14 @@
  */
 
 require ('../phpalbogenerator/AlboPopGenerator.php');
-<<<<<<< HEAD
-require ('AlboBelpassoParserFactory.php');
-require ('AlboBelpassoItemConverter.php');
-$generator = new AlboPopGenerator ( new AlboBelpassoParserFactory (), new AlboBelpassoItemConverter () );
-$generator->outputFeed ("Albo POP della città della salute di Torino", "Versione POP dell'Albo Pretorio della città della salute del comune di Torino", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php",
-			"http://dev.opendatasicilia.it/albopop/torino/albofeed.php");
-=======
 require ('../jCityGov/AlbojCityGovParserFactory.php');
 require ('../jCityGov/AlbojCityGovItemConverter.php');
-require ('AlboBelpassoEntryParser.php');
 
-define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio?p_auth=92oCQYZB&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiPaginazione&hidden_page_size=200');
+//define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio?p_auth=92oCQYZB&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiPaginazione&hidden_page_size=200');
+define('ALBO_URL','http://trasparenza.cittametropolitana.ct.it/web/citta-metropolitana-di-catania/albo-pretorio?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_pos=1&p_p_col_count=3&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiPaginazione&hidden_page_size=200');
 define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro');
 
-$generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL, new AlboBelpassoEntryParser() ), 
-		new AlbojCityGovItemConverter ());
+$generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL), new AlbojCityGovItemConverter () );
 $generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
 		"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
->>>>>>> branch 'master' of https://github.com/aborruso/albo-pop.git
 ?>

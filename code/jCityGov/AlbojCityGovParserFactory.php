@@ -20,17 +20,29 @@
  * @author Cristiano Longo
  */
 require ('../phpparsing/AlboParserFactory.php');
-require ('AlboBelpassoParser.php');
-define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro');
+require ('AlbojCityGovParser.php');
 
-class AlboBelpassoParserFactory implements AlboParserFactory {
-	public static $alboPageUri = 'http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio?p_auth=92oCQYZB&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiPaginazione&hidden_page_size=200';
+class AlbojCityGovParserFactory implements AlboParserFactory {
+	private $alboPageUri;
+	private $selectionFormUri;
+	private $entryParser;
+	
+	/**
+	 * 
+	 * @param unknown $alboPageUri TODO write me
+	 * @param unknown $selectionFormUri TODO write me
+	 */
+	public function __construct($alboPageUri, $selectionFormUri, $entryParser){
+		$this->alboPageUri=$alboPageUri;
+		$this->selectionFormUri=$selectionFormUri;
+		$this->entryParser=$entryParser;
+	}
 	
 	/**
 	 * The landing page of the Official Albo
 	 */
 	public function getAlboPretorioLandingPage() {
-		return AlboBelpassoParserFactory::$alboPageUri;
+		return $this->alboPageUri;
 	}
 	
 	/**
@@ -40,8 +52,8 @@ class AlboBelpassoParserFactory implements AlboParserFactory {
 	 */
 	public function createFromWebPage() {
 		$page = new DOMDocument();
-		$page->loadHTMLfile(AlboBelpassoParserFactory::$alboPageUri);
-		return new AlboBelpassoParser($page);
+		$page->loadHTMLfile($this->alboPageUri);
+		return new AlbojCityGovParser($page, $this->entryParser);
 	}
 	
 	/**
@@ -50,8 +62,8 @@ class AlboBelpassoParserFactory implements AlboParserFactory {
 	 */
 	public function createByYearAndNumber($year, $number) {
 		$page = new DOMDocument();
-		$page->loadHTMLfile(SELECTION_FORM_URL."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
-		return new AlboBelpassoParser($page);
+		$page->loadHTMLfile($this->selectionFormUri."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
+		return new AlbojCityGovParser($page, $this->entryParser);
 	}
 }
 ?>

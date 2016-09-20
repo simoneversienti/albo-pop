@@ -12,12 +12,15 @@ class AlboCittaDellaSaluteParser implements Iterator{
 	 */
 	public function __construct($page) 
 	{
+	
+	//	$this->rows=$page->getElementsByTagName('atto');
 		$this->rows=$page;
 		$this->index=1;
 	}
 
-	public function current(){
-		return new AlboCittaDellaSaluteEntry($this->rows->atto->atti[$this->index]);
+	public function current()
+	{
+		return new AlboCittaDellaSaluteEntry($this->rows->atto[$this->index]);
 	}
 	
 	

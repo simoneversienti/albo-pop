@@ -17,6 +17,7 @@ class AlboCittaDellaSaluteEntry{
 	
 	public function __construct($atto) {
 		
+		
 		$tipologia=$atto->tipologia;
 		$ndelibera=$atto->ndelibera;
 		$ddelibera=$atto->ddelibera;

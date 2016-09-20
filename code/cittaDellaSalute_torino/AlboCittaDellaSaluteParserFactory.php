@@ -23,10 +23,10 @@ class AlboCittaDellaSaluteParserFactory implements AlboParserFactory {
 		/*$url = "https://www.cittadellasalute.to.it/albo/pubblicazione.xml";
 		$file = file_get_contents($url, FALSE, stream_context_create(array('http' =>array('user_agent' => 'php' ))));
 		$page = simplexml_load_string($file);*/
-		/*$page = new DOMDocument();
-		$page->load(AlboCittaDellaSaluteParserFactory::$alboPageUri);*/
-		//print_r($page);
-		$page=simplexml_load_file(AlboCittaDellaSaluteParserFactory::$alboPageUri);
+		$var = new DOMDocument();
+		$var->load('https://www.cittadellasalute.to.it/albo/pubblicazione.xml');
+		$page = simplexml_load_string($var->saveXML());
+		//$page=simplexml_load_file(AlboCittaDellaSaluteParserFactory::$alboPageUri);
 		return new AlboCittaDellaSaluteParser($page);
 	}
 
@@ -36,7 +36,7 @@ class AlboCittaDellaSaluteParserFactory implements AlboParserFactory {
 	 */
 	public function createByYearAndNumber($year, $number) {
 		$page = new DOMDocument();
-		$page->loadHTMLfile(SELECTION_FORM_URL."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
+		$page->load(SELECTION_FORM_URL."&numeroRegistrazioneDa=$number&annoRegistrazioneDa=$year");
 		return new AlboBelpassoParser($page);
 	}
 }

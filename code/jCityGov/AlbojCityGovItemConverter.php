@@ -20,17 +20,17 @@
  */
 require ('../phpalbogenerator/AlboToRSSItemConverter.php');
 require ('../RSS/RSSFeedItem.php');
-class AlboBelpassoItemConverter implements AlboToRSSItemConverter {
+class AlbojCityGovItemConverter implements AlboToRSSItemConverter {
 	/** 
 	 *
 	 * @param AlboUnitoEntry $alboTorinoItem        	
 	 */
-	function getRSSItem($alboBelpassoItem) {
+	function getRSSItem($albojCityGovItem) {
 		$rssItem = new RSSFeedItem ();
-		$rssItem->title=$alboBelpassoItem->oggetto;
-		$rssItem->description=$alboBelpassoItem->anno_registro.'/'.$alboBelpassoItem->numero_registro.'['.$alboBelpassoItem->tipo_atto.','.$alboBelpassoItem->sottotipo_atto.']'.$alboBelpassoItem->oggetto;
-		$rssItem->pubDate=$alboBelpassoItem->data_inizio_pubblicazione;
-		$rssItem->link="http://dev.opendatasicilia.it/albopop/belpasso/sharer.php?year=".$alboBelpassoItem->anno_registro."&number=".$alboBelpassoItem->numero_registro;
+		$rssItem->title=$albojCityGovItem->oggetto;
+		$rssItem->description=$albojCityGovItem->anno_registro.'/'.$albojCityGovItem->numero_registro.'['.$albojCityGovItem->tipo_atto.','.$albojCityGovItem->sottotipo_atto.']'.$albojCityGovItem->oggetto;
+		$rssItem->pubDate=$albojCityGovItem->data_inizio_pubblicazione;
+		$rssItem->link="http://dev.opendatasicilia.it/albopop/belpasso/sharer.php?year=".$albojCityGovItem->anno_registro."&number=".$albojCityGovItem->numero_registro;
 		$rssItem->guid=$rssItem->link;
 		return $rssItem;
 	}
