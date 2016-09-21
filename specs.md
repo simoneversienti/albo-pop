@@ -416,7 +416,6 @@ Qui di seguito è riportato un esempio completo di feed con un solo elemento a s
    <category domain="http://albopop.it/specs#item-category-municipality">Bagheria</category>
    <category domain="http://albopop.it/specs#item-category-latitude">38.083333</category>
    <category domain="http://albopop.it/specs#item-category-longitude">13.5</category>
-   <category domain="http://albopop.it/specs#item-category-type">Comune</category>
    <category domain="http://albopop.it/specs#item-category-uid">117</category>
    <category domain="http://albopop.it/specs#item-category-type">Determina</category>
    <category domain="http://albopop.it/specs#item-category-pubStart">Wed, 14 Sep 2016 10:00:00 +000</category>
