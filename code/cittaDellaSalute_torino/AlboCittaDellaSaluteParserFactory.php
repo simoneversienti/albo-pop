@@ -20,13 +20,8 @@ class AlboCittaDellaSaluteParserFactory implements AlboParserFactory {
 	 * @return the AlboUnictParser instance obtained by parsing the specified page.
 	 */
 	public function createFromWebPage() {
-		/*$url = "https://www.cittadellasalute.to.it/albo/pubblicazione.xml";
-		$file = file_get_contents($url, FALSE, stream_context_create(array('http' =>array('user_agent' => 'php' ))));
-		$page = simplexml_load_string($file);*/
-		$var = new DOMDocument();
-		$var->load('https://www.cittadellasalute.to.it/albo/pubblicazione.xml');
-		$page = simplexml_load_string($var->saveXML());
-		//$page=simplexml_load_file(AlboCittaDellaSaluteParserFactory::$alboPageUri);
+		$page = new DOMDocument();
+		$page->load('https://www.cittadellasalute.to.it/albo/pubblicazione.xml');
 		return new AlboCittaDellaSaluteParser($page);
 	}
 

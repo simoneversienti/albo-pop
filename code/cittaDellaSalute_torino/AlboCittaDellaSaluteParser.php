@@ -13,9 +13,10 @@ class AlboCittaDellaSaluteParser implements Iterator{
 	public function __construct($page) 
 	{
 	
-	//	$this->rows=$page->getElementsByTagName('atto');
-		$this->rows=$page;
+		$this->rows=$page->getElementsByTagName('atto');
+	//	$this->rows=$page;
 		$this->index=1;
+		echo "Found ".$this->rows->length." atti.\n";
 	}
 
 	public function current()
