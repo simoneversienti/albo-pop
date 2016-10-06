@@ -7,6 +7,6 @@ La pagina dell'albo pretorio del comune di **San Biagio di Callalta** è questa:
 
 Adesso puoi seguire le nuove pubblicazioni in albo tramite questo **feed RSS**:
 
-- [http://feeds.feedburner.com/AlbopopSanBiagioDiCallalta](http://feeds.feedburner.com/AlbopopSanBiagioDiCallalta)
+- [http://feeds.feedburner.com/AlbopopSanBiagioDiCallalta](http://feeds.feedburner.com/AlbopopSanBiagioDiCallalta?format=xml)
 
 **Autore**: [Carlo Felice Dalla Pasqua](https://twitter.com/carlofelice)
