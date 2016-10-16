@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Montefortino (Marche)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Montefortino** è questa: [http://halleyweb.com/c044037/mc/mc_p_ricerca.php](http://halleyweb.com/c044037/mc/mc_p_ricerca.php)

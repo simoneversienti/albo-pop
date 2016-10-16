@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Montemonaco (Marche)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Montemonaco** è questa: [http://www.tecuting.it/c044044/mc/mc_p_ricerca.php](http://www.tecuting.it/c044044/mc/mc_p_ricerca.php)

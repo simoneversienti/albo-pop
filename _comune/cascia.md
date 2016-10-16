@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Cascia (Umbria)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Cascia** è [questa.](http://www.halleyweb.com/c054007/mc/mc_gridev_messi.php?x=&servizio=&bck=http%3A%2F%2Fwww.comune.cascia.pg.it%2F).

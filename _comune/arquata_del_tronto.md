@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Arquata del Tronto (Marche)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Arquata del Tronto** è questa: [http://www.halleyegov.it/c044006/mc/mc_p_ricerca.php](http://www.halleyegov.it/c044006/mc/mc_p_ricerca.php).

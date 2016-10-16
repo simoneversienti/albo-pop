@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Acquasanta Terme (Marche)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Acquasanta Terme** è questa: [http://www.comune.acquasantaterme.ap.it/mc/mc_p_ricerca.php](http://www.comune.acquasantaterme.ap.it/mc/mc_p_ricerca.php)

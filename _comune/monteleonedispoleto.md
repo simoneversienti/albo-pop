@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Monteleone di Spoleto (Umbria)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Monteleone di Spoleto** è questa: [http://www.comune.monteleonedispoleto.pg.it/mc/mc_p_ricerca.php](http://www.comune.monteleonedispoleto.pg.it/mc/mc_p_ricerca.php).

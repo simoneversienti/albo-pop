@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Cittareale (Lazio)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Cittareale** è questa: [http://halleyweb.com/c057017/mc/mc_p_ricerca.php?x=&](http://halleyweb.com/c057017/mc/mc_p_ricerca.php?x=&)
