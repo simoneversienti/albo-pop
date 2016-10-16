@@ -7,5 +7,5 @@ A seguire i comuni per cui è stata creata una versione **POP** del loro **Albo 
 
 {% assign tci = site.comune | where: "tags", "tci" %}
 {% for comuni in tci %}
-  <li><a href="{{ site.baseurl }}{{ comuni.url }}">{{ comuni.title }}</a></li>
+  ciao
 {% endfor %}
