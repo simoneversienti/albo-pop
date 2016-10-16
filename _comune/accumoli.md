@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Accumoli (Lazio)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Accumoli** è questa: [http://www.comune.accumoli.ri.it/albo-pretorio/](http://www.comune.accumoli.ri.it/albo-pretorio/).
