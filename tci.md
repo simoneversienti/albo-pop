@@ -16,5 +16,5 @@ A seguire l'elenco dei comuni coinvolti nel terremoto del centro Italia di fine 
 		{% endfor %}
 </ul>
 
-La creazione degli albi POP per questi comuni è stata realizzata dai soci dell'[associazione onData](http://ondata.it/): uno speciale grazie a Alessio Cimarelli.
+La creazione degli albi POP per questi comuni è stata realizzata dai soci dell'[associazione onData](http://ondata.it/): uno speciale grazie a Alessio Cimarelli e a Enrico Bergamini.
 Ed è anche un piccolo contributo in sostegno del progetto [Terremoto Centro Italia](http://terremotocentroitalia.info/).

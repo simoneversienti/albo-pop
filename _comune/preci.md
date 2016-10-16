@@ -1,6 +1,7 @@
 ---
 layout: comune
 title: Preci (Umbria)
+tags: [tci]
 ---
 
 La pagina dell'albo pretorio del **Comune di Preci** è questa: [http://halleyweb.com/c054043/mc/mc_p_ricerca.php](http://halleyweb.com/c054043/mc/mc_p_ricerca.php)
