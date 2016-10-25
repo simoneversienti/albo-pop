@@ -34,7 +34,7 @@ class AlbojCityGovParseUtils{
 	 */
 	public static function parseTwoLinesField($fullContent){
 		$contentPieces=explode(CONTENT_SEPARATOR, $fullContent);
-		if (count($contentPieces>1)) return array(trim($contentPieces[0]), trim($contentPieces[1]));
+		if (count($contentPieces)>1) return array(trim($contentPieces[0]), trim($contentPieces[1]));
 		return array(trim($contentPieces[0]),'');
 	}
 	
