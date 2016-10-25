@@ -20,13 +20,6 @@
  */
 
 require ('../phpalbogenerator/AlboPopGenerator.php');
-<<<<<<< HEAD
-require ('AlboBelpassoParserFactory.php');
-require ('AlboBelpassoItemConverter.php');
-$generator = new AlboPopGenerator ( new AlboBelpassoParserFactory (), new AlboBelpassoItemConverter () );
-$generator->outputFeed ("Albo POP della città della salute di Torino", "Versione POP dell'Albo Pretorio della città della salute del comune di Torino", "http://dev.opendatasicilia.it/albopop/torino/albofeed.php",
-			"http://dev.opendatasicilia.it/albopop/torino/albofeed.php");
-=======
 require ('../jCityGov/AlbojCityGovParserFactory.php');
 require ('../jCityGov/AlbojCityGovItemConverter.php');
 require ('AlboBelpassoEntryParser.php');
@@ -38,5 +31,4 @@ $generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SEL
 		new AlbojCityGovItemConverter ());
 $generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
 		"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
->>>>>>> branch 'master' of https://github.com/aborruso/albo-pop.git
 ?>
