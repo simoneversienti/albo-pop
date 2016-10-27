@@ -28,7 +28,7 @@ define('ALBO_URL','http://belpasso.trasparenza-valutazione-merito.it/web/traspar
 define('SELECTION_FORM_URL','http://belpasso.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio;jsessionid=A7AAB8DEA03B8B38A523391514236713?p_auth=8GWyser9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro');
 
 $generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL, new AlboBelpassoEntryParser() ), 
-		new AlbojCityGovItemConverter ());
+		new AlbojCityGovItemConverter ("http://dev.opendatasicilia.it/albopop/belpasso/sharer.php"));
 $generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
 		"http://dev.opendatasicilia.it/albopop/belpasso/albofeed.php");
 ?>

@@ -20,7 +20,17 @@
  */
 require ('../phpalbogenerator/AlboToRSSItemConverter.php');
 require ('../RSS/RSSFeedItem.php');
+/**
+ * @author cristianolongo
+ *
+ */
 class AlbojCityGovItemConverter implements AlboToRSSItemConverter {
+	
+	private $sharerUrl;
+	
+	function __construct($sharerUrl){
+		$this->sharerUrl=$sharerUrl;	
+	}
 	/** 
 	 *
 	 * @param AlboUnitoEntry $alboTorinoItem        	
@@ -30,7 +40,7 @@ class AlbojCityGovItemConverter implements AlboToRSSItemConverter {
 		$rssItem->title=$albojCityGovItem->oggetto;
 		$rssItem->description=$albojCityGovItem->anno_registro.'/'.$albojCityGovItem->numero_registro.'['.$albojCityGovItem->tipo_atto.','.$albojCityGovItem->sottotipo_atto.']'.$albojCityGovItem->oggetto;
 		$rssItem->pubDate=$albojCityGovItem->data_inizio_pubblicazione;
-		$rssItem->link="http://dev.opendatasicilia.it/albopop/belpasso/sharer.php?year=".$albojCityGovItem->anno_registro."&number=".$albojCityGovItem->numero_registro;
+		$rssItem->link=$this->sharerUrl.'?year='.$albojCityGovItem->anno_registro."&number=".$albojCityGovItem->numero_registro;
 		$rssItem->guid=$rssItem->link;
 		return $rssItem;
 	}
