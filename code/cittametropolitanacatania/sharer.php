@@ -44,6 +44,10 @@ $description='Tipologia:'.$entry->tipo_atto.','.$entry->sottotipo_atto
 $link=$entry->url;
 $css="../RSS/sharer.css";
 $supporter_name="Rosario Romeo";
+$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> sostiene il
+<a href=\"http://bastionedeglinfettict.it\">Bastione degli Infetti</a> nel concorso <em>I LUOGHI DEL CUORE</em>.
+<a href=\"http://iluoghidelcuore.it/luoghi/86006\">Sostieni anche tu il Bastione degli Infetti!
+		<img src=\"http://bastionedeglinfettict.it/img/heart-gray.png\" style=\"vertical-align: middle; height:2em; padding-left:1em\" alt=\"cuoricino\" /></a>";
 
 require("../RSS/sharer-template.php");
 ?>
