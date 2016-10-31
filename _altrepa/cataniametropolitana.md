@@ -8,7 +8,7 @@ La pagina dell'albo pretorio della **Città Metropolitana di Catania** è questa
 Adesso puoi seguire le nuove pubblicazioni in albo e condividerle sui social
 
 
-* iscrivendoti al **feed RSS**: [http://dev.opendatasicilia.it/albopop/cittametropolitanacatania/albofeed.php](http://dev.opendatasicilia.it/cittametropolitanacatania/belpasso/albofeed.php).
+* iscrivendoti al **feed RSS**: [http://dev.opendatasicilia.it/albopop/cittametropolitanacatania/albofeed.php](http://dev.opendatasicilia.it/albopop/cittametropolitanacatania/albofeed.php).
 
 **Autore**: Cristiano Longo
 
