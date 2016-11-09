@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * A template for generated pages to share feed items on facebook.
  * Just set the following variables and import this file in your own sharer.php page:
@@ -24,6 +24,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+if (isset($ente))
+	$donationTxt="SOSTIENI ALBO POP $ente CON UNA DONAZIONE AD HACKSPACE CATANIA";
+else 
+	$donationTxt="SOSTIENI QUESTO ALBO POP CON UNA DONAZIONE AD HACKSPACE CATANIA";
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,10 +74,20 @@ function sharefb(){
 		<h1>
 			<?php echo $title;?>
 		</h1>
+		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr"
+			method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick"> <input
+				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE"> 
+				<input class="donation" type="submit" name="sumbit"
+				value="<?php echo $donationTxt; ?>">
+			</label>
+		</form>
 	</header>
-	<?php if (isset($news))
+	<?php
+	
+if (isset ( $news ))
 		echo "\t<section id=\"news\">\n\t\t<p>$news</p>\n\t</section>\n";
-		?>
+	?>
 	<section id="avviso">
 		<blockquote cite="<?php echo $link?>">
 			<p>
@@ -85,8 +100,8 @@ function sharefb(){
 		</p>
 	</section>
 	<section id="links">
-		<a href="http://albopop.it" target="_blank"> <img class="logo" alt="logo albo pop"
-			src="http://albopop.it/images/logo.png" />
+		<a href="http://albopop.it" target="_blank"> <img class="logo"
+			alt="logo albo pop" src="http://albopop.it/images/logo.png" />
 		</a>
 		<p>
 			Per saperne di pi&ugrave visita il sito del progetto <a
@@ -101,7 +116,9 @@ function sharefb(){
 				href="http://hackspacecatania.it" target="_blank">Hackspace Catania</a>
 			nell'ambito del progetto <a href="http://opendatahacklab.org"
 				target="_blank"><code>opendatahacklab</code> </a>
-<?php if (isset($supporter_name))
+<?php
+
+if (isset ( $supporter_name ))
 	echo " col supporto di <em>$supporter_name</em>"?>
 		.</p>
 		<p class="links">
@@ -112,11 +129,14 @@ function sharefb(){
 				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
 				alt="logo opendatahacklab" />
 			</a>
-		<?php if (isset($supporter_name) && isset($supporter_img))
+		<?php
+		
+if (isset ( $supporter_name ) && isset ( $supporter_img ))
 			echo "<img src=\"$supporter_img\" alt=\"$supporter_name\" />"?>	
 		</p>
-		<?php 
-		if (isset($credits)) echo "<p class=\"credits\">$credits</p>\n";
+		<?php
+		if (isset ( $credits ))
+			echo "<p class=\"credits\">$credits</p>\n";
 		?>
 	</section>
 

@@ -19,6 +19,10 @@
  */
 
 require("AlboUnictParserFactory.php");
+require("../phpalbogenerator/AccessLogUtils.php");
+define ("RSSPATH","http://dev.opendatasicilia.it/albopop/catania/");
+AccessLogUtils::logAccess("accessNotices.log");
+
 $number=$_GET['number'];
 if (!isset($number))
 	die("E' necessario specificare un numero di avviso.");
@@ -28,6 +32,7 @@ if ($entry==null)
   die("Nessun elemento con numero $number");
 
 $css="../RSS/sharer.css";
+$ente="Universit&agrave; di Catania";
 $title="Albo POP Universit&agrave; di Catania - Avviso $number";
 $logo="logo.png";
 $description=$entry->richiedente.": ".$entry->description;
@@ -35,7 +40,7 @@ $link=$entry->link;
 $news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> sostiene il
 <a href=\"http://bastionedeglinfettict.it\">Bastione degli Infetti</a> nel concorso <em>I LUOGHI DEL CUORE</em>.
 <a href=\"http://iluoghidelcuore.it/luoghi/86006\">Sostieni anche tu il Bastione degli Infetti!
-		<img src=\"http://bastionedeglinfettict.it/img/heart-gray.png\" style=\"vertical-align: middle; height:2em; padding-left:1em\" alt=\"cuoricino\" /></a>";
+		<img src=\"http://bastionedeglinfettict.it/img/heart-gray.png\" style=\"vertical-align: middle; height:1.8em; padding-left:1em\" alt=\"cuoricino\" /></a>";
 
 require("../RSS/sharer-template.php");
 ?>

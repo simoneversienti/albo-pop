@@ -22,7 +22,7 @@
 
 class AccessLogUtils{
 
-	public static function logAccess(){
+	public static function logAccess($filename="access.log"){
 		//ACCESS COUNTER
 		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			$ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -32,7 +32,7 @@ class AccessLogUtils{
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
 		$path=$_SERVER["REQUEST_URI"];
-		$handle = fopen("access.log", "a");
+		$handle = fopen("access.log", "a+");
 		fwrite($handle, date("Y\tm\td\tH\ti\ts\t$ip\t$uri\n"));
 		fflush($handle);
 		fclose($handle);
