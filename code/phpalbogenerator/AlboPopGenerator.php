@@ -21,6 +21,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 require ("../RSS/RSSFeedGenerator.php");
+require ('AccessLogUtils.php');
 class AlboPopGenerator {
 	private $parserFactory;
 	private $converter;
@@ -63,7 +64,8 @@ class AlboPopGenerator {
 		 * (il server deve avere il locale italiano installato
 		 */
 		setlocale ( LC_TIME, 'it_IT' );
+		AccessLogUtils::logAccess();
 		echo $feed->getFeed ();
-	}
+	}	
 }
 
