@@ -25,10 +25,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-if (isset($ente))
+if (isset($ente)){
 	$donationTxt="SOSTIENI ALBO POP $ente CON UNA DONAZIONE AD HACKSPACE CATANIA";
-else 
+	$motivation="Supporto per opnedatahacklab e Albo POP $ente";
+} else { 
 	$donationTxt="SOSTIENI QUESTO ALBO POP CON UNA DONAZIONE AD HACKSPACE CATANIA";
+	$motivation="Supporto per opnedatahacklab";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,6 +66,7 @@ function sharefb(){
 		href: window.location.href
 	}, function(response){});
 }
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 		</script>
 <meta property="og:title" content="<?php echo $title; ?>" />
 <meta property="og:description" content="<?php echo $description; ?>" />
@@ -76,10 +80,12 @@ function sharefb(){
 		</h1>
 		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr"
 			method="post" target="_top">
-			<input type="hidden" name="cmd" value="_s-xclick"> <input
-				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE"> 
+			<input typpe="hidden" name="item_name" value="Supporto per l'Albo POP ";
+			<input type="hidden" name="cmd" value="_s-xclick" /> <input
+				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE" /> 
+				<input type="hidden" name="item_name" value="<?php echo $motivation; ?>" />
 				<input class="donation" type="submit" name="sumbit"
-				value="<?php echo $donationTxt; ?>">
+				value="<?php echo $donationTxt; ?>"/>
 			</label>
 		</form>
 	</header>
@@ -96,7 +102,8 @@ if (isset ( $news ))
 		</blockquote>
 		<p>
 			Vedi l'<a href="<?php echo $link?>" target="_blank">avviso originale</a>
-			- Condividi su <a href="#" onclick="sharefb()">Facebook</a>
+			- Condividi su <a href="#" onclick="sharefb()">Facebook</a> o
+			<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 		</p>
 	</section>
 	<section id="links">
