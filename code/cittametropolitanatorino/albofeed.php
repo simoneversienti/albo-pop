@@ -22,5 +22,5 @@ require ('AlboCittaMetroTorinoParserFactory.php');
 require ('AlboCittaMetroTorinoItemConverter.php');
 
 $generator = new AlboPopGenerator ( new AlboCittaMetroTorinoParserFactory (), new AlboCittaMetroTorinoItemConverter () );
-$generator->outputFeed ( "Albo POP della Citt&agrave Metropolitana di Torino", "Versione POP della Citt&agrave Metropolitana di Torino", "http://dev.opendatasicilia.it/albopop/cittametropolitanatorino/albofeed.php" );
+$generator->outputFeed ( "Albo POP della Città Metropolitana di Torino", "Versione POP della Città Metropolitana di Torino", "http://dev.opendatasicilia.it/albopop/cittametropolitanatorino/albofeed.php" );
 ?>
