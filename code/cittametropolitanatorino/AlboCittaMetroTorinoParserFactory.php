@@ -20,19 +20,21 @@
  * @author Cristiano Longo
  */
 require ('../phpparsing/AlboParserFactory.php');
-require ('AlboTorinoParser.php');
+require ('AlboCittaMetroTorinoParser.php');
 //require ('../phpparsing/AlboTableParser.php');
 //require ('AlboUnitoRowParser.php');
 
-//https: // www.serviziweb.unito.it/albo_ateneo/?area=Albo&action=Read&go=Cerca&advsearch%5Bnum_rep%5D=1715&advsearch%5Byear%5D=2016
-class AlboTorinoParserFactory implements AlboParserFactory {
-	public static $alboPageUri = 'https://www.serviziweb.unito.it/albo_ateneo/';
+https: // www.serviziweb.unito.it/albo_ateneo/?area=Albo&action=Read&go=Cerca&advsearch%5Bnum_rep%5D=1715&advsearch%5Byear%5D=2016
+class AlboCittaMetroTorinoParserFactory implements AlboParserFactory 
+{
+	public static $alboPageUri = 'http://www.provincia.torino.gov.it/cgi-bin/attiweb/';
 	
 	/**
 	 * The landing page of the Official Albo
 	 */
-	function getAlboPretorioLandingPage() {
-		return 'http://www.comune.torino.it/albopretorio/';
+	function getAlboPretorioLandingPage() 
+	{
+		return 'http://www.provincia.torino.gov.it/cgi-bin/attiweb/';
 	}
 	
 	/**
@@ -40,8 +42,9 @@ class AlboTorinoParserFactory implements AlboParserFactory {
 	 *
 	 * @return the AlboUnitoParser instance obtained by parsing the specified page.
 	 */
-	public function createFromWebPage() {
-		return new AlboTorinoParser();
+	public function createFromWebPage() 
+	{
+		return new AlboCittaMetroTorinoParser();
 	}
 	
 	/**
