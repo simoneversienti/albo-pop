@@ -27,7 +27,7 @@
 
 if (isset($ente)){
 	$donationTxt="SOSTIENI ALBO POP $ente CON UNA DONAZIONE AD HACKSPACE CATANIA";
-	$motivation="Supporto per opnedatahacklab e Albo POP $ente";
+	$motivation="Supporto per opendatahacklab e Albo POP $ente";
 } else { 
 	$donationTxt="SOSTIENI QUESTO ALBO POP CON UNA DONAZIONE AD HACKSPACE CATANIA";
 	$motivation="Supporto per opnedatahacklab";
@@ -80,8 +80,7 @@ function sharefb(){
 		</h1>
 		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr"
 			method="post" target="_top">
-			<input typpe="hidden" name="item_name" value="Supporto per l'Albo POP ";
-			<input type="hidden" name="cmd" value="_s-xclick" /> <input
+				<input type="hidden" name="cmd" value="_s-xclick" /> <input
 				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE" /> 
 				<input type="hidden" name="item_name" value="<?php echo $motivation; ?>" />
 				<input class="donation" type="submit" name="sumbit"
