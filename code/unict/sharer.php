@@ -37,10 +37,7 @@ $title="Albo POP Universit&agrave; di Catania - Avviso $number";
 $logo="logo.png";
 $description=$entry->richiedente.": ".$entry->description;
 $link=$entry->link;
-$news="<code><a href=\"http://opendatahacklab.org\">opendahacklab</a></code> sostiene il
-<a href=\"http://bastionedeglinfettict.it\">Bastione degli Infetti</a> nel concorso <em>I LUOGHI DEL CUORE</em>.
-<a href=\"http://iluoghidelcuore.it/luoghi/86006\">Sostieni anche tu il Bastione degli Infetti!
-		<img src=\"http://bastionedeglinfettict.it/img/heart-gray.png\" style=\"vertical-align: middle; height:1.8em; padding-left:1em\" alt=\"cuoricino\" /></a>";
+$news=null;
 
 require("../RSS/sharer-template.php");
 ?>
