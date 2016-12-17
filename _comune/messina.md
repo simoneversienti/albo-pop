@@ -8,5 +8,5 @@ La pagina dell'albo pretorio del **Comune di Messina** è questa:
 
 Adesso puoi seguire le nuove pubblicazioni in albo iscrivendoti al **feed RSS**: 
 
-* [http://albopretorio.comune.messina.it/jalbopretorio/AlboPretorio](http://albopretorio.comune.messina.it/jalbopretorio/AlboPretorio);
+* [http://feeds.feedburner.com/albopopcomunemessina](http://feeds.feedburner.com/albopopcomunemessina);
 
